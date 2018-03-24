@@ -8,7 +8,6 @@ public class partText : MonoBehaviour {
 	TextItem[] stringList;
 	Rect startRect;
 
-	private bool gui_ready;			// true if gui is ready
 	private bool doing_color;		// true if still on coroutine
 	private bool done;				// true if spelling finished
 	private string command;			// command to pass to OnGUI
@@ -17,14 +16,12 @@ public class partText : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		startRect = new Rect (0,0,100,20);
-		stringList = new TextItem[4];
-		stringList [0] = new TextItem ("Test ", Color.white);
-		stringList [1] = new TextItem ("Test1 ", Color.white);
-		stringList [2] = new TextItem ("Test2 ", Color.white);
-		stringList [3] = new TextItem ("Test3 ", Color.white);
+		stringList = new TextItem[2];
+		stringList [0] = new TextItem ("Pada har minggu ", Color.white);
+		stringList [1] = new TextItem ("Naik delman kampret ", Color.white);
+		//stringList [2] = new TextItem ("Kududuk samping pak kusir yang sedang bekerja", Color.white);
+		//stringList [3] = new TextItem ("Mengendarai kuda supaya baik jalannya ", Color.white);
 
-		gui_ready = false;
 		doing_color = false;
 		done = false;
 	}
@@ -33,43 +30,17 @@ public class partText : MonoBehaviour {
 	void Update () {
 
 		if (!doing_color && !done) {
-			Debug.Log ("color");
 			StartCoroutine (DoColor ());
 		}
 	}
 
 	void OnGUI() {
-		//if (!gui_ready) {
-		//			Debug.Log ("Setting GUI");
-		//			Rect theRect = startRect;
-		//			//		GUIStyle theStyle = GUI.skin.box;
-		//			GUIStyle theStyle = new GUIStyle ();
-		//			theStyle.fontSize = 12;
-		//			theStyle.normal.textColor = Color.red;
-		//
-		//			Color oldColor = GUI.color;
-		//			foreach (TextItem thisItem in stringList) {
-		//				//			Debug.Log (thisItem.getText ());
-		//				GUIContent theContent = new GUIContent (thisItem.getText ());
-		//				Vector2 theSize = theStyle.CalcSize (theContent);
-		//				GUI.color = thisItem.getColor ();
-		//				theRect.width = theSize.x;
-		//				GUI.Box (theRect, theContent, theStyle);
-		//				GUI.color = oldColor;
-		//				theRect.x += theSize.x;
-		//			}
-		//			GUI.color = oldColor;
-		//			gui_ready = true;
-		//StartCoroutine (DoColor ());
-		//} else {
-		Debug.Log ("command is " + command);
+		Rect theRect = new Rect (Screen.width/2,Screen.height/3,100,20);;
+		GUIStyle theStyle = new GUIStyle ();
+		theStyle.fontSize = 12;
 		switch (command) {
 		case "ColorPartText":
-			Debug.Log ("Color it");
 			{
-				Rect theRect = startRect;
-				GUIStyle theStyle = new GUIStyle ();
-				theStyle.fontSize = 12;
 				if (param2 == 1) {
 					theStyle.normal.textColor = Color.yellow;
 				} else {
@@ -78,8 +49,6 @@ public class partText : MonoBehaviour {
 
 				Color oldColor = GUI.color;
 				for(int i = 0; i < stringList.Length; i++) {
-					//			Debug.Log (thisItem.getText ());
-
 					if (param1 == i) {
 						theStyle.normal.textColor = Color.yellow;
 					} else {
@@ -90,29 +59,16 @@ public class partText : MonoBehaviour {
 					Vector2 theSize = theStyle.CalcSize (theContent);
 					GUI.color = stringList[i].getColor ();
 					theRect.width = theSize.x;
+					Debug.Log ("Right "+ theRect.width + " " + theRect.xMin+","+theRect.yMin+" "+theRect.xMax+","+theRect.yMax);
 					GUI.Box (theRect, theContent, theStyle);
 					GUI.color = oldColor;
 					theRect.x += theSize.x;
 				}
 				GUI.color = oldColor;
-
-				//					Color oldColor = GUI.color;
-				//					GUIContent theContent = new GUIContent (stringList [param1].getText ());
-				//					Vector2 theSize = theStyle.CalcSize (theContent);
-				//					GUI.color = stringList [param1].getColor ();
-				//					theRect.width = theSize.x;
-				//					GUI.Box (theRect, theContent, theStyle);
-				//					GUI.color = oldColor;
 				break;
 			}
 		default: 
 			{
-				Debug.Log ("def");
-				Debug.Log ("Setting GUI");
-				Rect theRect = startRect;
-				//		GUIStyle theStyle = GUI.skin.box;
-				GUIStyle theStyle = new GUIStyle ();
-				theStyle.fontSize = 12;
 				theStyle.normal.textColor = Color.red;
 
 				Color oldColor = GUI.color;
@@ -122,28 +78,25 @@ public class partText : MonoBehaviour {
 					Vector2 theSize = theStyle.CalcSize (theContent);
 					GUI.color = thisItem.getColor ();
 					theRect.width = theSize.x;
+					theRect.center = new Vector2(theRect.center.x - theRect.width / 2, theRect.center.y);
+					Debug.Log ("center "+theRect.width + " " + theRect.xMin+","+theRect.yMin+" "+theRect.xMax+","+theRect.yMax);
 					GUI.Box (theRect, theContent, theStyle);
 					GUI.color = oldColor;
 					theRect.x += theSize.x;
 				}
 				GUI.color = oldColor;
-				gui_ready = true;
 				break;
 			}
-			//}
 		}
 	}
 
 	IEnumerator DoColor() {
-		Debug.Log (command);
 		doing_color = true;
 		command = "ColorPartText";
 		for (int i = 0; i < 4; i++) {
 			if (i == 0) {
 				param1 = i;
 				param2 = 1;
-				Debug.Log ("ready " + command);
-				//				ColorPartText (i, 1);
 			} else {
 				param1 = i-1;
 				param2 = 2;
