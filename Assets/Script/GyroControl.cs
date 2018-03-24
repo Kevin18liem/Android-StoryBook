@@ -3,53 +3,47 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GyroControl : MonoBehaviour {
-	private bool gyroEnabled;
-	private Gyroscope gyro;
-	private GameObject cameraContainer;
-	private Quaternion rot;
-	private float moveThreshold = .2f;
-	private float speedCamera  = 0.7f;
-	private float movex;
-	private float iPx;
-	private Vector3 lastAcc;
-	private Vector3 linAcc1;
-	private void Start() {
-		// cameraContainer = new GameObject("Camera Container");
-		// cameraContainer.transform.position = transform.position;
-		// transform.SetParent(cameraContainer.transform);
-		// gyroEnabled = EnableGyro();
-		
+
+	public float linear_limit;			// how long the camera can move (from -limit to limit)
+	public float angle_limit = 45;		// max device rotation to linear limit
+	public float movement_speed = 1;	// camera move speed
+	public GameObject detector;			// rotation detector
+
+	private float pos;					// camera position
+	private Vector3 init_pos;			// this object's initial position
+
+	// Use this for initialization
+	void Start () {
+
+		// initialization
+		init_pos = transform.position;
+
 	}
 
-	// private bool EnableGyro() {
-	// 	if(SystemInfo.supportsGyroscope) {
-	// 		gyro = Input.gyro;
-	// 		gyro.enabled = true;
-	// 		cameraContainer.transform.rotation = Quaternion.Euler (90f, 90f, 0f);
-	// 		rot = new Quaternion (0, 0, -1, 0);
+	// Update is called once per frame
+	void Update () {
 
-	// 		return true;
-	// 	}
-	// 	return false;
-	// }
-	 public Vector3 linearAcceleration() {
-	     linAcc1 = Input.acceleration - lastAcc;
-	     lastAcc = Input.acceleration;
-	     return linAcc1;
- 	}
-	private void Update() {
-		movex = 0;
-		iPx = linearAcceleration().x;
-		if(Mathf.Abs(iPx) > moveThreshold) {
-			movex = Mathf.Sign(iPx) * speedCamera;
-    		transform.Translate(movex,0,0);
+		detector.transform.Rotate (0, -Input.gyro.rotationRateUnbiased.y, 0);
+		Debug.Log (detector.transform.eulerAngles);
+
+		if (detector.transform.eulerAngles.y < 180) {
+			pos = init_pos.x + (detector.transform.eulerAngles.y / angle_limit) * linear_limit;
+			if (pos > linear_limit) {
+				pos = linear_limit;
+			}
+	
+		} else {
+			pos = init_pos.x + ((detector.transform.eulerAngles.y - 360) / angle_limit) * linear_limit;
+			if (pos < -linear_limit) {
+				pos = -linear_limit;
+			}
 		}
-		// if (gyroEnabled) {
-		// 	transform.localRotation = gyro.attitude * rot;
-		// }
-		// hRotation -= Input.acceleration.y * cameraMovementSpeed;
-  //     vRotation += Input.acceleration.x * cameraMovementSpeed;
-  //     transform.rotation = Quaternion.Euler(vRotation, hRotation, 0.0f);
+			
+		Debug.Log (pos);
+		transform.position = Vector3.Lerp (transform.position, 
+			new Vector3 (pos, init_pos.y,init_pos.z),
+			movement_speed);
+
 	}
 
 }
