@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using TextItemClass;
 
-public class guiText : MonoBehaviour {
+public class partText : MonoBehaviour {
 
 	TextItem[] stringList;
 	Rect startRect;
-	float totalWidth;
 
 	// Use this for initialization
 	void Start () {
@@ -17,7 +16,6 @@ public class guiText : MonoBehaviour {
 		stringList [1] = new TextItem ("Test1 ", Color.white);
 		stringList [2] = new TextItem ("Test2 ", Color.white);
 		stringList [3] = new TextItem ("Test3 ", Color.white);
-		totalWidth = 0;
 	}
 
 	// Update is called once per frame
