@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 218732284}
   - component: {fileID: 218732283}
   - component: {fileID: 218732282}
+  - component: {fileID: 218732285}
   m_Layer: 5
   m_Name: Subtitles
   m_TagString: Untagged
@@ -146,7 +147,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 214}
+  m_AnchoredPosition: {x: 0, y: 279}
   m_SizeDelta: {x: 1050.6, y: 126}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &218732282
@@ -160,19 +161,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37b88a479a5cc7049a391b6c8b3906a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  words:
-  - text: Hai
-    color: {r: 0, g: 0, b: 0, a: 0}
-    delay: 1
-  - text: Namaku
-    color: {r: 0, g: 0, b: 0, a: 0}
-    delay: 1
-  - text: EDWIN
-    color: {r: 0, g: 0, b: 0, a: 0}
-    delay: 1
-  - text: 
-    color: {r: 0, g: 0, b: 0, a: 0}
-    delay: 1
+  texts:
+  - words:
+    - text: Namaku
+      delay: 1
+    - text: Arka.$
+      delay: 1
+    - text: Aku
+      delay: 1
+    - text: tinggal
+      delay: 1
+    - text: bersama
+      delay: 1
+    - text: ibuku
+      delay: 1
+    - text: dan
+      delay: 1
+    - text: ayahku.
+      delay: 1
+    - text: 
+      delay: 1
+  - words:
+    - text: Tapi
+      delay: 1
+    - text: suatu
+      delay: 1
+    - text: hari
+      delay: 1
+    - text: ayah
+      delay: 1
+    - text: harus
+      delay: 1
+    - text: pergi
+      delay: 1
+    - text: ke
+      delay: 1
+    - text: luar
+      delay: 1
+    - text: kota.
+      delay: 1
+    - text: 
+      delay: 1
+  fade_speed: 3
+  newline_char: 36
+  sprites: {fileID: 1879233982}
 --- !u!114 &218732283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,7 +217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.3019608, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -193,8 +225,8 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
+    m_Font: {fileID: 12800000, guid: 5aef65ee60a884941952c7aa39e1dce7, type: 3}
+    m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -205,13 +237,24 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: hai bang
+  m_Text: "text \n"
 --- !u!222 &218732284
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 218732280}
+--- !u!225 &218732285
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 218732280}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &320624269
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,7 +281,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 320624269}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.49, y: 1.68, z: 0}
+  m_LocalPosition: {x: 0.95, y: -0.15, z: -0.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1879233983}
@@ -252,9 +295,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 320624269}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 441c9f21c73a491489a9a2c3f4753be5, type: 3}
+  m_Script: {fileID: 11500000, guid: e406ed78391b6494ca5abcab25eec98c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trigger: muter
+  anim: {fileID: 0}
 --- !u!65 &320624272
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -416,7 +461,7 @@ Transform:
   m_GameObject: {fileID: 865313498}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 19, y: 9.5, z: 1}
+  m_LocalScale: {x: 16, y: 12, z: 1}
   m_Children: []
   m_Father: {fileID: 1996710754}
   m_RootOrder: 0
@@ -502,7 +547,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1074658247}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.92725134, y: 1.9185131, z: 0}
+  m_LocalPosition: {x: -1.28, y: -0.11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1879233983}
@@ -577,9 +622,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1074658247}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec0cf7d47ec54054dacab536a98186d6, type: 3}
+  m_Script: {fileID: 11500000, guid: e406ed78391b6494ca5abcab25eec98c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trigger: ngelus
+  anim: {fileID: 0}
 --- !u!65 &1074658252
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1005,7 +1052,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1514761615}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.032521404, y: 0.67350477, z: 0}
+  m_LocalPosition: {x: -0.7, y: 0.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1879233983}
@@ -1019,9 +1066,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1514761615}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 191b40aee5d5c2343969c33c960f400d, type: 3}
+  m_Script: {fileID: 11500000, guid: e406ed78391b6494ca5abcab25eec98c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trigger: menunduk
+  anim: {fileID: 0}
 --- !u!65 &1514761620
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1121,7 +1170,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1530847463}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.45, y: 1.01, z: 0}
+  m_LocalPosition: {x: -1.2, y: -0.24, z: -0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1879233983}
@@ -1135,9 +1184,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1530847463}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfcb91a2e7aeaac4c948920adbbcde9f, type: 3}
+  m_Script: {fileID: 11500000, guid: e406ed78391b6494ca5abcab25eec98c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trigger: meraung
+  anim: {fileID: 0}
 --- !u!65 &1530847468
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1161,6 +1212,7 @@ GameObject:
   - component: {fileID: 1596274141}
   - component: {fileID: 1596274140}
   - component: {fileID: 1596274142}
+  - component: {fileID: 1596274143}
   m_Layer: 0
   m_Name: Anak
   m_TagString: Untagged
@@ -1175,7 +1227,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1596274138}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.06, y: 2.01, z: -0.1}
+  m_LocalPosition: {x: -0.72274876, y: -0.018512964, z: -0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1879233983}
@@ -1254,6 +1306,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.356113, y: 4.201535, z: 0.2}
   m_Center: {x: -0.000006914139, y: -3.4709382, z: 0}
+--- !u!114 &1596274143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1596274138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e406ed78391b6494ca5abcab25eec98c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger: terkejut
+  anim: {fileID: 0}
 --- !u!1 &1861841105
 GameObject:
   m_ObjectHideFlags: 0
@@ -1264,8 +1329,8 @@ GameObject:
   - component: {fileID: 1861841108}
   - component: {fileID: 1861841107}
   - component: {fileID: 1861841106}
-  - component: {fileID: 1861841109}
   - component: {fileID: 1861841110}
+  - component: {fileID: 1861841109}
   m_Layer: 0
   m_Name: Balok
   m_TagString: Untagged
@@ -1341,7 +1406,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1861841105}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.05, y: 1.73, z: 0}
+  m_LocalPosition: {x: -13.64, y: -0.14, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1879233983}
@@ -1355,9 +1420,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1861841105}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35669f59acbd95843aabb8e7e53f5ca6, type: 3}
+  m_Script: {fileID: 11500000, guid: e406ed78391b6494ca5abcab25eec98c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trigger: jatuh
+  anim: {fileID: 0}
 --- !u!65 &1861841110
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1393,7 +1460,7 @@ Transform:
   m_GameObject: {fileID: 1879233982}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.56, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children:
   - {fileID: 320624270}
   - {fileID: 1596274139}

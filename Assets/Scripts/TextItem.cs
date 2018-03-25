@@ -5,29 +5,24 @@ using UnityEngine;
 namespace TextItemClass
 {
 	[System.Serializable]
-	public class TextItem {
+	public class WordItem {
 		public string text;
-		public Color color;
-		public float delay = 1;
+		public float delay;
 
-		public TextItem (){
+		public WordItem (){
 			text = "";
-			color = Color.white;
 			delay = 1;
 		}
+			
+	}
 
-		public TextItem (string text, Color color) {
-			this.text = text;
-			this.color = color;
+	[System.Serializable]
+	public class TextItem  {
+		public WordItem[] words;
+
+		public TextItem() {
 		}
 
-		public string getText() {
-			return text;
-		}
-
-		public Color getColor() {
-			return color;
-		}
 	}
 }
 

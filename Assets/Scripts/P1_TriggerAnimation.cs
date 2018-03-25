@@ -2,36 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class P1_DinoMeraung : MonoBehaviour {
+public class P1_TriggerAnimation : MonoBehaviour {
 
-	private Animator anim;		// dino's animator
+	public string trigger;				// animation trigger
+	public Animator anim;				// object's animator
+	public bool trigger_allowed = true;	// true if trigger allowed
 
 	// Use this for initialization
 	void Start () {
 
 		// initialize animator
 		anim = GetComponent<Animator>();
-		
+
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 
-		if ((Input.touchCount > 0) && (Input.GetTouch(0).phase == TouchPhase.Began))
+		if ((Input.touchCount > 0) && (Input.GetTouch(0).phase == TouchPhase.Began) && trigger_allowed)
 		{
 			Ray raycast = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
 			RaycastHit raycastHit;
 			if (Physics.Raycast(raycast, out raycastHit))
 			{
-				Debug.Log("Tap detected");
 				if (raycastHit.collider.name == gameObject.name)
 				{
-					Debug.Log(gameObject.name + " clicked");
-					anim.SetTrigger("meraung");
+					anim.SetTrigger(trigger);
 				}
-					
+
 			}
 		}
-		
+
 	}
 }
