@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - swapmanager
+  - hint
   layers:
   - Default
   - TransparentFX
