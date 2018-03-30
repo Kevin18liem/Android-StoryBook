@@ -16,6 +16,7 @@ public class P1_Subtitles : MonoBehaviour {
 	private int idx;				// which word to style
 	private bool waiting;			// true if waiting
 	private bool in_anim;			// in fade animation
+	private bool wait_input;		// true if waiting for input
 	private string highlighted;		// highlighted part
 	private CanvasGroup cg;			// canvas group with alpha
 
@@ -29,6 +30,7 @@ public class P1_Subtitles : MonoBehaviour {
 		wordset = 0;
 		waiting = false;
 		in_anim = false;
+		wait_input = false;
 		cg.alpha = 0;
 		cg.interactable = false;
 
@@ -37,9 +39,18 @@ public class P1_Subtitles : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (!waiting && !in_anim && wordset < texts.Length) {
+		// play text if not in fade animation and waiting for input and not end of texts
+		if (!waiting && !in_anim && !wait_input && wordset < texts.Length) {
 			if (idx < texts [wordset].words.Length) {
 				StartCoroutine (Spell (texts [wordset].words [idx].delay));
+			}
+		}
+
+		// when input got, change text if there are still more text to display
+		if (wait_input) {
+			if ((Input.touchCount > 0) && (Input.GetTouch (0).phase == TouchPhase.Began) && wordset < texts.Length - 1) {
+				wait_input = false;
+				ChangeText ();
 			}
 		}
 
@@ -47,39 +58,43 @@ public class P1_Subtitles : MonoBehaviour {
 
 	IEnumerator Spell (float sec) {
 
+		// if beginning new text, go init
 		if (idx == 0) {
 			InitText ();
 		}
 
+		// make sure animation finished playing
 		if (!in_anim) {
 			waiting = true;
 			yield return new WaitForSeconds (sec);
 
 			// events
-			if (wordset == 0 && idx == 5) {
+			if (wordset == 0 && idx == 5) { // ibu
 				sprites.transform.GetChild (5).GetComponent<P1_TriggerAnimation> ().anim.SetTrigger ("menunduk");
 			}
 
-			if (wordset == 1 && idx == 0) {
+			if (wordset == 1 && idx == 0) { // tapi
 				sprites.transform.GetChild (1).GetComponent<P1_TriggerAnimation> ().anim.SetTrigger ("terkejut");
 				sprites.transform.GetChild (4).GetComponent<P1_TriggerAnimation> ().anim.SetTrigger ("ngelus");
 			}
 
-			if (wordset == texts.Length - 1 && idx == texts[texts.Length-1].words.Length-1) {
+			if (wordset == texts.Length - 1 && idx == texts[texts.Length-1].words.Length-1) { // end
 				sprites.transform.GetChild (5).GetComponent<P1_TriggerAnimation> ().trigger_allowed = true;
-				sprites.transform.GetChild (4).GetComponent<P1_TriggerAnimation> ().trigger_allowed = true;
+				sprites.transform.GetChild (4).GetComponents<P1_TriggerAnimation> ()[1].trigger_allowed = true;
 			}
 
 			// Highlight
 			HighlightText();
 
+			// increment
 			idx++;
 			waiting = false;
 
 		}
 
+		// if end of text ask for input
 		if (idx == texts[wordset].words.Length) {
-			ChangeText ();
+			wait_input = true;
 		}
 	}
 

@@ -7,12 +7,14 @@ public class P1_TriggerAnimation : MonoBehaviour {
 	public string trigger;				// animation trigger
 	public Animator anim;				// object's animator
 	public bool trigger_allowed = true;	// true if trigger allowed
+	public float speed = 1.5f;			// animation speed
 
 	// Use this for initialization
 	void Start () {
 
 		// initialize animator
 		anim = GetComponent<Animator>();
+		anim.speed = speed;
 
 	}
 
