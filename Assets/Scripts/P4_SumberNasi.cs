@@ -16,8 +16,9 @@ public class P4_SumberNasi : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other) {
 		if (other.name == "Sendok") {
-			Debug.Log ("enter");
-			other.GetComponent<P4_Sendok> ().SetFull();
+			if (GameObject.FindGameObjectWithTag ("SequenceManager").GetComponent<P4_SequenceManager> ().allowClutterAnim) {
+				other.GetComponent<P4_Sendok> ().SetFull ();
+			}
 		}
 	}
 }

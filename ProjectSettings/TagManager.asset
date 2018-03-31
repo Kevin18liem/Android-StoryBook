@@ -6,6 +6,7 @@ TagManager:
   tags:
   - swapmanager
   - hint
+  - SequenceManager
   layers:
   - Default
   - TransparentFX
