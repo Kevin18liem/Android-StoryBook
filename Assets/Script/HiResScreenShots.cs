@@ -20,7 +20,7 @@ public class HiResScreenShots : MonoBehaviour {
 	IEnumerator captureScreenshot()
 	{
 	    yield return new WaitForEndOfFrame();
-		string path = "screenshot1.png";
+		string path =Application.persistentDataPath+ "/screenshot1.png";
 
 		Texture2D screenImage = new Texture2D(Screen.width-500, Screen.height-500);
 	    //Get Image from screen
