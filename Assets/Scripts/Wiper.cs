@@ -10,9 +10,11 @@ public class Wiper : MonoBehaviour {
 	int xpos;
 	int ypos;
 
+	public int boxSize = 10;
+
 	// Use this for initialization
 	void Start () {
-		myColor = new Color (1f, 0f, 0f, 1f);
+		myColor = new Color (1f, 1f, 1f, 0f);
 
 		Texture mainTexture = GetComponent<Renderer>().material.mainTexture;
 		texture = new Texture2D(mainTexture.width, mainTexture.height, TextureFormat.RGBA32, false);
@@ -30,35 +32,43 @@ public class Wiper : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
 		if (Input.GetMouseButton(0)) {
-			Debug.Log ("mouse pressed");
 			Ray raycast = Camera.main.ScreenPointToRay(Input.mousePosition);
 			RaycastHit raycastHit;
 			if (Physics.Raycast(raycast, out raycastHit))
 			{
 				Debug.Log ("Hit " + raycastHit.collider.name);
-				Debug.DrawRay(Input.mousePosition, Vector3.forward, Color.red,100);
-				Debug.DrawRay(new Vector3(0,0,0), Vector3.forward, Color.red,100);
+
 
 				if (raycastHit.collider.name == gameObject.name)
 				{
-					Debug.Log ("Hit Plane");
+					Debug.Log ("Hit " + raycastHit.collider.name );
 					/*dist = transform.position.z - Camera.main.transform.position.z;
 					temp = new Vector3 (Input.mousePosition.x, Input.mousePosition.y,
 						dist);
 					temp = Camera.main.ScreenToWorldPoint (temp);
 					offset = transform.position - temp;
 					Debug.Log (temp.x + " " + temp.y);*/
-					Debug.Log (raycastHit.textureCoord);
 
-					xpos = (int)(raycastHit.textureCoord2.x * 1024);
-					ypos = (int)(raycastHit.textureCoord2.y * 768);
+					Debug.Log ("Size: " + texture.width + "," + texture.height + "---" + Screen.width + "," + Screen.height);
 
-					//texture = new Texture2D(1024, 768);
-					// GetComponent<Renderer>().material.mainTexture = texture;
+					xpos = (int)(((float)Screen.width/texture.width) * Input.mousePosition.x);
+					Debug.Log (Screen.width + " / " + texture.width + " * " + Input.mousePosition.x + " = " + xpos);
+					ypos = (int)(((float)Screen.height/texture.height) * Input.mousePosition.y);
+					Debug.Log (Screen.height + " / " + texture.height + " * " + Input.mousePosition.y + " = " + ypos);
+					Debug.Log (Screen.height + " / " + texture.height + " = " + Screen.height/texture.height);
 
-					Debug.Log (xpos + " " + ypos);
-					texture.SetPixel(xpos, ypos, myColor); //set pixel (0,0) to the color specified
+
+					Debug.Log ("Pos: " + xpos + "," + ypos + "---" + Input.mousePosition.x + "," + Input.mousePosition.y);
+
+					for (int i = xpos - boxSize; i < xpos + boxSize; i++) {
+						for (int j = ypos - boxSize; j < ypos + boxSize; j++) {
+							if (i <= texture.width && i >= 0 && j <= texture.height && j >= 0)
+							texture.SetPixel(i, j, myColor); //set pixel (0,0) to the color specified
+						}
+					}
+
 					texture.Apply();			
 					GetComponent<Renderer>().material.mainTexture = texture;
 
