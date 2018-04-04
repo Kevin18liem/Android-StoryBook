@@ -62,7 +62,6 @@ public class P4_DraggablePiring : MonoBehaviour {
 					putHintHere (target.position);
 					isdragging = true;
 				}
-
 			}
 		}
 
