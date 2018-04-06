@@ -246,7 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 488cd5c9a2891f04195f03f8149756ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: DrawingBoard
+  sceneName: AnimationTest
 --- !u!1 &218732280
 GameObject:
   m_ObjectHideFlags: 0

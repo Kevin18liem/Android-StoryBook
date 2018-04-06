@@ -6,6 +6,7 @@ public class SwipeTrail : MonoBehaviour {
 	Vector3 startPos;
 	Plane objPlane;
 	public string KodeWarna;
+	private Color warnaTertentu;
 	private void Start() {
 		objPlane = new Plane(Camera.main.transform.forward*-1,this.transform.position);
 		KodeWarna = "black";
@@ -29,31 +30,56 @@ public class SwipeTrail : MonoBehaviour {
 
 	private void UpdateColor() {
 		if (KodeWarna == "black") {
-			thisTrail.GetComponent<TrailRenderer> ().startColor = Color.black;
-			thisTrail.GetComponent<TrailRenderer> ().endColor = Color.black;
+				thisTrail.GetComponent<TrailRenderer> ().startColor = Color.black;
+				thisTrail.GetComponent<TrailRenderer> ().endColor = Color.black;
 		} else if (KodeWarna == "red") {
-			thisTrail.GetComponent<TrailRenderer> ().startColor = Color.red;
-			thisTrail.GetComponent<TrailRenderer> ().endColor = Color.red;
-		} else if (KodeWarna == "green") {
-			thisTrail.GetComponent<TrailRenderer> ().startColor = Color.green;
-			thisTrail.GetComponent<TrailRenderer> ().endColor = Color.green;
+			warnaTertentu = new Color(0,4,59,247);			
+			thisTrail.GetComponent<TrailRenderer> ().startColor = warnaTertentu;
+			thisTrail.GetComponent<TrailRenderer> ().endColor = warnaTertentu;
+		} else if (KodeWarna == "light green") {
+			warnaTertentu = new Color (0, 67, 206, 198);
+			thisTrail.GetComponent<TrailRenderer> ().startColor = warnaTertentu;
+			thisTrail.GetComponent<TrailRenderer> ().endColor = warnaTertentu;
 		} else if (KodeWarna == "yellow") {
-			thisTrail.GetComponent<TrailRenderer> ().startColor = Color.yellow;
-			thisTrail.GetComponent<TrailRenderer> ().endColor = Color.yellow;
-		} else if (KodeWarna == "blue") {
-			thisTrail.GetComponent<TrailRenderer> ().startColor = Color.blue;
-			thisTrail.GetComponent<TrailRenderer> ().endColor = Color.blue;
-		} else if (KodeWarna == "gray") {
-			thisTrail.GetComponent<TrailRenderer> ().startColor = Color.gray;
-			thisTrail.GetComponent<TrailRenderer> ().endColor = Color.gray;
-		} else if (KodeWarna == "cyan") {
-			thisTrail.GetComponent<TrailRenderer> ().startColor = Color.cyan;
-			thisTrail.GetComponent<TrailRenderer> ().endColor = Color.cyan;
+			warnaTertentu = new Color (0, 26, 174, 254);
+			thisTrail.GetComponent<TrailRenderer> ().startColor = warnaTertentu;
+			thisTrail.GetComponent<TrailRenderer> ().endColor = warnaTertentu;
+		} else if (KodeWarna == "dark blue") {
+			warnaTertentu = new Color (0, 132, 76, 8);
+			thisTrail.GetComponent<TrailRenderer> ().startColor = warnaTertentu;
+			thisTrail.GetComponent<TrailRenderer> ().endColor = warnaTertentu;
+		} else if (KodeWarna == "coklat") {
+			warnaTertentu = new Color (0, 0, 36, 110);
+			thisTrail.GetComponent<TrailRenderer> ().startColor = warnaTertentu;
+			thisTrail.GetComponent<TrailRenderer> ().endColor = warnaTertentu;
 		} else if (KodeWarna == "white") {
 			thisTrail.GetComponent<TrailRenderer> ().startColor = Color.white;
 			thisTrail.GetComponent<TrailRenderer> ().endColor = Color.white;
 			thisTrail.GetComponent<TrailRenderer> ().startWidth = 1;
 			thisTrail.GetComponent<TrailRenderer> ().endWidth = 1;
+		} else if (KodeWarna == "light blue") {
+			warnaTertentu = new Color (0, 231, 197, 114);
+			thisTrail.GetComponent<TrailRenderer> ().startColor = warnaTertentu;
+			thisTrail.GetComponent<TrailRenderer> ().endColor = warnaTertentu;
+		} else if (KodeWarna == "orange") {
+			warnaTertentu = new Color (0, 10, 116, 253);
+			thisTrail.GetComponent<TrailRenderer> ().startColor = warnaTertentu;
+			thisTrail.GetComponent<TrailRenderer> ().endColor = warnaTertentu;
+		} else if (KodeWarna == "dark green") {
+			warnaTertentu = new Color (0, 28, 118, 77);
+			thisTrail.GetComponent<TrailRenderer> ().startColor = warnaTertentu;
+			thisTrail.GetComponent<TrailRenderer> ().endColor = warnaTertentu;
+		} else if (KodeWarna == "cream") {
+			warnaTertentu = new Color (0, 129, 175, 243);
+			thisTrail.GetComponent<TrailRenderer> ().startColor = warnaTertentu;
+			thisTrail.GetComponent<TrailRenderer> ().endColor = warnaTertentu;
+		} else if (KodeWarna == "yellow ochre") {
+			warnaTertentu = new Color (0, 67, 155, 216);
+			thisTrail.GetComponent<TrailRenderer> ().startColor = warnaTertentu;
+			thisTrail.GetComponent<TrailRenderer> ().endColor = warnaTertentu;
+		} else if (KodeWarna == "gray") {
+			thisTrail.GetComponent<TrailRenderer> ().startColor = Color.gray;
+			thisTrail.GetComponent<TrailRenderer> ().endColor = Color.gray;
 		}
 	}
 }
