@@ -52,8 +52,9 @@ public class SwipeTrail : MonoBehaviour {
 			thisTrail.GetComponent<TrailRenderer> ().startColor = warnaTertentu;
 			thisTrail.GetComponent<TrailRenderer> ().endColor = warnaTertentu;
 		} else if (KodeWarna == "white") {
-			thisTrail.GetComponent<TrailRenderer> ().startColor = Color.white;
-			thisTrail.GetComponent<TrailRenderer> ().endColor = Color.white;
+			warnaTertentu = new Color32 (246, 251, 235, 255);
+			thisTrail.GetComponent<TrailRenderer> ().startColor = warnaTertentu;
+			thisTrail.GetComponent<TrailRenderer> ().endColor = warnaTertentu;
 			thisTrail.GetComponent<TrailRenderer> ().startWidth = 1;
 			thisTrail.GetComponent<TrailRenderer> ().endWidth = 1;
 		} else if (KodeWarna == "light blue") {
