@@ -65,7 +65,7 @@ public class Wiper : MonoBehaviour {
 					for (int i = xpos - boxSize; i < xpos + boxSize; i++) {
 						for (int j = ypos - boxSize; j < ypos + boxSize; j++) {
 							if (i <= texture.width && i >= 0 && j <= texture.height && j >= 0)
-							texture.SetPixel(i, j, myColor); //set pixel (0,0) to the color specified
+							texture.SetPixel(-1*i, j, myColor); //set pixel (0,0) to the color specified
 						}
 					}
 
