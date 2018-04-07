@@ -324,6 +324,7 @@ MonoBehaviour:
   targetLeft: {fileID: 1096657185}
   targetRight: {fileID: 994611235}
   maxDelta: 0.1
+  takeScreenshotKey: 32
   movementSpeed: 2
   threshold: 0.1
 --- !u!4 &195675010
@@ -687,7 +688,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 4f3ccb643578075449d275d8a4bd168f, type: 2}
+  - {fileID: 2100000, guid: 313e30bcce96288488ec434509ad5526, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

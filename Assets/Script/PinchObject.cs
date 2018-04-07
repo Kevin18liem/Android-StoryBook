@@ -8,6 +8,7 @@ public class PinchObject : MonoBehaviour {
 	public GameObject targetLeft;
 	public GameObject targetRight;
 	public float maxDelta = 0.1f;
+	public KeyCode takeScreenshotKey;
 
 	float distanceTouch;
 	float distanceObject;
@@ -34,6 +35,10 @@ public class PinchObject : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (Input.GetKeyDown (takeScreenshotKey)) {
+			objectLeft.transform.position = targetLeft.transform.position;
+			objectRight.transform.position = targetRight.transform.position;
+		}
 		if ((Input.touchCount == 2) && !isDragging && !reachedTarget) {
 			if (((Input.GetTouch (0).phase == TouchPhase.Began) || (Input.GetTouch (1).phase == TouchPhase.Began))) {
 				Debug.Log ("begin");
