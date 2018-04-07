@@ -10,7 +10,7 @@ public class Wiper : MonoBehaviour {
 	int xpos;
 	int ypos;
 
-	public int boxSize = 10;
+	public int boxSize = 500;
 
 	// Use this for initialization
 	void Start () {
@@ -27,9 +27,8 @@ public class Wiper : MonoBehaviour {
 		RenderTexture.active = renderTexture;
 		texture.ReadPixels(new Rect(0, 0, renderTexture.width, renderTexture.height), 0, 0);
 		texture.Apply();
-
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 
@@ -38,6 +37,8 @@ public class Wiper : MonoBehaviour {
 			RaycastHit raycastHit;
 			if (Physics.Raycast(raycast, out raycastHit))
 			{
+				xpos = 0;
+				ypos = 0;
 				Debug.Log ("Hit " + raycastHit.collider.name);
 
 
@@ -53,19 +54,34 @@ public class Wiper : MonoBehaviour {
 
 					Debug.Log ("Size: " + texture.width + "," + texture.height + "---" + Screen.width + "," + Screen.height);
 
-					xpos = (int)(((float)Screen.width/texture.width) * Input.mousePosition.x);
-					Debug.Log (Screen.width + " / " + texture.width + " * " + Input.mousePosition.x + " = " + xpos);
-					ypos = (int)(((float)Screen.height/texture.height) * Input.mousePosition.y);
-					Debug.Log (Screen.height + " / " + texture.height + " * " + Input.mousePosition.y + " = " + ypos);
-					Debug.Log (Screen.height + " / " + texture.height + " = " + Screen.height/texture.height);
+					if (Input.mousePosition.y > 384) {
+						ypos = ypos + (int)Input.mousePosition.y;
+					} else {
+						ypos = (int)Input.mousePosition.y;
+					}
+					if (Input.mousePosition.x < 300) {
+						xpos = (int)Input.mousePosition.x;
+					} else if (Input.mousePosition.x > 400) {
+						xpos = xpos + (int)Input.mousePosition.x;
+					} else {
+						xpos = (int)Input.mousePosition.x;
+					}
+					xpos -= 200;
+					//					ypos += 384;
+
+					//					xpos = xpos + (int)(((float)Screen.width/texture.width) * Input.mousePosition.x);
+					//					Debug.Log (Screen.width + " / " + texture.width + " * " + Input.mousePosition.x + " = " + xpos);
+					//					ypos = ypos + (int)(((float)Screen.height/texture.height) * Input.mousePosition.y);
+					//					Debug.Log (Screen.height + " / " + texture.height + " * " + Input.mousePosition.y + " = " + ypos);
+					//					Debug.Log (Screen.height + " / " + texture.height + " = " + Screen.height/texture.height);
 
 
 					Debug.Log ("Pos: " + xpos + "," + ypos + "---" + Input.mousePosition.x + "," + Input.mousePosition.y);
 
-					for (int i = xpos - boxSize; i < xpos + boxSize; i++) {
-						for (int j = ypos - boxSize; j < ypos + boxSize; j++) {
+					for (int i = xpos-10; i < xpos + boxSize; i++) {
+						for (int j = ypos-10; j < ypos + boxSize; j++) {
 							if (i <= texture.width && i >= 0 && j <= texture.height && j >= 0)
-							texture.SetPixel(-1*i, j, myColor); //set pixel (0,0) to the color specified
+								texture.SetPixel(-1*i, j, myColor); //set pixel (0,0) to the color specified
 						}
 					}
 
