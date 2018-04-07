@@ -22,6 +22,8 @@ public class P4_Draggable : MonoBehaviour {
 	private bool snap;					// true if object near target
 	private Animator anim;				// object's animator
 	private bool moved;					// true if reached target
+	private P4_SequenceManager 
+		sequenceManager;				// sequence manager
 
 	// Use this for initialization
 	void Start () {
@@ -32,6 +34,7 @@ public class P4_Draggable : MonoBehaviour {
 		moving = false;
 		anim = GetComponent<Animator> ();
 		anim.speed = anim_speed;
+		sequenceManager = GameObject.FindGameObjectWithTag ("SequenceManager").GetComponent<P4_SequenceManager> ();
 
 	}
 
@@ -39,7 +42,7 @@ public class P4_Draggable : MonoBehaviour {
 	void Update () {
 
 		if ((Input.touchCount == 1) && (Input.GetTouch(0).phase == TouchPhase.Began) && !moving && moveable && 				
-			GameObject.FindGameObjectWithTag ("SequenceManager").GetComponent<P4_SequenceManager> ().allowClutterAnim
+			sequenceManager.allowClutterAnim
 		) {
 			Ray raycast = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
 			RaycastHit raycastHit;
@@ -59,9 +62,31 @@ public class P4_Draggable : MonoBehaviour {
 				}
 
 			}
+		} else if (Input.GetMouseButtonDown(0) && !moving && moveable && 				
+			sequenceManager.allowClutterAnim
+		) {
+			Ray raycast = Camera.main.ScreenPointToRay(Input.mousePosition);
+			RaycastHit raycastHit;
+			if (Physics.Raycast(raycast, out raycastHit))
+			{
+				if (raycastHit.collider.name == gameObject.name)
+				{
+					anim.SetTrigger ("boop");
+
+					dist = transform.position.z - Camera.main.transform.position.z;
+					temp = new Vector3 (Input.mousePosition.x, Input.mousePosition.y,
+						dist);
+					temp = Camera.main.ScreenToWorldPoint (temp);
+					offset = transform.position - temp;
+
+					isdragging = true;
+				}
+
+			}
 		}
 
-		if (isdragging && Input.GetTouch(0).phase == TouchPhase.Moved) {
+
+		if (isdragging) {
 			temp = new Vector3 (Input.mousePosition.x, Input.mousePosition.y,
 				dist);
 			temp = Camera.main.ScreenToWorldPoint (temp);
@@ -69,7 +94,7 @@ public class P4_Draggable : MonoBehaviour {
 			transform.position = temp + offset;
 		}
 
-		if (isdragging && (Input.GetTouch (0).phase == TouchPhase.Ended ||
+		if (isdragging && Input.touchCount == 1 && (Input.GetTouch (0).phase == TouchPhase.Ended ||
 			Input.GetTouch (0).phase == TouchPhase.Canceled)) {
 
 			anim.SetTrigger ("boop");
@@ -81,7 +106,19 @@ public class P4_Draggable : MonoBehaviour {
 				snap = false;
 			}
 			moving = true;
+		} else if (isdragging && Input.GetMouseButtonUp(0)) {
+
+			anim.SetTrigger ("boop");
+			isdragging = false;
+
+			if (Vector3.Distance (transform.position, target.position) <= treshold) {
+				snap = true;
+			} else {
+				snap = false;
+			}
+			moving = true;
 		}
+
 
 		if (moving) {
 			if (snap) {
