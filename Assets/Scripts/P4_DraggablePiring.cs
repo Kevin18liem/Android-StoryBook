@@ -23,6 +23,14 @@ public class P4_DraggablePiring : MonoBehaviour {
 	private Animator anim;				// object's animator
 	private bool moved;					// true if reached target
 	private GameObject hint;			// the hint
+	private P4_SequenceManager 
+		sequenceManager;				// sequence manager
+
+	// Awake
+	void Awake() {
+		sequenceManager = GameObject.FindGameObjectWithTag ("SequenceManager").GetComponent<P4_SequenceManager> ();
+
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -44,7 +52,7 @@ public class P4_DraggablePiring : MonoBehaviour {
 	void Update () {
 
 		if ((Input.touchCount == 1) && (Input.GetTouch(0).phase == TouchPhase.Began) && !moving && moveable && 				
-			GameObject.FindGameObjectWithTag ("SequenceManager").GetComponent<P4_SequenceManager> ().allowPlateMove
+			sequenceManager.allowPlateMove
 			) {
 			Ray raycast = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
 			RaycastHit raycastHit;
@@ -63,9 +71,28 @@ public class P4_DraggablePiring : MonoBehaviour {
 					isdragging = true;
 				}
 			}
+		} else if (Input.GetMouseButtonDown(0) && !moving && moveable && 				
+			sequenceManager.allowPlateMove) {
+			Ray raycast = Camera.main.ScreenPointToRay(Input.mousePosition);
+			RaycastHit raycastHit;
+			if (Physics.Raycast(raycast, out raycastHit))
+			{
+				if (raycastHit.collider.name == gameObject.name)
+				{
+					anim.SetTrigger ("boop");
+
+					dist = transform.position.z - Camera.main.transform.position.z;
+					temp = new Vector3 (Input.mousePosition.x, Input.mousePosition.y,
+						dist);
+					temp = Camera.main.ScreenToWorldPoint (temp);
+					offset = transform.position - temp;
+					putHintHere (target.position);
+					isdragging = true;
+				}
+			}
 		}
 
-		if (isdragging && Input.GetTouch(0).phase == TouchPhase.Moved) {
+		if (isdragging){// && Input.GetTouch(0).phase == TouchPhase.Moved) {
 			temp = new Vector3 (Input.mousePosition.x, Input.mousePosition.y,
 				dist);
 			temp = Camera.main.ScreenToWorldPoint (temp);
@@ -73,8 +100,8 @@ public class P4_DraggablePiring : MonoBehaviour {
 			transform.position = temp + offset;
 		}
 
-		if (isdragging && (Input.GetTouch (0).phase == TouchPhase.Ended ||
-		    Input.GetTouch (0).phase == TouchPhase.Canceled)) {
+		if (isdragging && Input.touchCount == 1 && (Input.GetTouch (0).phase == TouchPhase.Ended ||
+			Input.GetTouch (0).phase == TouchPhase.Canceled)) {
 
 			anim.SetTrigger ("boop");
 			isdragging = false;
@@ -85,7 +112,18 @@ public class P4_DraggablePiring : MonoBehaviour {
 				snap = false;
 			}
 			moving = true;
-		}
+		} else if (isdragging && Input.GetMouseButtonUp(0)) {
+
+			anim.SetTrigger ("boop");
+			isdragging = false;
+
+			if (Vector3.Distance (transform.position, target.position) <= treshold) {
+				snap = true;
+			} else {
+				snap = false;
+			}
+			moving = true;
+		} 
 
 		if (moving) {
 			if (snap) {
@@ -105,10 +143,10 @@ public class P4_DraggablePiring : MonoBehaviour {
 						hint.SetActive (false);
 					}
 					if (gameObject.name == "PiringAyah") {
-						GameObject.FindGameObjectWithTag ("SequenceManager").GetComponent<P4_SequenceManager> ().allowClutterAnim = true;
+						sequenceManager.allowClutterAnim = true;
 					}
-					GameObject.FindGameObjectWithTag ("SequenceManager").GetComponent<P4_SequenceManager> ().setPlate (gameObject.name);
-					GameObject.FindGameObjectWithTag ("SequenceManager").GetComponent<P4_SequenceManager> ().plateCounter++;
+					sequenceManager.setPlate (gameObject.name);
+					sequenceManager.plateCounter++;
 
 				}
 			} else {
@@ -126,7 +164,7 @@ public class P4_DraggablePiring : MonoBehaviour {
 	}
 
 	public void putHintHere(Vector3 pos) {
-		if (!GameObject.FindGameObjectWithTag ("SequenceManager").GetComponent<P4_SequenceManager> ().allowPlateMove) {
+		if (!sequenceManager.allowPlateMove) {
 			hint.transform.position = new Vector3 (pos.x + 1, pos.y - 1.5f, 1);
 		} else {
 			hint.transform.position = new Vector3 (pos.x + 1, pos.y - 1.5f, initPos.z);

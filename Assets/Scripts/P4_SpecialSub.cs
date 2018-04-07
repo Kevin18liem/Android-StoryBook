@@ -22,6 +22,7 @@ public class P4_SpecialSub : MonoBehaviour {
 	private string highlighted;		// highlighted part
 	private CanvasGroup cg;			// canvas group with alpha
 	private bool waitForTap;
+	private P4_SequenceManager sequenceManager;
 
 	// Use this for initialization
 	void Start () {
@@ -37,19 +38,21 @@ public class P4_SpecialSub : MonoBehaviour {
 		cg.alpha = 0;
 		cg.interactable = false;
 		waitForTap = false;
+
+		sequenceManager = GameObject.FindGameObjectWithTag ("SequenceManager").GetComponent<P4_SequenceManager> ();
 	
 	}
 
 	// Update is called once per frame
 	void Update () {
 
-		if (GameObject.FindGameObjectWithTag ("SequenceManager").GetComponent<P4_SequenceManager> ().plateCounter >= maxPlateMoved && allowText) {
-			GameObject.FindGameObjectWithTag ("SequenceManager").GetComponent<P4_SequenceManager> ().allowPlateMove = false;
+		if (sequenceManager.plateCounter >= maxPlateMoved && allowText) {
+			sequenceManager.allowPlateMove = false;
 		}
 
 		// play text if not in fade animation and waiting for input and not end of texts
 		if (!waiting && !in_anim && !wait_input && wordset < texts.Length && allowText &&
-			GameObject.FindGameObjectWithTag ("SequenceManager").GetComponent<P4_SequenceManager> ().holdNormalSub) {
+			sequenceManager.holdNormalSub) {
 			if (idx < texts [wordset].words.Length) {
 				StartCoroutine (Spell (texts [wordset].words [idx].delay));
 			}
@@ -57,32 +60,32 @@ public class P4_SpecialSub : MonoBehaviour {
 
 		// when input got, change text if there are still more text to display
 		if (wait_input && allowText) {
-			if (GameObject.FindGameObjectWithTag ("SequenceManager").GetComponent<P4_SequenceManager> ().plateCounter >= maxPlateMoved) {
+			if (sequenceManager.plateCounter >= maxPlateMoved) {
 				if (nextText) {
 					nextText.GetComponent<P4_SpecialSub> ().allowText = true;
 				}
 				allowText = false;
-				GameObject.FindGameObjectWithTag ("SequenceManager").GetComponent<P4_SequenceManager> ().allowPlateMove = true;
+				sequenceManager.allowPlateMove = true;
 				wait_input = false;
 				if (gameObject.name == "Ayah") {
-					GameObject.FindGameObjectWithTag ("SequenceManager").GetComponent<P4_SequenceManager> ().readySpecialToFade = true;
+					sequenceManager.readySpecialToFade = true;
 				}
 					
 			}
 					
 		}
 
-		if (GameObject.FindGameObjectWithTag ("SequenceManager").GetComponent<P4_SequenceManager> ().readySpecialToFade) {
+		if (sequenceManager.readySpecialToFade) {
 			waitForTap = true;
 		}
 
 		if (waitForTap) {
-			if ((Input.touchCount > 0) && (Input.GetTouch (0).phase == TouchPhase.Began)) {
+			if (((Input.touchCount > 0) && (Input.GetTouch (0).phase == TouchPhase.Began)) || Input.GetMouseButtonDown(0)) {
 				waitForTap = false;
 			}
 		}
 
-		if (GameObject.FindGameObjectWithTag ("SequenceManager").GetComponent<P4_SequenceManager> ().readySpecialToFade && !waitForTap) {
+		if (sequenceManager.readySpecialToFade && !waitForTap) {
 			StartCoroutine (Fade (false));
 		}
 			
@@ -97,7 +100,7 @@ public class P4_SpecialSub : MonoBehaviour {
 			if (gameObject.name == "Ibu") {
 				GameObject.Find ("PiringIbu").GetComponent<P4_DraggablePiring> ().putHintHere (GameObject.Find ("PiringIbu").transform.position);
 			}
-			GameObject.FindGameObjectWithTag ("SequenceManager").GetComponent<P4_SequenceManager> ().allowPlateMove = true;
+			sequenceManager.allowPlateMove = true;
 		}
 
 		// make sure animation finished playing
@@ -136,7 +139,7 @@ public class P4_SpecialSub : MonoBehaviour {
 				cg.alpha -= Time.deltaTime / 2 * fade_speed;
 				yield return null;
 			}
-			GameObject.FindGameObjectWithTag ("SequenceManager").GetComponent<P4_SequenceManager> ().holdNormalSub = false;
+			sequenceManager.holdNormalSub = false;
 
 		}
 		in_anim = false;

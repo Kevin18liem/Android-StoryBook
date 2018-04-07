@@ -14,11 +14,14 @@ public class P4_Sendok : MonoBehaviour {
 	private Transform toDrag;			// hit location
 	private Vector3 temp;				// used to save temporary v3
 	private Vector3 initPos;			// initial position
+	private P4_SequenceManager sequenceManager;
 
 	// Use this for initialization
 	void Start () {
 
 		curr = GetComponent<SpriteRenderer> ();
+		sequenceManager = GameObject.FindGameObjectWithTag ("SequenceManager").GetComponent<P4_SequenceManager> ();
+			
 
 	}
 	
@@ -26,7 +29,7 @@ public class P4_Sendok : MonoBehaviour {
 	void Update () {
 
 		if ((Input.touchCount == 1) && (Input.GetTouch(0).phase == TouchPhase.Began) && 
-			GameObject.FindGameObjectWithTag ("SequenceManager").GetComponent<P4_SequenceManager> ().allowClutterAnim) {
+			sequenceManager.allowClutterAnim) {
 			Ray raycast = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
 			RaycastHit raycastHit;
 			if (Physics.Raycast(raycast, out raycastHit))
@@ -44,9 +47,28 @@ public class P4_Sendok : MonoBehaviour {
 				}
 
 			}
+		} else if (Input.GetMouseButtonDown(0) && 
+			sequenceManager.allowClutterAnim) {
+			Ray raycast = Camera.main.ScreenPointToRay(Input.mousePosition);
+			RaycastHit raycastHit;
+			if (Physics.Raycast(raycast, out raycastHit))
+			{
+				if (raycastHit.collider.name == gameObject.name)
+				{
+
+					dist = transform.position.z - Camera.main.transform.position.z;
+					temp = new Vector3 (Input.mousePosition.x, Input.mousePosition.y,
+						dist);
+					temp = Camera.main.ScreenToWorldPoint (temp);
+					offset = transform.position - temp;
+
+					isdragging = true;
+				}
+
+			}
 		}
 
-		if (isdragging && Input.GetTouch(0).phase == TouchPhase.Moved) {
+		if (isdragging) {
 			temp = new Vector3 (Input.mousePosition.x, Input.mousePosition.y,
 				dist);
 			temp = Camera.main.ScreenToWorldPoint (temp);
@@ -54,11 +76,14 @@ public class P4_Sendok : MonoBehaviour {
 			transform.position = temp + offset;
 		}
 
-		if (isdragging && (Input.GetTouch (0).phase == TouchPhase.Ended ||
-			Input.GetTouch (0).phase == TouchPhase.Canceled)) {
+		if (isdragging && Input.touchCount == 1 && (Input.GetTouch (0).phase == TouchPhase.Ended ||
+		    Input.GetTouch (0).phase == TouchPhase.Canceled)) {
 
 			isdragging = false;
 
+		} else if (isdragging && Input.GetMouseButtonUp(0)) {
+
+			isdragging = false;
 		}
 		
 	}
