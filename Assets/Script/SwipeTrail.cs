@@ -19,7 +19,6 @@ public class SwipeTrail : MonoBehaviour {
 				startPos = mRay.GetPoint(rayDistance);
 			thisTrail = (GameObject) Instantiate(trailPrefab,startPos,Quaternion.identity);
 				UpdateColor ();
-			Debug.Log(thisTrail.transform.position);
 		} else if(((Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)|| Input.GetMouseButton(0))) {
 			Ray mRay = Camera.main.ScreenPointToRay(Input.mousePosition);
 			float rayDistance;
@@ -41,7 +40,7 @@ public class SwipeTrail : MonoBehaviour {
 			thisTrail.GetComponent<TrailRenderer> ().startColor = warnaTertentu;
 			thisTrail.GetComponent<TrailRenderer> ().endColor = warnaTertentu;
 		} else if (KodeWarna == "yellow") {
-			warnaTertentu = new Color (0, 26, 174, 254);
+			warnaTertentu = new Color32 (255, 204, 0, 255);
 			thisTrail.GetComponent<TrailRenderer> ().startColor = warnaTertentu;
 			thisTrail.GetComponent<TrailRenderer> ().endColor = warnaTertentu;
 		} else if (KodeWarna == "dark blue") {

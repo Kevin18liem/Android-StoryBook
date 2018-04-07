@@ -22,6 +22,17 @@ public class Crayon : MonoBehaviour {
 					kodeWarna.GetComponent<SwipeTrail>() .KodeWarna = warna;
 				}
 			}
+		} else if (Input.GetMouseButtonDown(0))
+		{
+			Ray raycast = Camera.main.ScreenPointToRay(Input.mousePosition);
+			RaycastHit raycastHit;
+			if (Physics.Raycast(raycast, out raycastHit))
+			{
+				if (raycastHit.collider.name == gameObject.name)
+				{
+					kodeWarna.GetComponent<SwipeTrail>() .KodeWarna = warna;
+				}
+			}
 		}
 	}
 }
