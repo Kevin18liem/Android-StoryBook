@@ -59,14 +59,17 @@ public class Wiper : MonoBehaviour {
 					} else {
 						ypos = (int)Input.mousePosition.y;
 					}
-					if (Input.mousePosition.x < 300) {
-						xpos = (int)Input.mousePosition.x;
-					} else if (Input.mousePosition.x > 400) {
-						xpos = xpos + (int)Input.mousePosition.x;
-					} else {
-						xpos = (int)Input.mousePosition.x;
+//					if (Input.mousePosition.x < 300) {
+//						xpos = (int)Input.mousePosition.x;
+//					} else if (Input.mousePosition.x > 400) {
+//						xpos = xpos + (int)Input.mousePosition.x;
+//					} else {
+//						xpos = (int)Input.mousePosition.x;
+//					}
+					if (Input.mousePosition.x > 150) {
+						xpos = xpos + (int)Input.mousePosition.x - (int)(150*(float)(Input.mousePosition.x/1024));
 					}
-					xpos -= 200;
+					xpos += 75;
 					//					ypos += 384;
 
 					//					xpos = xpos + (int)(((float)Screen.width/texture.width) * Input.mousePosition.x);
