@@ -1016,7 +1016,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8476ad344384de42831e3d6796be5d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  warna: yello ochre
+  warna: yellow ochre
 --- !u!65 &1136744061
 BoxCollider:
   m_ObjectHideFlags: 0
