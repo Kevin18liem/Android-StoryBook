@@ -33,6 +33,17 @@ public class P1_TriggerAnimation : MonoBehaviour {
 				}
 
 			}
+		} else if (Input.GetMouseButtonDown(0) && trigger_allowed) {
+			Ray raycast = Camera.main.ScreenPointToRay(Input.mousePosition);
+			RaycastHit raycastHit;
+			if (Physics.Raycast(raycast, out raycastHit))
+			{
+				if (raycastHit.collider.name == gameObject.name)
+				{
+					anim.SetTrigger(trigger);
+				}
+
+			}
 		}
 
 	}
