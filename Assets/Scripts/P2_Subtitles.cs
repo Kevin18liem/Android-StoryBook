@@ -7,6 +7,7 @@ using TextItemClass;
 public class P2_Subtitles : MonoBehaviour {
 	
 	public GameObject anakIbuNext;
+	public string trigger;
 	public Sprite anakIbuNextSprite;
 	public Sprite bapaMobilNextSprite;
 	public GameObject bapaMobilNext;
@@ -56,7 +57,7 @@ public class P2_Subtitles : MonoBehaviour {
 				Debug.Log ("masuk ga gan");
 				ChangeText ();
 				nextText.SetActive (true);
-				anakIbuNext.GetComponent<SpriteRenderer> ().sprite = anakIbuNextSprite;
+				anakIbuNext.GetComponent<Animator> ().SetTrigger(trigger);
 			}
 		}
 
