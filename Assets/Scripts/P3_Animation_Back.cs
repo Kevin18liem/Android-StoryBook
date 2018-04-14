@@ -4,15 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using TextItemClass;
 
-public class P2_Subtitles : MonoBehaviour {
-	
-	public GameObject anakIbuNext;
-	public GameObject bapakMobil;
-	public string trigger;
-	public Sprite anakIbuNextSprite;
-	public Sprite bapaMobilNextSprite;
-	public GameObject bapaMobilNext;
-	public GameObject nextText;
+public class P3_Animation_Back : MonoBehaviour {
+
+	public string trigger = "goLive";
+	public bool startAnimation = false;
 	public TextItem[] texts;		// texts to be displayed
 	public float fade_speed = 1;	// fade speed
 	public char newline_char = '$';	// char to be detected as newline
@@ -38,28 +33,13 @@ public class P2_Subtitles : MonoBehaviour {
 		wait_input = false;
 		cg.alpha = 0;
 		cg.interactable = false;
-
 	}
 
 	// Update is called once per frame
 	void Update () {
 
-		// play text if not in fade animation and waiting for input and not end of texts
-		if (!waiting && !in_anim && !wait_input && wordset < texts.Length) {
-			if (idx < texts [wordset].words.Length) {
-				StartCoroutine (Spell (texts [wordset].words [idx].delay));
-			}
-		}
-		// when input got, change text if there are still more text to display
-		if (wait_input) {
-			if ((((Input.touchCount > 0) && (Input.GetTouch (0).phase == TouchPhase.Began)) || Input.GetMouseButtonDown(0))) {
-				wait_input = false;
-				Debug.Log ("masuk ga gan");
-				ChangeText ();
-				nextText.GetComponent<P2_Subtitles_2> ().startBubbleText = true;
-				anakIbuNext.GetComponent<Animator> ().SetTrigger(trigger);
-				bapakMobil.GetComponent<Animator> ().SetTrigger ("dada");
-			}
+		if (startAnimation) {
+			GetComponent<Animator> ().SetTrigger (trigger);
 		}
 
 	}

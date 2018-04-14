@@ -3,36 +3,44 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Wiper : MonoBehaviour {
+	public GameObject nextAnimation;
+	public bool startWipe = false;
 	Texture2D texture;
 	Color myColor;
 	Vector3 temp, offset;
 	float dist;
 	int xpos;
 	int ypos;
+	public int threshold;
+	int counter = 0;
 
 	public int boxSize = 500;
 
 	// Use this for initialization
 	void Start () {
+		if (startWipe) {
+			gameObject.SetActive (true);
+		}
 		myColor = new Color (1f, 1f, 1f, 0f);
 
-		Texture mainTexture = GetComponent<Renderer>().material.mainTexture;
-		texture = new Texture2D(mainTexture.width, mainTexture.height, TextureFormat.RGBA32, false);
+	//		Texture mainTexture = this.gameObject.GetComponent<SpriteRenderer> ().sprite.texture;
+		Texture mainTexture = GetComponent<Renderer> ().material.mainTexture;
+		texture = new Texture2D (mainTexture.width, mainTexture.height, TextureFormat.RGBA32, false);
 
 		RenderTexture currentRT = RenderTexture.active;
-
-		RenderTexture renderTexture = new RenderTexture(mainTexture.width, mainTexture.height, 32);
-		Graphics.Blit(mainTexture, renderTexture);
+	
+		RenderTexture renderTexture = new RenderTexture (mainTexture.width, mainTexture.height, 32);
+		Graphics.Blit (mainTexture, renderTexture);
 
 		RenderTexture.active = renderTexture;
-		texture.ReadPixels(new Rect(0, 0, renderTexture.width, renderTexture.height), 0, 0);
-		texture.Apply();
+		texture.ReadPixels (new Rect (0, 0, renderTexture.width, renderTexture.height), 0, 0);
+		texture.Apply ();
 	}
 
 	// Update is called once per frame
 	void Update () {
-
-		if (Input.GetMouseButton(0)) {
+		Debug.Log ("counter: " + counter + " threshold: " + threshold);
+		if (Input.GetMouseButton(0) && startWipe && counter <= threshold) {
 			Ray raycast = Camera.main.ScreenPointToRay(Input.mousePosition);
 			RaycastHit raycastHit;
 			if (Physics.Raycast(raycast, out raycastHit))
@@ -66,10 +74,15 @@ public class Wiper : MonoBehaviour {
 //					} else {
 //						xpos = (int)Input.mousePosition.x;
 //					}
-					if (Input.mousePosition.x > 150) {
-						xpos = xpos + (int)Input.mousePosition.x - (int)(150*(float)(Input.mousePosition.x/1024));
+					if (Input.mousePosition.x > 100) {
+						xpos = xpos + (int)Input.mousePosition.x + 75 - (int)(150 * (float)(Input.mousePosition.x / 1024));
 					}
-					xpos += 75;
+//					else {
+//						//xpos += (int) Input.mousePosition.x;
+//						xpos = xpos + (int)Input.mousePosition.x - 10;
+//					}else if (Input.mousePosition.x < 150 && Input.mousePosition.x > 4) {
+//						xpos = xpos + (int)Input.mousePosition.x + 75;
+//					}
 					//					ypos += 384;
 
 					//					xpos = xpos + (int)(((float)Screen.width/texture.width) * Input.mousePosition.x);
@@ -81,10 +94,15 @@ public class Wiper : MonoBehaviour {
 
 					Debug.Log ("Pos: " + xpos + "," + ypos + "---" + Input.mousePosition.x + "," + Input.mousePosition.y);
 
-					for (int i = xpos-10; i < xpos + boxSize; i++) {
-						for (int j = ypos-10; j < ypos + boxSize; j++) {
-							if (i <= texture.width && i >= 0 && j <= texture.height && j >= 0)
-								texture.SetPixel(-1*i, j, myColor); //set pixel (0,0) to the color specified
+					if (xpos != 0) {
+						for (int i = xpos - 10; i < xpos + boxSize; i++) {
+							for (int j = ypos - 10; j < ypos + boxSize; j++) {
+								if (i <= texture.width && i >= 0 && j <= texture.height && j >= 0) {
+									if (texture.GetPixel (i, j).a != 0)
+										counter++;
+									texture.SetPixel (i, j, myColor); //set pixel (0,0) to the color specified
+								}
+							}
 						}
 					}
 
@@ -94,7 +112,13 @@ public class Wiper : MonoBehaviour {
 				}
 
 			}
+			if (counter > threshold) {
+				nextAnimation.GetComponent<P3_Animation_Back> ().startAnimation = true;
+				gameObject.SetActive (false);
+			}
 		}
 
 	}
+
+
 }
