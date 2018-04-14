@@ -4,20 +4,22 @@ using UnityEngine;
 using UnityEngine.UI;
 using TextItemClass;
 
-public class P1_Subtitles : MonoBehaviour {
+public class P5_Subtitles : MonoBehaviour {
 
 	public TextItem[] texts;		// texts to be displayed
 	public float fade_speed = 1;	// fade speed
 	public char newline_char = '$';	// char to be detected as newline
+	public GameObject sprites;		// sprites to be animated
 
 	private string text_buffer;		// buffer to save string
 	private int wordset;			// which wordset to display
 	private int idx;				// which word to style
 	private bool waiting;			// true if waiting
 	private bool in_anim;			// in fade animation
-	private bool wait_input;		// true if waiting for input
 	private string highlighted;		// highlighted part
 	private CanvasGroup cg;			// canvas group with alpha
+	private IEnumerator speller;
+	private GameObject seqManager;
 
 	// Use this for initialization
 	void Start () {
@@ -29,28 +31,36 @@ public class P1_Subtitles : MonoBehaviour {
 		wordset = 0;
 		waiting = false;
 		in_anim = false;
-		wait_input = false;
 		cg.alpha = 0;
 		cg.interactable = false;
+		seqManager = GameObject.Find ("SequenceManager");
 
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 
+		Debug.Log (idx + " " + wordset);
+
+		if (!seqManager.GetComponent<P5_SequenceManager> ().movable && wordset == texts.Length - 1 && (idx == texts [wordset].words.Length)) {
+			seqManager.GetComponent<P5_SequenceManager> ().movable = true;
+
+		}
+
 		// play text if not in fade animation and waiting for input and not end of texts
-		if (!waiting && !in_anim && !wait_input && wordset < texts.Length) {
+		if (!waiting && !in_anim && wordset < texts.Length) {
 			if (idx < texts [wordset].words.Length) {
-				StartCoroutine (Spell (texts [wordset].words [idx].delay));
+				speller = Spell (texts [wordset].words [idx].delay);
+				StartCoroutine (speller);
 			}
 		}
 
 		// when input got, change text if there are still more text to display
-		if (wait_input) {
-			if ((((Input.touchCount > 0) && (Input.GetTouch (0).phase == TouchPhase.Began)) || Input.GetMouseButtonDown(0)) && wordset < texts.Length - 1) {
-				wait_input = false;
-				ChangeText ();
-			}
+		if ((((Input.touchCount > 0) && (Input.GetTouch (0).phase == TouchPhase.Began)) || Input.GetMouseButtonDown (0)) && wordset < texts.Length) {
+			StopCoroutine (speller);
+			waiting = false;
+			in_anim = false;
+			ChangeText ();
 		}
 
 	}
@@ -78,7 +88,6 @@ public class P1_Subtitles : MonoBehaviour {
 
 		// if end of text ask for input
 		if (idx == texts[wordset].words.Length) {
-			wait_input = true;
 		}
 	}
 
@@ -116,9 +125,14 @@ public class P1_Subtitles : MonoBehaviour {
 	}
 
 	void ChangeText() {
-		idx = 0;
-		wordset++;
-		StartCoroutine (Fade (false));
+		if (wordset != texts.Length - 1) {
+			StartCoroutine (Fade (false));
+			idx = 0;
+			wordset++;
+		} else {
+			idx = texts[wordset].words.Length;
+			HighlightText ();
+		}
 	}
 
 	void HighlightText() {
