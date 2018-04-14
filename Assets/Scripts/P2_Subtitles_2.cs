@@ -6,6 +6,10 @@ using TextItemClass;
 
 public class P2_Subtitles_2 : MonoBehaviour {
 
+	public GameObject bapakMobil;
+	public GameObject nextText;
+	public GameObject bubble;
+	public bool startBubbleText = false;
 	public TextItem[] texts;		// texts to be displayed
 	public float fade_speed = 1;	// fade speed
 	public char newline_char = '$';	// char to be detected as newline
@@ -31,26 +35,31 @@ public class P2_Subtitles_2 : MonoBehaviour {
 		wait_input = false;
 		cg.alpha = 0;
 		cg.interactable = false;
-
 	}
 
 	// Update is called once per frame
 	void Update () {
 
-		// play text if not in fade animation and waiting for input and not end of texts
-		if (!waiting && !in_anim && !wait_input && wordset < texts.Length) {
-			if (idx < texts [wordset].words.Length) {
-				StartCoroutine (Spell (texts [wordset].words [idx].delay));
+		Debug.Log (startBubbleText);
+
+		if (startBubbleText) {
+			// play text if not in fade animation and waiting for input and not end of texts
+			if (!waiting && !in_anim && !wait_input && wordset < texts.Length) {
+				if (idx < texts [wordset].words.Length) {
+					StartCoroutine (Spell (texts [wordset].words [idx].delay));
+				}
 			}
-		}
-		Debug.Log ("test masuk lagi gan");
-		// when input got, change text if there are still more text to display
-		if (wait_input) {
-			Debug.Log ("test dalem wait");
-			if ((((Input.touchCount > 0) && (Input.GetTouch (0).phase == TouchPhase.Began)) || Input.GetMouseButtonDown(0)) && wordset < texts.Length - 1) {
-				wait_input = false;
-				Debug.Log ("masuk ga gan");
-				ChangeText ();
+			// when input got, change text if there are still more text to display
+			if (wait_input) {
+				Debug.Log ("Waiting input");
+				if ((((Input.touchCount > 0) && (Input.GetTouch (0).phase == TouchPhase.Began)) || Input.GetMouseButtonDown (0))) {
+					Debug.Log ("got input");
+					wait_input = false;
+					bubble.GetComponent<Animator> ().SetTrigger ("ilang");
+					bapakMobil.GetComponent<Animator> ().SetTrigger ("jalan");
+					nextText.GetComponent<P2_Subtitles_3>().startText = true;
+					ChangeText ();
+				}
 			}
 		}
 
@@ -61,6 +70,7 @@ public class P2_Subtitles_2 : MonoBehaviour {
 		// if beginning new text, go init
 		if (idx == 0) {
 			InitText ();
+			bubble.GetComponent<Animator> ().SetTrigger ("muncul");
 		}
 
 		// make sure animation finished playing

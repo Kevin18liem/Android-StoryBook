@@ -4,15 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using TextItemClass;
 
-public class P2_Subtitles : MonoBehaviour {
-	
-	public GameObject anakIbuNext;
-	public GameObject bapakMobil;
-	public string trigger;
-	public Sprite anakIbuNextSprite;
-	public Sprite bapaMobilNextSprite;
-	public GameObject bapaMobilNext;
-	public GameObject nextText;
+public class P2_Subtitles_3 : MonoBehaviour {
+
+	public bool startText = false;
+	private bool start = false;
 	public TextItem[] texts;		// texts to be displayed
 	public float fade_speed = 1;	// fade speed
 	public char newline_char = '$';	// char to be detected as newline
@@ -30,6 +25,7 @@ public class P2_Subtitles : MonoBehaviour {
 
 		// initialization
 		cg = gameObject.GetComponent<CanvasGroup> ();
+
 		idx = 0;
 		wordset = 0;
 		waiting = false;
@@ -43,21 +39,14 @@ public class P2_Subtitles : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		// play text if not in fade animation and waiting for input and not end of texts
-		if (!waiting && !in_anim && !wait_input && wordset < texts.Length) {
-			if (idx < texts [wordset].words.Length) {
-				StartCoroutine (Spell (texts [wordset].words [idx].delay));
-			}
-		}
-		// when input got, change text if there are still more text to display
-		if (wait_input) {
-			if ((((Input.touchCount > 0) && (Input.GetTouch (0).phase == TouchPhase.Began)) || Input.GetMouseButtonDown(0))) {
-				wait_input = false;
-				Debug.Log ("masuk ga gan");
-				ChangeText ();
-				nextText.GetComponent<P2_Subtitles_2> ().startBubbleText = true;
-				anakIbuNext.GetComponent<Animator> ().SetTrigger(trigger);
-				bapakMobil.GetComponent<Animator> ().SetTrigger ("dada");
+		Debug.Log (startText);
+
+		if (startText) {
+			// play text if not in fade animation and waiting for input and not end of texts
+			if (!waiting && !in_anim && !wait_input && wordset < texts.Length) {
+				if (idx < texts [wordset].words.Length) {
+					StartCoroutine (Spell (texts [wordset].words [idx].delay));
+				}
 			}
 		}
 
@@ -67,6 +56,7 @@ public class P2_Subtitles : MonoBehaviour {
 
 		// if beginning new text, go init
 		if (idx == 0) {
+			start = true;
 			InitText ();
 		}
 
@@ -93,6 +83,7 @@ public class P2_Subtitles : MonoBehaviour {
 	IEnumerator Fade(bool fadeIn) {
 		in_anim = true;
 		if (fadeIn) {
+			yield return new WaitForSeconds (1);
 			while (cg.alpha < 1) {
 				cg.alpha += Time.deltaTime / 2 * fade_speed;
 				yield return null;
