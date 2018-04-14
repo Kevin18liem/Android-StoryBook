@@ -9,31 +9,36 @@ public class TiltOpacity : MonoBehaviour {
 	public KeyCode takeOpacityChangeFirstFamily = KeyCode.F;
 	public KeyCode takeOpacityChangeAnotherFamily = KeyCode.J;
 
+	private GameObject seqMan;
+
 	public float changeValue;
 	void Start () {
 		opacityValueFirstFamily = gameObject.GetComponent<SpriteRenderer>().color.r;
 		opacityValueAnotherFamily = anotherFamily.GetComponent<SpriteRenderer> ().color.r;
 		Input.gyro.enabled = true;
+		seqMan = GameObject.Find ("SequenceManager");
 	}
 
 	// Update is called once per frame
 	void Update () {
-		
-		if (Input.gyro.attitude.x < -0.1f ) {
-			//Debug.Log (opacityValue);
-			Debug.Log (Input.gyro.attitude.x);
-			ChangeFirstFamilyOpacity ();
 
-		} 
-		if (Input.gyro.attitude.x > 0.18f) {
-			ChangeAnotherFamilyOpacity();
-		}
+		if (seqMan.GetComponent<P6_SequenceManager> ().allowTilt) {
+			if (Input.gyro.attitude.x < -0.1f) {
+				//Debug.Log (opacityValue);
+				Debug.Log (Input.gyro.attitude.x);
+				ChangeFirstFamilyOpacity ();
 
-		if(Input.GetKeyDown(takeOpacityChangeFirstFamily)) {
-			ChangeFirstFamilyOpacity ();
-		}
-		if(Input.GetKeyDown(takeOpacityChangeAnotherFamily)) {
-			ChangeAnotherFamilyOpacity();
+			} 
+			if (Input.gyro.attitude.x > 0.18f) {
+				ChangeAnotherFamilyOpacity ();
+			}
+
+			if (Input.GetKeyDown (takeOpacityChangeFirstFamily)) {
+				ChangeFirstFamilyOpacity ();
+			}
+			if (Input.GetKeyDown (takeOpacityChangeAnotherFamily)) {
+				ChangeAnotherFamilyOpacity ();
+			}
 		}
 	}
 

@@ -4,11 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using TextItemClass;
 
-public class P5_Subtitles : MonoBehaviour {
+public class P6_Subtitles : MonoBehaviour {
 
 	public TextItem[] texts;		// texts to be displayed
 	public float fade_speed = 1;	// fade speed
 	public char newline_char = '$';	// char to be detected as newline
+	public GameObject ibuAnak;
+	public GameObject keluargaLain;
 
 	private string text_buffer;		// buffer to save string
 	private int wordset;			// which wordset to display
@@ -39,9 +41,9 @@ public class P5_Subtitles : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-		if (!seqManager.GetComponent<P5_SequenceManager> ().movable && wordset == texts.Length - 1 && (idx == texts [wordset].words.Length)) {
-			seqManager.GetComponent<P5_SequenceManager> ().movable = true;
-
+		if (!seqManager.GetComponent<P6_SequenceManager> ().allowTilt && wordset == texts.Length - 1 && (idx == texts [wordset].words.Length)) {
+			seqManager.GetComponent<P6_SequenceManager> ().allowTilt = true;
+			seqManager.GetComponent<P6_SequenceManager> ().enableButton ();
 		}
 
 		// play text if not in fade animation and waiting for input and not end of texts
@@ -73,6 +75,17 @@ public class P5_Subtitles : MonoBehaviour {
 		if (!in_anim) {
 			waiting = true;
 			yield return new WaitForSeconds (sec);
+
+			// events
+			if (wordset == 0 && idx == 0) {
+				ibuAnak.GetComponent<Animator> ().SetTrigger ("nunduk");
+				keluargaLain.GetComponent<Animator> ().SetTrigger ("senang");
+			}
+
+			if (wordset == 1 && idx == 0) {
+				ibuAnak.GetComponent<Animator> ().SetTrigger ("nunduk");
+				keluargaLain.GetComponent<Animator> ().SetTrigger ("senang");
+			}
 
 			// Highlight
 			HighlightText();
