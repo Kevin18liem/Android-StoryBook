@@ -507,7 +507,7 @@ SpriteRenderer:
   m_Size: {x: 20, y: 15}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!1 &685345905
 GameObject:
@@ -616,7 +616,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 4f3ccb643578075449d275d8a4bd168f, type: 2}
+  - {fileID: 2100000, guid: 313e30bcce96288488ec434509ad5526, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -749,7 +749,7 @@ SpriteRenderer:
   m_Size: {x: 20, y: 15}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!114 &1074658251
 MonoBehaviour:
@@ -1198,7 +1198,7 @@ SpriteRenderer:
   m_Size: {x: 20, y: 15}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!4 &1514761618
 Transform:
@@ -1318,7 +1318,7 @@ SpriteRenderer:
   m_Size: {x: 20, y: 15}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!4 &1530847466
 Transform:
@@ -1451,7 +1451,7 @@ SpriteRenderer:
   m_Size: {x: 20, y: 15}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!65 &1596274142
 BoxCollider:
@@ -1558,7 +1558,7 @@ SpriteRenderer:
   m_Size: {x: 20, y: 15}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!4 &1861841108
 Transform:

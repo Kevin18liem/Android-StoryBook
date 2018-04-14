@@ -13,7 +13,7 @@ public class HiResScreenShots : MonoBehaviour {
 		
 	}
 	private void Update() {
-		if (Input.GetKeyDown(takeScreenshotKey))
+		if (Input.GetKeyDown(takeScreenshotKey) || Input.touchCount == 2)
 	    {
 			crayon.SetActive (false);
 	        StartCoroutine(captureScreenshot());
