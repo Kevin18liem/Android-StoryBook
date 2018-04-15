@@ -71,6 +71,7 @@ public class P7_Subtitles_Ibu_1 : MonoBehaviour {
 					bapaLambai.GetComponent<P7_Ayah> ().isStarting = true;
 					isNext = true;
 				}
+				isDone = false;
 			}
 		}
 
