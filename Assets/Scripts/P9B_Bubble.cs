@@ -8,7 +8,6 @@ public class P9B_Bubble: MonoBehaviour {
 	public bool allowFadeOut = false;	// true if trigger allowed
 	public float speed = 1;				// animation speed
 	public GameObject subtitle;
-	public GameObject sprite;
 
 	// Use this for initialization
 	void Start () {
