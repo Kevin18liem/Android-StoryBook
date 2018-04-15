@@ -9,7 +9,9 @@ public class P7_Ayah_2 : MonoBehaviour {
 	public string trigger;
 	public bool isStarting = false;
 	public bool startNextBapa = false;
-	public GameObject bapaNext;
+	public GameObject bubbleAnakNext;
+	public GameObject anakNext;
+	public GameObject scriptAnakNext;
 
 	// Use this for initialization
 	void Start () {
@@ -18,14 +20,16 @@ public class P7_Ayah_2 : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		StartCoroutine (Tunggu (true));
-
+		StartCoroutine (Tunggu ());
 	}
 
-	IEnumerator Tunggu(bool wait) {
-		if (wait) {
-			yield return new WaitForSeconds (3);
+	IEnumerator Tunggu() {
+		yield return new WaitForSeconds (3);
+		if (!isStarting) {
+			anakNext.GetComponent<Animator> ().SetTrigger ("toNgomong");
+			scriptAnakNext.GetComponent<P7_Subtitles_Anak> ().isStart = true;
+			bubbleAnakNext.SetActive (true);
+			isStarting = true;
 		}
-		yield return null;
 	}
 }

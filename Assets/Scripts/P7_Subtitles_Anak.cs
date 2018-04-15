@@ -4,11 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using TextItemClass;
 
-public class P7_Subtitles_Ibu_2 : MonoBehaviour {
+public class P7_Subtitles_Anak : MonoBehaviour {
 
+	public string trigger;
 	public bool isStart = false;
-	public GameObject ibuSprite;
+	public bool isDone = false;
+	public GameObject scriptIbuNext;
+	public GameObject anakSprite;
 	public GameObject nextText;
+	public GameObject nextTextIbu;
+	public GameObject ibuAnimNext;
 	public TextItem[] texts;		// texts to be displayed
 	public float fade_speed = 1;	// fade speed
 	public char newline_char = '$';	// char to be detected as newline
@@ -34,7 +39,6 @@ public class P7_Subtitles_Ibu_2 : MonoBehaviour {
 		wait_input = false;
 		cg.alpha = 0;
 		cg.interactable = false;
-
 	}
 
 	// Update is called once per frame
@@ -49,12 +53,13 @@ public class P7_Subtitles_Ibu_2 : MonoBehaviour {
 			// when input got, change text if there are still more text to display
 			if (wait_input) {
 				if ((((Input.touchCount > 0) && (Input.GetTouch (0).phase == TouchPhase.Began)) || Input.GetMouseButtonDown (0))) {
-					Debug.Log ("Test Click");
 					wait_input = false;
+					nextText.GetComponent<Animator>().SetTrigger ("fadeout");
 					ChangeText ();
-					nextText.GetComponent<Animator> ().SetTrigger ("fadeout");
-					
-					GetComponent<Text> ().text = "";
+					//Script Ibu
+					nextTextIbu.GetComponent<Animator>().SetTrigger ("fadein");
+					ibuAnimNext.GetComponent<Animator>().SetTrigger ("toNgomong");
+					scriptIbuNext.GetComponent<P7_Subtitles_Ibu_2>().isStart = true;
 				}
 			}
 		}
@@ -84,7 +89,7 @@ public class P7_Subtitles_Ibu_2 : MonoBehaviour {
 		// if end of text ask for input
 		if (idx == texts[wordset].words.Length) {
 			wait_input = true;
-			ibuSprite.GetComponent<Animator> ().SetTrigger ("toIdle");
+			anakSprite.GetComponent<Animator> ().SetTrigger ("toIdle");
 		}
 	}
 
