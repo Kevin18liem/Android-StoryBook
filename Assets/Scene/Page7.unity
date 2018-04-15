@@ -201,6 +201,7 @@ RectTransform:
   - {fileID: 1412253283}
   - {fileID: 551299636}
   - {fileID: 544973831}
+  - {fileID: 1538657700}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -225,7 +226,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &135216711
 Transform:
   m_ObjectHideFlags: 0
@@ -233,7 +234,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 135216710}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.6165457, y: -0.37170312, z: 4.9335938}
+  m_LocalPosition: {x: 0.9100001, y: -3.44, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 788431335}
@@ -310,6 +311,7 @@ GameObject:
   - component: {fileID: 142998323}
   - component: {fileID: 142998325}
   - component: {fileID: 142998324}
+  - component: {fileID: 142998326}
   m_Layer: 0
   m_Name: Ayah 3 Gerak
   m_TagString: Untagged
@@ -391,6 +393,26 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &142998326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 142998322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcdbd463c74407c4e806998775ff6aca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger: 
+  isStarting: 0
+  startTap: 0
+  startNextBapa: 0
+  keepMoving: 1
+  bubbleIbuNext: {fileID: 246229515}
+  ibuNext: {fileID: 1285508398}
+  scriptIbuNext: {fileID: 1538657699}
+  nextAnakSprite: {fileID: 753355721}
 --- !u!1 &246229515
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,7 +429,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &246229516
 Transform:
   m_ObjectHideFlags: 0
@@ -415,7 +437,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 246229515}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.6165457, y: -0.37170312, z: 4.9335938}
+  m_LocalPosition: {x: 0.91, y: -3.44, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 788431335}
@@ -618,6 +640,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isStart: 0
   ibuSprite: {fileID: 1285508398}
+  nextBapaSprite: {fileID: 2108652600}
   nextText: {fileID: 1024799930}
   texts:
   - words:
@@ -727,7 +750,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -33, y: -272}
+  m_AnchoredPosition: {x: -33, y: -276}
   m_SizeDelta: {x: 315.7, y: 126}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &551299637
@@ -1511,7 +1534,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1177944936}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3, y: -3.58, z: -1}
+  m_LocalPosition: {x: -3, y: -3.58, z: -1.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 788431335}
@@ -1602,7 +1625,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1285508398}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3, y: -3.58, z: -1}
+  m_LocalPosition: {x: -3, y: -3.58, z: -1.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 788431335}
@@ -2110,6 +2133,143 @@ MonoBehaviour:
   isStarting: 0
   startNextBapa: 0
   bapaNext: {fileID: 2108652600}
+--- !u!1 &1538657699
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1538657700}
+  - component: {fileID: 1538657704}
+  - component: {fileID: 1538657703}
+  - component: {fileID: 1538657702}
+  - component: {fileID: 1538657701}
+  m_Layer: 5
+  m_Name: Subtitles 3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1538657700
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1538657699}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 18722446}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 130.20007, y: -231}
+  m_SizeDelta: {x: 315.7, y: 126}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1538657701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1538657699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fc2d2596fa6e0f43b09922790bee969, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStart: 0
+  ibuSprite: {fileID: 1285508398}
+  bapaSpritePertama: {fileID: 1427788919}
+  bapaSpriteKedua: {fileID: 2108652600}
+  currentBapaSprite: {fileID: 142998322}
+  nextAnakSprite: {fileID: 753355721}
+  nextText: {fileID: 246229515}
+  texts:
+  - words:
+    - text: Di
+      delay: 0
+    - text: sana
+      delay: 0
+    - text: Ayah
+      delay: 0
+    - text: membangun
+      delay: 0
+    - text: rumah,$
+      delay: 0
+    - text: jembatan,
+      delay: 0
+    - text: dan
+      delay: 0
+    - text: jalan
+      delay: 0
+    - text: raya
+      delay: 0
+    - text: untuk$
+      delay: 0
+    - text: membantu
+      delay: 0
+    - text: banyak
+      delay: 0
+    - text: orang.
+      delay: 0
+    - text: 
+      delay: 0
+  fade_speed: 1
+  newline_char: 36
+--- !u!225 &1538657702
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1538657699}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &1538657703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1538657699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.3019608, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 5aef65ee60a884941952c7aa39e1dce7, type: 3}
+    m_FontSize: 20
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 40
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "text \n"
+--- !u!222 &1538657704
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1538657699}
 --- !u!1 &1639073929
 GameObject:
   m_ObjectHideFlags: 0
@@ -2579,7 +2739,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trigger: 
   isStarting: 0
+  startTap: 0
   startNextBapa: 0
+  keepMoving: 0
   bubbleAnakNext: {fileID: 1972768993}
+  nextBapaSprite: {fileID: 142998322}
   anakNext: {fileID: 753355721}
   scriptAnakNext: {fileID: 551299635}

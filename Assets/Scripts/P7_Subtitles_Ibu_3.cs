@@ -4,11 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using TextItemClass;
 
-public class P7_Subtitles_Ibu_2 : MonoBehaviour {
+public class P7_Subtitles_Ibu_3 : MonoBehaviour {
 
 	public bool isStart = false;
 	public GameObject ibuSprite;
-	public GameObject nextBapaSprite;
+	public GameObject bapaSpritePertama;
+	public GameObject bapaSpriteKedua;
+	public GameObject currentBapaSprite;
+	public GameObject nextAnakSprite;
 	public GameObject nextText;
 	public TextItem[] texts;		// texts to be displayed
 	public float fade_speed = 1;	// fade speed
@@ -50,13 +53,10 @@ public class P7_Subtitles_Ibu_2 : MonoBehaviour {
 			// when input got, change text if there are still more text to display
 			if (wait_input) {
 				if ((((Input.touchCount > 0) && (Input.GetTouch (0).phase == TouchPhase.Began)) || Input.GetMouseButtonDown (0))) {
-					Debug.Log ("Test Click");
 					wait_input = false;
 					ChangeText ();
 					nextText.GetComponent<Animator> ().SetTrigger ("fadeout");
-					nextBapaSprite.GetComponent<Animator> ().SetTrigger ("toGerak");
 					GetComponent<Text> ().text = "";
-					nextBapaSprite.GetComponent<P7_Ayah_2> ().startTap = true;
 				}
 			}
 		}
@@ -87,6 +87,10 @@ public class P7_Subtitles_Ibu_2 : MonoBehaviour {
 		if (idx == texts[wordset].words.Length) {
 			wait_input = true;
 			ibuSprite.GetComponent<Animator> ().SetTrigger ("toIdle");
+			nextAnakSprite.GetComponent<Animator> ().SetTrigger ("toSenang");
+//			bapaSpritePertama.GetComponent<Animator> ().SetTrigger ("toIdle");
+//			bapaSpriteKedua.GetComponent<Animator> ().SetTrigger ("toIdle");
+//			currentBapaSprite.GetComponent<Animator> ().SetTrigger ("toIdle");
 		}
 	}
 
