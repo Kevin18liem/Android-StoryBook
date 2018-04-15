@@ -211,6 +211,8 @@ MonoBehaviour:
       delay: 0
   fade_speed: 1
   newline_char: 36
+  nextPage: {fileID: 1960329017}
+  plane: {fileID: 888780711}
 --- !u!114 &169159072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -542,6 +544,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextAnimation: {fileID: 2128391916}
   startWipe: 1
+  allowWipe: 0
   threshold: 10000
   boxSize: 10
 --- !u!1 &1038974088
@@ -838,6 +841,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextAnimation: {fileID: 0}
   startWipe: 0
+  allowWipe: 0
   threshold: 0
   boxSize: 10
 --- !u!23 &1239693142
@@ -1284,6 +1288,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextAnimation: {fileID: 0}
   startWipe: 0
+  allowWipe: 0
   threshold: 0
   boxSize: 10
 --- !u!23 &2094425161

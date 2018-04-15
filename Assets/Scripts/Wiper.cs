@@ -11,6 +11,7 @@ public class Wiper : MonoBehaviour {
 	float dist;
 	int xpos;
 	int ypos;
+	public bool allowWipe = false;
 	public int threshold;
 	int counter = 0;
 
@@ -18,9 +19,9 @@ public class Wiper : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		if (startWipe) {
-			gameObject.SetActive (true);
-		}
+		//if (startWipe) {
+		//	gameObject.SetActive (true);
+		//}
 		myColor = new Color (1f, 1f, 1f, 0f);
 
 	//		Texture mainTexture = this.gameObject.GetComponent<SpriteRenderer> ().sprite.texture;
@@ -40,7 +41,7 @@ public class Wiper : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		Debug.Log ("counter: " + counter + " threshold: " + threshold);
-		if (Input.GetMouseButton(0) && startWipe && counter <= threshold) {
+		if (Input.GetMouseButton(0) && startWipe && counter <= threshold && allowWipe) {
 			Ray raycast = Camera.main.ScreenPointToRay(Input.mousePosition);
 			RaycastHit raycastHit;
 			if (Physics.Raycast(raycast, out raycastHit))

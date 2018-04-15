@@ -53,7 +53,7 @@ public class P5_Subtitles : MonoBehaviour {
 		}
 
 		// when input got, change text if there are still more text to display
-		if ((((Input.touchCount > 0) && (Input.GetTouch (0).phase == TouchPhase.Began)) || Input.GetMouseButtonDown (0)) && wordset < texts.Length) {
+		if ((((Input.touchCount > 0) && (Input.GetTouch (0).phase == TouchPhase.Began)) || Input.GetMouseButtonDown (0)) && wordset < texts.Length && !in_anim) {
 			StopCoroutine (speller);
 			waiting = false;
 			in_anim = false;

@@ -15,6 +15,9 @@ public class P3_Subtitles : MonoBehaviour {
 	public TextItem[] texts;		// texts to be displayed
 	public float fade_speed = 1;	// fade speed
 	public char newline_char = '$';	// char to be detected as newline
+	public GameObject nextPage;
+	public GameObject plane;
+
 	private string text_buffer;		// buffer to save string
 	private int wordset;			// which wordset to display
 	private int idx;				// which word to style
@@ -23,6 +26,7 @@ public class P3_Subtitles : MonoBehaviour {
 	private bool wait_input;		// true if waiting for input
 	private string highlighted;		// highlighted part
 	private CanvasGroup cg;			// canvas group with alpha
+	private IEnumerator speller;
 
 	// Use this for initialization
 	void Start () {
@@ -42,23 +46,25 @@ public class P3_Subtitles : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		if (wordset == texts.Length - 1 && (idx == texts [wordset].words.Length)) {
+			nextPage.SetActive (true);
+			plane.GetComponent<Wiper> ().allowWipe = true;
+		}
+
 		// play text if not in fade animation and waiting for input and not end of texts
-		if (!waiting && !in_anim && !wait_input && wordset < texts.Length) {
+		if (!waiting && !in_anim && wordset < texts.Length) {
 			if (idx < texts [wordset].words.Length) {
-				StartCoroutine (Spell (texts [wordset].words [idx].delay));
+				speller = Spell (texts [wordset].words [idx].delay);
+				StartCoroutine (speller);
 			}
 		}
-		Debug.Log ("test masuk lagi gan");
+
 		// when input got, change text if there are still more text to display
-		if (wait_input) {
-			Debug.Log ("test dalem wait");
-			if ((((Input.touchCount > 0) && (Input.GetTouch (0).phase == TouchPhase.Began)) || Input.GetMouseButtonDown(0))) {
-				wait_input = false;
-				Debug.Log ("masuk ga gan");
-				ChangeText ();
-//				nextText.SetActive (true);
-//				anakIbuNext.GetComponent<Animator> ().SetTrigger(trigger);
-			}
+		if ((((Input.touchCount > 0) && (Input.GetTouch (0).phase == TouchPhase.Began)) || Input.GetMouseButtonDown (0)) && wordset < texts.Length && !in_anim) {
+			StopCoroutine (speller);
+			waiting = false;
+			in_anim = false;
+			ChangeText ();
 		}
 
 	}
@@ -124,9 +130,14 @@ public class P3_Subtitles : MonoBehaviour {
 	}
 
 	void ChangeText() {
-		idx = 0;
-		wordset++;
-		StartCoroutine (Fade (false));
+		if (wordset != texts.Length - 1) {
+			StartCoroutine (Fade (false));
+			idx = 0;
+			wordset++;
+		} else {
+			idx = texts[wordset].words.Length;
+			HighlightText ();
+		}
 	}
 
 	void HighlightText() {
