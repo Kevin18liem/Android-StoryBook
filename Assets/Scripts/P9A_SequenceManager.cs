@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class P9B_SequenceManager : MonoBehaviour {
+public class P9A_SequenceManager : MonoBehaviour {
 
-	public GameObject bgAyah;
+	public GameObject callScreen;
 	public GameObject spriteAyah;
 	public GameObject balonAyahKecil;
 	public GameObject balonAyahBesar;
@@ -25,10 +25,6 @@ public class P9B_SequenceManager : MonoBehaviour {
 		sequence = 0;
 		inSequence = false;
 		inCoroutine = false;
-
-		Debug.Log ("disabling ayah");
-		bgAyah.SetActive (false);
-		spriteAyah.SetActive (false);
 		
 	}
 	
@@ -49,10 +45,9 @@ public class P9B_SequenceManager : MonoBehaviour {
 			case 1:
 				{
 					Debug.Log ("seq 1 : enabling ayah");
-					bgAyah.SetActive (true);
 					balonAyahKecil.SetActive (true);
-					spriteAyah.SetActive (true);
-					spriteAyah.GetComponent<Animator> ().SetTrigger ("ngomong");
+					callScreen.SetActive (false);
+					spriteAyah.GetComponent<Animator> ().SetTrigger ("lambai");
 					balonAyahKecil.GetComponent<Animator> ().SetTrigger ("in");
 					subtitleAyahKecil.GetComponent<P9B_Subtitles> ().DoSub (0);
 					sequence++;
@@ -127,7 +122,7 @@ public class P9B_SequenceManager : MonoBehaviour {
 					Debug.Log ("seq 8 : ayah reply 4");
 					balonAnak.SetActive (false);
 					balonAyahKecil.SetActive (true);
-					spriteAyah.GetComponent<Animator> ().SetTrigger ("ngomong");
+					spriteAyah.GetComponent<Animator> ().SetTrigger ("lambai");
 					balonAyahKecil.GetComponent<Animator> ().SetTrigger ("in");
 					subtitleAyahKecil.GetComponent<P9B_Subtitles> ().DoSub (2);
 					sequence++;
