@@ -711,7 +711,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ab9eb09de6b1b849a3497f221ef4ae6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  texts: []
+  texts:
+  - words:
+    - text: Halo,
+      delay: 1
+    - text: arka.$
+      delay: 0
+    - text: Bagaimana
+      delay: 0
+    - text: kabarnya?
+      delay: 0
+    - text: 
+      delay: 0
+  - words:
+    - text: Ayah
+      delay: 1
+    - text: juga
+      delay: 0
+    - text: kangen$
+      delay: 0
+    - text: sama
+      delay: 0
+    - text: Arka.
+      delay: 0
+    - text: 
+      delay: 0
+  - words:
+    - text: Iya.
+      delay: 1
+    - text: Sampai
+      delay: 0
+    - text: ketemu
+      delay: 0
+    - text: minggu$
+      delay: 0
+    - text: depan,
+      delay: 0
+    - text: ya.
+      delay: 0
+    - text: Ayah
+      delay: 0
+    - text: Sayang
+      delay: 0
+    - text: Arka.
+      delay: 0
+    - text: 
+      delay: 0
   fade_speed: 1
   newline_char: 36
   bubble: {fileID: 1503611461}
@@ -982,7 +1027,61 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ab9eb09de6b1b849a3497f221ef4ae6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  texts: []
+  texts:
+  - words:
+    - text: Ayah!$
+      delay: 1
+    - text: Baik
+      delay: 0
+    - text: Yah.
+      delay: 0
+    - text: 
+      delay: 0
+  - words:
+    - text: Tapi
+      delay: 1
+    - text: Arka
+      delay: 0
+    - text: kangen
+      delay: 0
+    - text: sekali$
+      delay: 0
+    - text: sama
+      delay: 0
+    - text: Ayah.
+      delay: 0
+    - text: 
+      delay: 0
+  - words:
+    - text: Bisa!
+      delay: 1
+    - text: Seminggu
+      delay: 0
+    - text: itu$
+      delay: 0
+    - text: tujuh
+      delay: 0
+    - text: hari,
+      delay: 0
+    - text: ya?
+      delay: 0
+    - text: 
+      delay: 0
+  - words:
+    - text: Arka
+      delay: 1
+    - text: juga
+      delay: 0
+    - text: sayang
+      delay: 0
+    - text: Ayah,$
+      delay: 0
+    - text: Dadah
+      delay: 0
+    - text: Ayah!
+      delay: 0
+    - text: 
+      delay: 0
   fade_speed: 1
   newline_char: 36
   bubble: {fileID: 1623106793}
@@ -1640,7 +1739,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ab9eb09de6b1b849a3497f221ef4ae6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  texts: []
+  texts:
+  - words:
+    - text: Kalau
+      delay: 1
+    - text: Arka
+      delay: 0
+    - text: kangen
+      delay: 0
+    - text: sama$
+      delay: 0
+    - text: Ayah,
+      delay: 0
+    - text: minta
+      delay: 0
+    - text: Ibu
+      delay: 0
+    - text: untuk
+      delay: 0
+    - text: video$
+      delay: 0
+    - text: call
+      delay: 0
+    - text: dengan
+      delay: 0
+    - text: Ayah
+      delay: 0
+    - text: saja.
+      delay: 0
+    - text: 
+      delay: 0
+  - words:
+    - text: Ayah
+      delay: 1
+    - text: pulang
+      delay: 0
+    - text: minggu
+      delay: 0
+    - text: depan.$
+      delay: 0
+    - text: Arka
+      delay: 0
+    - text: bisa
+      delay: 0
+    - text: jadi
+      delay: 0
+    - text: anak
+      delay: 0
+    - text: baik$
+      delay: 0
+    - text: sampai
+      delay: 0
+    - text: minggu
+      delay: 0
+    - text: depan?
+      delay: 0
+    - text: 
+      delay: 0
   fade_speed: 1
   newline_char: 36
   bubble: {fileID: 756113585}
