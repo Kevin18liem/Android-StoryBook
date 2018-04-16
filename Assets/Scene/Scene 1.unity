@@ -246,7 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 488cd5c9a2891f04195f03f8149756ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Scene 4
+  sceneName: Scene-2
 --- !u!1 &178479573
 GameObject:
   m_ObjectHideFlags: 0
@@ -411,7 +411,6 @@ MonoBehaviour:
       delay: 1
   fade_speed: 3
   newline_char: 36
-  sprites: {fileID: 1879233982}
 --- !u!114 &218732283
 MonoBehaviour:
   m_ObjectHideFlags: 0

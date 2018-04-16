@@ -242,7 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 488cd5c9a2891f04195f03f8149756ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Scene 4
+  sceneName: DrawingBoard
 --- !u!114 &395631471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1010,7 +1010,6 @@ MonoBehaviour:
   allowFadeOut: 0
   speed: 1
   subtitle: {fileID: 1897431364}
-  sprite: {fileID: 0}
 --- !u!65 &756113587
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1338,7 +1337,6 @@ MonoBehaviour:
   allowFadeOut: 0
   speed: 1
   subtitle: {fileID: 499713260}
-  sprite: {fileID: 0}
 --- !u!1 &1623106793
 GameObject:
   m_ObjectHideFlags: 0
@@ -1373,7 +1371,6 @@ MonoBehaviour:
   allowFadeOut: 0
   speed: 1
   subtitle: {fileID: 719635939}
-  sprite: {fileID: 0}
 --- !u!95 &1623106795
 Animator:
   serializedVersion: 3

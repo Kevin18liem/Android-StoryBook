@@ -493,7 +493,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 488cd5c9a2891f04195f03f8149756ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Scene 4
+  sceneName: Scene-9b
 --- !u!114 &395631471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -715,7 +715,7 @@ MonoBehaviour:
   - words:
     - text: Halo,
       delay: 1
-    - text: arka.$
+    - text: Arka.$
       delay: 0
     - text: Bagaimana
       delay: 0
@@ -1074,7 +1074,7 @@ MonoBehaviour:
       delay: 0
     - text: sayang
       delay: 0
-    - text: Ayah,$
+    - text: Ayah.$
       delay: 0
     - text: Dadah
       delay: 0
