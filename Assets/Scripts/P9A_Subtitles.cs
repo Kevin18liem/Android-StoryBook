@@ -84,7 +84,7 @@ public class P9A_Subtitles : MonoBehaviour {
 		// if end of text ask for input
 		if (idx == texts[wordset].words.Length) {
 			subAllowed = false;
-			bubble.GetComponent<P9B_Bubble> ().allowFadeOut = true;
+			bubble.GetComponent<P9A_Bubble> ().allowFadeOut = true;
 			sprite.GetComponent<Animator> ().SetTrigger ("idle");
 		}
 	}

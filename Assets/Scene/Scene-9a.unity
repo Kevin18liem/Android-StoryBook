@@ -757,7 +757,7 @@ MonoBehaviour:
       delay: 0
     - text: 
       delay: 0
-  fade_speed: 1
+  fade_speed: 3
   newline_char: 36
   bubble: {fileID: 1503611461}
   sprite: {fileID: 15595698}
@@ -1082,7 +1082,7 @@ MonoBehaviour:
       delay: 0
     - text: 
       delay: 0
-  fade_speed: 1
+  fade_speed: 3
   newline_char: 36
   bubble: {fileID: 1623106793}
   sprite: {fileID: 1479183034}
@@ -1796,7 +1796,7 @@ MonoBehaviour:
       delay: 0
     - text: 
       delay: 0
-  fade_speed: 1
+  fade_speed: 3
   newline_char: 36
   bubble: {fileID: 756113585}
   sprite: {fileID: 15595698}

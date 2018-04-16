@@ -49,7 +49,7 @@ public class P9A_SequenceManager : MonoBehaviour {
 					callScreen.SetActive (false);
 					spriteAyah.GetComponent<Animator> ().SetTrigger ("lambai");
 					balonAyahKecil.GetComponent<Animator> ().SetTrigger ("in");
-					subtitleAyahKecil.GetComponent<P9B_Subtitles> ().DoSub (0);
+					subtitleAyahKecil.GetComponent<P9A_Subtitles> ().DoSub (0);
 					sequence++;
 					break;
 				}
@@ -60,7 +60,7 @@ public class P9A_SequenceManager : MonoBehaviour {
 					balonAnak.SetActive (true);
 					spriteAnak.GetComponent<Animator> ().SetTrigger ("ngomong");
 					balonAnak.GetComponent<Animator> ().SetTrigger ("in");
-					subtitleAnak.GetComponent<P9B_Subtitles> ().DoSub (0);
+					subtitleAnak.GetComponent<P9A_Subtitles> ().DoSub (0);
 					sequence++;
 					break;
 				}
@@ -70,7 +70,7 @@ public class P9A_SequenceManager : MonoBehaviour {
 					spriteAnak.GetComponent<Animator> ().SetFloat ("mood", 0);
 					spriteAnak.GetComponent<Animator> ().SetTrigger ("ngomong");
 					balonAnak.GetComponent<Animator> ().SetTrigger ("in");
-					subtitleAnak.GetComponent<P9B_Subtitles> ().DoSub (1);
+					subtitleAnak.GetComponent<P9A_Subtitles> ().DoSub (1);
 					sequence++;
 					break;
 				}
@@ -81,7 +81,7 @@ public class P9A_SequenceManager : MonoBehaviour {
 					balonAyahKecil.SetActive (true);
 					spriteAyah.GetComponent<Animator> ().SetTrigger ("ngomong");
 					balonAyahKecil.GetComponent<Animator> ().SetTrigger ("in");
-					subtitleAyahKecil.GetComponent<P9B_Subtitles> ().DoSub (1);
+					subtitleAyahKecil.GetComponent<P9A_Subtitles> ().DoSub (1);
 					sequence++;
 					break;
 				}
@@ -92,7 +92,7 @@ public class P9A_SequenceManager : MonoBehaviour {
 					balonAyahBesar.SetActive (true);
 					spriteAyah.GetComponent<Animator> ().SetTrigger ("ngomong");
 					balonAyahBesar.GetComponent<Animator> ().SetTrigger ("in");
-					subtitleAyahBesar.GetComponent<P9B_Subtitles> ().DoSub (0);
+					subtitleAyahBesar.GetComponent<P9A_Subtitles> ().DoSub (0);
 					sequence++;
 					break;
 				}
@@ -101,7 +101,7 @@ public class P9A_SequenceManager : MonoBehaviour {
 					Debug.Log ("seq 6 : ayah reply 3");
 					spriteAyah.GetComponent<Animator> ().SetTrigger ("ngomong");
 					balonAyahBesar.GetComponent<Animator> ().SetTrigger ("in");
-					subtitleAyahBesar.GetComponent<P9B_Subtitles> ().DoSub (1);
+					subtitleAyahBesar.GetComponent<P9A_Subtitles> ().DoSub (1);
 					sequence++;
 					break;
 				}
@@ -113,7 +113,7 @@ public class P9A_SequenceManager : MonoBehaviour {
 					spriteAnak.GetComponent<Animator> ().SetFloat ("mood", 1);
 					spriteAnak.GetComponent<Animator> ().SetTrigger ("ngomong");
 					balonAnak.GetComponent<Animator> ().SetTrigger ("in");
-					subtitleAnak.GetComponent<P9B_Subtitles> ().DoSub (2);
+					subtitleAnak.GetComponent<P9A_Subtitles> ().DoSub (2);
 					sequence++;
 					break;
 				}
@@ -124,7 +124,7 @@ public class P9A_SequenceManager : MonoBehaviour {
 					balonAyahKecil.SetActive (true);
 					spriteAyah.GetComponent<Animator> ().SetTrigger ("lambai");
 					balonAyahKecil.GetComponent<Animator> ().SetTrigger ("in");
-					subtitleAyahKecil.GetComponent<P9B_Subtitles> ().DoSub (2);
+					subtitleAyahKecil.GetComponent<P9A_Subtitles> ().DoSub (2);
 					sequence++;
 					break;
 				}
@@ -136,7 +136,7 @@ public class P9A_SequenceManager : MonoBehaviour {
 					spriteAnak.GetComponent<Animator> ().SetFloat ("mood", 1);
 					spriteAnak.GetComponent<Animator> ().SetTrigger ("ngomong");
 					balonAnak.GetComponent<Animator> ().SetTrigger ("in");
-					subtitleAnak.GetComponent<P9B_Subtitles> ().DoSub (3);
+					subtitleAnak.GetComponent<P9A_Subtitles> ().DoSub (3);
 					sequence++;
 					break;
 				}
