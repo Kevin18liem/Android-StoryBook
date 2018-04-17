@@ -545,7 +545,7 @@ MonoBehaviour:
   nextAnimation: {fileID: 2128391916}
   startWipe: 1
   allowWipe: 0
-  threshold: 10000
+  threshold: 100000
   boxSize: 10
 --- !u!1 &1038974088
 GameObject:
@@ -1126,7 +1126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 488cd5c9a2891f04195f03f8149756ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: ' Scene 4'
+  sceneName: Scene 4
 --- !u!114 &1960329020
 MonoBehaviour:
   m_ObjectHideFlags: 0
