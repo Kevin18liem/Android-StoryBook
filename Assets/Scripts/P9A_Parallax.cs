@@ -26,23 +26,28 @@ public class P9A_Parallax : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		/*if (SystemInfo.deviceType == DeviceType.Desktop)
+		Debug.Log (SystemInfo.deviceType);
+
+		if (SystemInfo.deviceType == DeviceType.Desktop)
 		{
+			Debug.Log ("get desktop");
 			if (Input.GetKey (KeyCode.RightArrow) && 
 			Vector3.Distance(transform.position, initPos) <= maxDelta) {
-			transform.position = Vector3.MoveTowards (transform.position, 
-				new Vector3 (initPos.x + maxDelta, transform.position.y, transform.position.z),
-				moveSpeed * Time.deltaTime);
+				Debug.Log ("get right");
+				transform.position = Vector3.MoveTowards (transform.position, 
+					new Vector3 (initPos.x + maxDelta, transform.position.y, transform.position.z),
+					moveSpeed * Time.deltaTime);
 			}
 			if (Input.GetKey (KeyCode.LeftArrow) && 
 				Vector3.Distance(transform.position, initPos) <= maxDelta) {
+				Debug.Log ("get left");
 				transform.position = Vector3.MoveTowards (transform.position, 
 					new Vector3 (initPos.x - maxDelta, transform.position.y, transform.position.z),
 					moveSpeed * Time.deltaTime);
 			}
-		}*/
+		}
 
-		//if (SystemInfo.deviceType == DeviceType.Handheld)
+		if (SystemInfo.deviceType == DeviceType.Handheld)
 		{
 			Debug.Log ("rotation= " + Input.gyro.rotationRateUnbiased.x + " " + Input.gyro.rotationRateUnbiased.y + " " + Input.gyro.rotationRateUnbiased.z);
 			detector.transform.Rotate (0, Input.gyro.rotationRateUnbiased.y, 0);
