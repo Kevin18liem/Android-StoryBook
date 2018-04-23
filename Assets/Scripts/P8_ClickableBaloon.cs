@@ -7,6 +7,7 @@ public class P8_ClickableBaloon : MonoBehaviour {
 
 	public string targetScene;
 	public bool allowClick = false;
+	public Sprite pressed;
 
 	// Use this for initialization
 	void Start () {
@@ -24,6 +25,8 @@ public class P8_ClickableBaloon : MonoBehaviour {
 			{
 				if (raycastHit.collider.name == gameObject.name)
 				{
+					GetComponent<Animator> ().enabled = false;
+					GetComponent<SpriteRenderer> ().sprite = pressed;
 					SceneManager.LoadScene (targetScene);
 				}
 
@@ -35,6 +38,8 @@ public class P8_ClickableBaloon : MonoBehaviour {
 			{
 				if (raycastHit.collider.name == gameObject.name)
 				{
+					GetComponent<Animator> ().enabled = false;
+					GetComponent<SpriteRenderer> ().sprite = pressed;
 					SceneManager.LoadScene (targetScene);
 				}
 
