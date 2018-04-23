@@ -30,17 +30,14 @@ public class P9A_Parallax : MonoBehaviour {
 
 		if (SystemInfo.deviceType == DeviceType.Desktop)
 		{
-			Debug.Log ("get desktop");
-			if (Input.GetKey (KeyCode.RightArrow) && 
+			if (Input.GetKey (KeyCode.LeftArrow) && 
 			Vector3.Distance(transform.position, initPos) <= maxDelta) {
-				Debug.Log ("get right");
 				transform.position = Vector3.MoveTowards (transform.position, 
 					new Vector3 (initPos.x + maxDelta, transform.position.y, transform.position.z),
 					moveSpeed * Time.deltaTime);
 			}
-			if (Input.GetKey (KeyCode.LeftArrow) && 
+			if (Input.GetKey (KeyCode.RightArrow) && 
 				Vector3.Distance(transform.position, initPos) <= maxDelta) {
-				Debug.Log ("get left");
 				transform.position = Vector3.MoveTowards (transform.position, 
 					new Vector3 (initPos.x - maxDelta, transform.position.y, transform.position.z),
 					moveSpeed * Time.deltaTime);
@@ -49,9 +46,22 @@ public class P9A_Parallax : MonoBehaviour {
 
 		if (SystemInfo.deviceType == DeviceType.Handheld)
 		{
-			//Debug.Log ("rotation= " + Input.gyro.rotationRateUnbiased.x + " " + Input.gyro.rotationRateUnbiased.y + " " + Input.gyro.rotationRateUnbiased.z);
+			Debug.Log ("acc = " + Input.acceleration.x + " " + Input.acceleration.y + " " + Input.acceleration.z);
+
+			pos = initPos.x + (Input.acceleration.x * 2);
+			if (pos > linear_limit) {
+				pos = linear_limit;
+			} else if (pos < -linear_limit) {
+				pos = -linear_limit;
+			}
+
+			transform.position = Vector3.Lerp (transform.position, 
+				new Vector3 (pos, initPos.y,initPos.z),
+				movement_speed);
+
+			/*
 			//detector.transform.Rotate (0, Input.gyro.rotationRateUnbiased.y, 0);
-			detector.transform.Rotate(0,Input.acceleration.x,0);
+			/*detector.transform.Rotate(0,Input.acceleration.x,0);
 			Debug.Log (detector.transform.eulerAngles);
 
 			if (detector.transform.eulerAngles.y < 180) {
@@ -71,6 +81,7 @@ public class P9A_Parallax : MonoBehaviour {
 			transform.position = Vector3.Lerp (transform.position, 
 				new Vector3 (pos, initPos.y,initPos.z),
 				movement_speed);
+			*/
 
 		}
 			
