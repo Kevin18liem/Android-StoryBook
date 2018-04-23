@@ -19,7 +19,7 @@ public class P9A_Parallax : MonoBehaviour {
 
 		initPos = transform.position;
 
-		Input.gyro.enabled = true;
+		//Input.gyro.enabled = true;
 
 	}
 	
@@ -49,8 +49,9 @@ public class P9A_Parallax : MonoBehaviour {
 
 		if (SystemInfo.deviceType == DeviceType.Handheld)
 		{
-			Debug.Log ("rotation= " + Input.gyro.rotationRateUnbiased.x + " " + Input.gyro.rotationRateUnbiased.y + " " + Input.gyro.rotationRateUnbiased.z);
-			detector.transform.Rotate (0, Input.gyro.rotationRateUnbiased.y, 0);
+			//Debug.Log ("rotation= " + Input.gyro.rotationRateUnbiased.x + " " + Input.gyro.rotationRateUnbiased.y + " " + Input.gyro.rotationRateUnbiased.z);
+			//detector.transform.Rotate (0, Input.gyro.rotationRateUnbiased.y, 0);
+			detector.transform.Rotate(0,Input.acceleration.x,0);
 			Debug.Log (detector.transform.eulerAngles);
 
 			if (detector.transform.eulerAngles.y < 180) {

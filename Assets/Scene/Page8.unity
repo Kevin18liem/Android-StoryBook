@@ -381,7 +381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12c787f8a74b22f4ea93d5720c71490b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScene: Scene-9a
+  targetScene: Scene-9b
   allowClick: 0
 --- !u!65 &286573943
 BoxCollider:
@@ -499,7 +499,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12c787f8a74b22f4ea93d5720c71490b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScene: Scene-9b
+  targetScene: Scene-9a
   allowClick: 0
 --- !u!65 &306209816
 BoxCollider:

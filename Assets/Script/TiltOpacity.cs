@@ -15,7 +15,7 @@ public class TiltOpacity : MonoBehaviour {
 	void Start () {
 		opacityValueFirstFamily = gameObject.GetComponent<SpriteRenderer>().color.r;
 		opacityValueAnotherFamily = anotherFamily.GetComponent<SpriteRenderer> ().color.r;
-		Input.gyro.enabled = true;
+		//Input.gyro.enabled = true;
 		seqMan = GameObject.Find ("SequenceManager");
 	}
 
@@ -23,13 +23,15 @@ public class TiltOpacity : MonoBehaviour {
 	void Update () {
 
 		if (seqMan.GetComponent<P6_SequenceManager> ().allowTilt) {
-			if (Input.gyro.attitude.x < -0.1f) {
+			//if (Input.gyro.attitude.x < -0.1f) {
+			if (Input.acceleration.x < -0.1f) {
 				//Debug.Log (opacityValue);
 				Debug.Log (Input.gyro.attitude.x);
 				ChangeFirstFamilyOpacity ();
 
 			} 
-			if (Input.gyro.attitude.x > 0.18f) {
+			//if (Input.gyro.attitude.x > 0.18f) {
+			if (Input.acceleration.x > 0.18f) {
 				ChangeAnotherFamilyOpacity ();
 			}
 
