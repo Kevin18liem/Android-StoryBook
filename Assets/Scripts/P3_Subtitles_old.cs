@@ -4,60 +4,69 @@ using UnityEngine;
 using UnityEngine.UI;
 using TextItemClass;
 
-public class P3_Subtitles : MonoBehaviour {
+public class P3_Subtitles_old : MonoBehaviour {
 
+//	public GameObject anakIbuNext;
+//	public string trigger;
+//	public Sprite anakIbuNextSprite;
+//	public Sprite bapaMobilNextSprite;
+//	public GameObject bapaMobilNext;
+//	public GameObject nextText;
 	public TextItem[] texts;		// texts to be displayed
-	public float fade_speed = 3;	// fade speed
+	public float fade_speed = 1;	// fade speed
 	public char newline_char = '$';	// char to be detected as newline
-	public GameObject holder;
-	//public GameObject sprite;
+	public GameObject nextPage;
+	public GameObject plane;
 
 	private string text_buffer;		// buffer to save string
 	private int wordset;			// which wordset to display
 	private int idx;				// which word to style
 	private bool waiting;			// true if waiting
 	private bool in_anim;			// in fade animation
+	private bool wait_input;		// true if waiting for input
 	private string highlighted;		// highlighted part
 	private CanvasGroup cg;			// canvas group with alpha
 	private IEnumerator speller;
-	private GameObject seqManager;
-	private bool subAllowed = false;
 
 	// Use this for initialization
 	void Start () {
 
 		// initialization
 		cg = gameObject.GetComponent<CanvasGroup> ();
-
 		idx = 0;
 		wordset = 0;
 		waiting = false;
 		in_anim = false;
+		wait_input = false;
 		cg.alpha = 0;
 		cg.interactable = false;
-		seqManager = GameObject.Find ("SequenceManager");
 
 	}
 
 	// Update is called once per frame
 	void Update () {
 
-		if (subAllowed) {
-			// play text if not in fade animation and waiting for input and not end of texts
-			if (!waiting && !in_anim && wordset < texts.Length) {
-				if (idx < texts [wordset].words.Length) {
-					speller = Spell (texts [wordset].words [idx].delay);
-					StartCoroutine (speller);
-				}
+		if (wordset == texts.Length - 1 && (idx == texts [wordset].words.Length)) {
+			nextPage.SetActive (true);
+			plane.GetComponent<Wiper> ().allowWipe = true;
+		}
+
+		// play text if not in fade animation and waiting for input and not end of texts
+		if (!waiting && !in_anim && wordset < texts.Length) {
+			if (idx < texts [wordset].words.Length) {
+				speller = Spell (texts [wordset].words [idx].delay);
+				StartCoroutine (speller);
 			}
 		}
 
-	}
+		// when input got, change text if there are still more text to display
+		if ((((Input.touchCount > 0) && (Input.GetTouch (0).phase == TouchPhase.Began)) || Input.GetMouseButtonDown (0)) && wordset < texts.Length && !in_anim) {
+			StopCoroutine (speller);
+			waiting = false;
+			in_anim = false;
+			ChangeText ();
+		}
 
-	public void DoSub(int _wordset) {
-		idx = 0;
-		wordset = _wordset;
-		subAllowed = true;
 	}
 
 	IEnumerator Spell (float sec) {
@@ -83,18 +92,8 @@ public class P3_Subtitles : MonoBehaviour {
 
 		// if end of text ask for input
 		if (idx == texts[wordset].words.Length) {
-			subAllowed = false;
-			if (wordset == texts.Length - 1) {
-				seqManager.GetComponent<P3_SequenceManager> ().inSequence = false;
-
-			} else {
-				holder.GetComponent<P3_SubHolder> ().allowClick = true;
-			}
+			wait_input = true;
 		}
-	}
-
-	public void FadeOut() {
-		StartCoroutine (Fade (false));
 	}
 
 	IEnumerator Fade(bool fadeIn) {
@@ -111,8 +110,6 @@ public class P3_Subtitles : MonoBehaviour {
 				cg.alpha -= Time.deltaTime / 2 * fade_speed;
 				yield return null;
 			}
-			//Debug.Log ("seq set to false");
-			seqManager.GetComponent<P3_SequenceManager> ().inSequence = false;
 		}
 		in_anim = false;
 	}
@@ -163,10 +160,6 @@ public class P3_Subtitles : MonoBehaviour {
 		text_buffer = text_buffer.Replace (newline_char, '\n');
 
 		GetComponent<Text> ().text = text_buffer;
-	}
-
-	public void setToEnd() {
-		idx = texts [wordset].words.Length - 1;
 	}
 
 }
