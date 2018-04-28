@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class P15_SubtitleHolder : MonoBehaviour {
+public class P13_SubHolder : MonoBehaviour {
 
 	public bool allowClick = false;	// true if trigger allowed
 	public float speed = 1;				// animation speed
@@ -17,19 +17,20 @@ public class P15_SubtitleHolder : MonoBehaviour {
 	void Update () {
 
 		if ((Input.touchCount > 0) && (Input.GetTouch (0).phase == TouchPhase.Began)) {
-
 			Ray raycast = Camera.main.ScreenPointToRay (Input.GetTouch (0).position);
 			RaycastHit raycastHit;
 			if (Physics.Raycast (raycast, out raycastHit)) {
 				if (raycastHit.collider.name == gameObject.name) {
 					if (allowClick) {
 						allowClick = false;
-					}else {
-						subtitle.GetComponent<P15_Subtitle> ().setToEnd ();
+						subtitle.GetComponent<P13_Subtitles> ().FadeOut ();
+					} else {
+						subtitle.GetComponent<P13_Subtitles> ().setToEnd ();
 					}
-
 				}
-			} 
+
+			}
+				
 		} else if (Input.GetMouseButtonDown (0)) {
 			Ray raycast = Camera.main.ScreenPointToRay (Input.mousePosition);
 			RaycastHit raycastHit;
@@ -37,12 +38,13 @@ public class P15_SubtitleHolder : MonoBehaviour {
 				if (raycastHit.collider.name == gameObject.name) {
 					if (allowClick) {
 						allowClick = false;
-					}else {
-						subtitle.GetComponent<P15_Subtitle> ().setToEnd ();
+						subtitle.GetComponent<P13_Subtitles> ().FadeOut ();
+					} else {
+						subtitle.GetComponent<P13_Subtitles> ().setToEnd ();
 					}
-
 				}
-			} 
+
+			}
 		}
 
 	}

@@ -18,33 +18,33 @@ public class P3_SubHolder : MonoBehaviour {
 
 		if ((Input.touchCount > 0) && (Input.GetTouch (0).phase == TouchPhase.Began)) {
 
-			if (allowClick) {
-				Ray raycast = Camera.main.ScreenPointToRay (Input.GetTouch (0).position);
-				RaycastHit raycastHit;
-				if (Physics.Raycast (raycast, out raycastHit)) {
-					if (raycastHit.collider.name == gameObject.name) {
+			Ray raycast = Camera.main.ScreenPointToRay (Input.GetTouch (0).position);
+			RaycastHit raycastHit;
+			if (Physics.Raycast (raycast, out raycastHit)) {
+				if (raycastHit.collider.name == gameObject.name) {
+					if (allowClick) {
 						allowClick = false;
 						subtitle.GetComponent<P3_Subtitles> ().FadeOut ();
+					} else {
+						subtitle.GetComponent<P3_Subtitles> ().setToEnd ();
 					}
-
 				}
-			} else {
-				subtitle.GetComponent<P15_Subtitle> ().setToEnd ();
+
 			}
+			
 		} else if (Input.GetMouseButtonDown (0)) {
-			if (allowClick) {
-				Ray raycast = Camera.main.ScreenPointToRay (Input.mousePosition);
-				RaycastHit raycastHit;
-				if (Physics.Raycast (raycast, out raycastHit)) {
-					if (raycastHit.collider.name == gameObject.name) {
+			Ray raycast = Camera.main.ScreenPointToRay (Input.mousePosition);
+			RaycastHit raycastHit;
+			if (Physics.Raycast (raycast, out raycastHit)) {
+				if (raycastHit.collider.name == gameObject.name) {
+					if (allowClick) {
 						allowClick = false;
 						subtitle.GetComponent<P3_Subtitles> ().FadeOut ();
-
+					} else {
+						subtitle.GetComponent<P3_Subtitles> ().setToEnd ();
 					}
-
 				}
-			} else {
-				subtitle.GetComponent<P3_Subtitles> ().setToEnd ();
+
 			}
 		}
 
