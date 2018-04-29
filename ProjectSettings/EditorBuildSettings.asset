@@ -11,10 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene/Scene-2.unity
     guid: 4e26442faf1746b4fbc70a087b4d6a41
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scene/WipeScene.unity
     guid: ca031b0e84dfe4dc2a07bc7a75628a30
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scene/Scene-3.unity
     guid: 1881076ef40acc249b70a7fa365eae46
   - enabled: 1
@@ -42,14 +42,17 @@ EditorBuildSettings:
     path: Assets/Scene/Scene-10.unity
     guid: d4551f01e5308c04f8b656b9a5b8a676
   - enabled: 1
+    path: Assets/Scene/Scene-11.unity
+    guid: 177d64ea649af6b4283f67f75f726a67
+  - enabled: 1
     path: Assets/Scene/DrawingBoard.unity
     guid: 6f7a0a3fb9e541a43b91a424bd6bb5ca
+  - enabled: 1
+    path: Assets/Scene/LoadPicture.unity
+    guid: de47d4119faeb1d4f9161d0110e790c0
   - enabled: 1
     path: Assets/Scene/Scene-14.unity
     guid: 6389f78b97ae90540b86971ac65fab03
   - enabled: 1
     path: Assets/Scene/Scene-15.unity
     guid: 907579525f0b0fb4a8887bf2a8f89a06
-  - enabled: 0
-    path: Assets/Scene/LoadPicture.unity
-    guid: de47d4119faeb1d4f9161d0110e790c0
