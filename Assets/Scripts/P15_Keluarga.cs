@@ -51,6 +51,12 @@ public class P15_Keluarga : MonoBehaviour {
 			}
 
 		}
+
+		if (Input.GetKeyDown (KeyCode.Space) && allowPinch && !pinchDone) {
+			pinchDone = true;
+			anim.SetTrigger ("peluk");
+			subtitle.GetComponent<P15_Subtitle> ().FadeOut ();
+		}
 		
 	}
 
