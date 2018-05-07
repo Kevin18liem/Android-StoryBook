@@ -19,7 +19,6 @@ public class changePage : MonoBehaviour {
 			balikHalaman.GetComponent<BalikHalaman> ().sceneName = sceneName;
 			if (next) {
 				balikHalaman.GetComponent<Animator> ().SetTrigger ("balik");
-
 			} else {
 				balikHalaman.GetComponent<Animator> ().SetTrigger ("balik-sebelum");
 
