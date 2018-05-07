@@ -8,6 +8,7 @@ public class P15_SequenceManager : MonoBehaviour {
 	public GameObject subtitle;
 	public GameObject keluargaSprite;
 	public GameObject mobilSprite;
+	GameObject settingsPopup;
 	public bool inSequence;
 
 	public int sequence;
@@ -15,7 +16,8 @@ public class P15_SequenceManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		settingsPopup = GameObject.Find("Settings");
+		settingsPopup.SetActive (false);
 		sequence = 0;
 		inSequence = false;
 		inCoroutine = false;
@@ -24,7 +26,6 @@ public class P15_SequenceManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-
 		if (!inSequence && !inCoroutine) {
 			inSequence = true;
 			switch (sequence) {
