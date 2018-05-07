@@ -39,7 +39,7 @@ public class P2_Subtitles_3 : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		Debug.Log (startText);
+		Debug.Log ("3 " + startText);
 
 		if (startText) {
 			// play text if not in fade animation and waiting for input and not end of texts
