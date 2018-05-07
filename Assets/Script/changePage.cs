@@ -5,15 +5,25 @@ using UnityEngine.SceneManagement;
 
 public class changePage : MonoBehaviour {
 
+	public bool next = true;
 	public GameObject balikHalaman;
 
 	[SerializeField]
 	public string sceneName;
 	public void changeMenuScene() {
+		GameObject UI = GameObject.Find ("UI");
+		if (UI) {
+			UI.SetActive (false);
+		}
 		if (balikHalaman) {
-			Debug.Log ("balikhalaman");
 			balikHalaman.GetComponent<BalikHalaman> ().sceneName = sceneName;
-			balikHalaman.GetComponent<Animator> ().SetTrigger ("balik");
+			if (next) {
+				balikHalaman.GetComponent<Animator> ().SetTrigger ("balik");
+
+			} else {
+				balikHalaman.GetComponent<Animator> ().SetTrigger ("balik-sebelum");
+
+			}
 		} else {
 			SceneManager.LoadScene (sceneName);	
 		}
