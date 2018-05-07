@@ -630,8 +630,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 488cd5c9a2891f04195f03f8149756ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  next: 1
-  balikHalaman: {fileID: 0}
+  next: 0
+  balikHalaman: {fileID: 965211912}
   sceneName: Page8
 --- !u!114 &647672509
 MonoBehaviour:
@@ -767,7 +767,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   next: 1
-  balikHalaman: {fileID: 0}
+  balikHalaman: {fileID: 965211912}
   sceneName: Scene-11
 --- !u!114 &841300832
 MonoBehaviour:
@@ -864,6 +864,7 @@ GameObject:
   - component: {fileID: 965211915}
   - component: {fileID: 965211914}
   - component: {fileID: 965211913}
+  - component: {fileID: 965211916}
   m_Layer: 0
   m_Name: balik
   m_TagString: Untagged
@@ -945,6 +946,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &965211916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 965211912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7b937c06dd8f8243a237ca0e540ef13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: 
 --- !u!1 &970801549
 GameObject:
   m_ObjectHideFlags: 0

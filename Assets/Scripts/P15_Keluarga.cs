@@ -29,7 +29,6 @@ public class P15_Keluarga : MonoBehaviour {
 			Touch touch2 = Input.GetTouch(1);
 
 			if (touch1.phase == TouchPhase.Began || touch2.phase == TouchPhase.Began) {
-				Debug.Log ("begin");
 				deltaPos = Vector3.Distance (touch1.position, touch2.position);
 				isPinching = true;
 			}
@@ -62,6 +61,11 @@ public class P15_Keluarga : MonoBehaviour {
 
 	public void FinishPinch() {
 		seqManager.GetComponent<P15_SequenceManager> ().FinishPinch ();
+	}
+
+	public void MoveSprite() {
+		Debug.Log ("move");
+		transform.position = new Vector3 (transform.position.x, transform.position.y - 0.3f, transform.position.z);
 	}
 
 }
