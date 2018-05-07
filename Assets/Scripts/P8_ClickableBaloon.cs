@@ -27,7 +27,8 @@ public class P8_ClickableBaloon : MonoBehaviour {
 				{
 					GetComponent<Animator> ().enabled = false;
 					GetComponent<SpriteRenderer> ().sprite = pressed;
-					SceneManager.LoadScene (targetScene);
+					GetComponent<changePage> ().changeMenuScene ();
+					//SceneManager.LoadScene (targetScene);
 				}
 
 			}
@@ -40,7 +41,7 @@ public class P8_ClickableBaloon : MonoBehaviour {
 				{
 					GetComponent<Animator> ().enabled = false;
 					GetComponent<SpriteRenderer> ().sprite = pressed;
-					SceneManager.LoadScene (targetScene);
+					GetComponent<changePage> ().changeMenuScene ();
 				}
 
 			}

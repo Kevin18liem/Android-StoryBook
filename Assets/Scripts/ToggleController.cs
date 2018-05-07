@@ -112,7 +112,7 @@ public class ToggleController : MonoBehaviour
 	Vector3 SmoothMove(GameObject toggleHandle, float startPosX, float endPosX)
 	{
 		
-		Vector3 position = new Vector3 (Mathf.Lerp(startPosX, endPosX, t += speed * Time.deltaTime), 0f, 0f);
+		Vector3 position = new Vector3 (Mathf.Lerp(startPosX, endPosX, t += speed * 1), 0f, 0f);
 		StopSwitching();
 		return position;
 	}
@@ -120,7 +120,7 @@ public class ToggleController : MonoBehaviour
 	Color SmoothColor(Color startCol, Color endCol)
 	{
 		Color resultCol;
-		resultCol = Color.Lerp(startCol, endCol, t += speed * Time.deltaTime);
+		resultCol = Color.Lerp(startCol, endCol, t += speed * 1);
 		return resultCol;
 	}
 
@@ -128,7 +128,7 @@ public class ToggleController : MonoBehaviour
 	{
 		CanvasGroup alphaVal;
 		alphaVal = alphaObj.gameObject.GetComponent<CanvasGroup>();
-		alphaVal.alpha = Mathf.Lerp(startAlpha, endAlpha, t += speed * Time.deltaTime);
+		alphaVal.alpha = Mathf.Lerp(startAlpha, endAlpha, t += speed * 1);
 		return alphaVal;
 	}
 
