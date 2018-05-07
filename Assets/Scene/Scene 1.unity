@@ -246,6 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 488cd5c9a2891f04195f03f8149756ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  balikHalaman: {fileID: 599562471}
   sceneName: Scene-2
 --- !u!1 &178479573
 GameObject:
@@ -411,6 +412,9 @@ MonoBehaviour:
       delay: 1
   fade_speed: 3
   newline_char: 36
+  spriteAnak: {fileID: 1596274138}
+  spriteAyah: {fileID: 1074658247}
+  spriteIbu: {fileID: 1514761615}
 --- !u!114 &218732283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -581,6 +585,110 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1 &599562471
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 599562474}
+  - component: {fileID: 599562473}
+  - component: {fileID: 599562472}
+  - component: {fileID: 599562475}
+  m_Layer: 0
+  m_Name: BalikHalaman
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!95 &599562472
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 599562471}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9d29145f393d0844cbf5f5333a7dd4bf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!212 &599562473
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 599562471}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 179339c8b1f3c634bbfab09d166b7e33, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.1, y: 0.1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+--- !u!4 &599562474
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 599562471}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &599562475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 599562471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7b937c06dd8f8243a237ca0e540ef13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: 
 --- !u!1 &685345905
 GameObject:
   m_ObjectHideFlags: 0
@@ -654,7 +762,6 @@ GameObject:
   - component: {fileID: 1074658250}
   - component: {fileID: 1074658249}
   - component: {fileID: 1074658252}
-  - component: {fileID: 1074658251}
   - component: {fileID: 1074658253}
   m_Layer: 0
   m_Name: Ayah
@@ -737,21 +844,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
---- !u!114 &1074658251
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1074658247}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e406ed78391b6494ca5abcab25eec98c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trigger: ngelus
-  anim: {fileID: 0}
-  trigger_allowed: 0
-  speed: 1.5
 --- !u!65 &1074658252
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1358,7 +1450,6 @@ GameObject:
   - component: {fileID: 1596274140}
   - component: {fileID: 1596274142}
   - component: {fileID: 1596274143}
-  - component: {fileID: 1596274144}
   m_Layer: 0
   m_Name: Anak
   m_TagString: Untagged
@@ -1465,22 +1556,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trigger: terkejut
   anim: {fileID: 0}
-  trigger_allowed: 1
-  speed: 1.5
---- !u!114 &1596274144
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1596274138}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e406ed78391b6494ca5abcab25eec98c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trigger: lanjut_terkejut
-  anim: {fileID: 0}
-  trigger_allowed: 1
+  trigger_allowed: 0
   speed: 1.5
 --- !u!1 &1861841105
 GameObject:

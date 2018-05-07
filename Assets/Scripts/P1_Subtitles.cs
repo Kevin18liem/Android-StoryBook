@@ -9,6 +9,9 @@ public class P1_Subtitles : MonoBehaviour {
 	public TextItem[] texts;		// texts to be displayed
 	public float fade_speed = 1;	// fade speed
 	public char newline_char = '$';	// char to be detected as newline
+	public GameObject spriteAnak;
+	public GameObject spriteAyah;
+	public GameObject spriteIbu;
 
 	private string text_buffer;		// buffer to save string
 	private int wordset;			// which wordset to display
@@ -67,6 +70,15 @@ public class P1_Subtitles : MonoBehaviour {
 			waiting = true;
 			yield return new WaitForSeconds (sec);
 
+			// events
+			if (wordset == 0 && idx == 5) {
+				spriteIbu.GetComponent<Animator> ().SetTrigger ("menunduk");
+			}
+			if (wordset == 1 && idx == 0) {
+				spriteAyah.GetComponent<Animator> ().SetTrigger ("ngelus");
+				spriteAnak.GetComponent<Animator> ().SetTrigger ("terkejut");
+			}
+
 			// Highlight
 			HighlightText();
 
@@ -79,6 +91,11 @@ public class P1_Subtitles : MonoBehaviour {
 		// if end of text ask for input
 		if (idx == texts[wordset].words.Length) {
 			wait_input = true;
+			if (wordset == 1) {
+				spriteIbu.GetComponent<P1_TriggerAnimation> ().trigger_allowed = true;
+				spriteAyah.GetComponent<P1_TriggerAnimation> ().trigger_allowed = true;		
+				spriteAnak.GetComponent<P1_TriggerAnimation> ().trigger_allowed = true;
+			}
 		}
 	}
 
