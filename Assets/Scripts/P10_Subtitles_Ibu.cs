@@ -70,7 +70,10 @@ public class P10_Subtitles_Ibu : MonoBehaviour {
 			yield return new WaitForSeconds (sec);
 
 			// Highlight
-			HighlightText();
+			if (PlayerPrefs.GetString ("HighlightText") == "on") {
+				HighlightText ();
+				Debug.Log ("On highlight");
+			}
 
 			// increment
 			idx++;
