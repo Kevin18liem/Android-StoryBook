@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ToggleController : MonoBehaviour 
 {
 	public  bool isOn;
-
+	public string buttonName;
 	public Color onColorBg;
 	public Color offColorBg;
 
@@ -40,6 +40,12 @@ public class ToggleController : MonoBehaviour
 		float toggleSizeX = toggle.sizeDelta.x;
 		onPosX = (toggleSizeX / 2) - (handleSize/2) - handleOffset;
 		offPosX = onPosX * -1;
+		if (PlayerPrefs.GetString (buttonName) == "on") {
+			isOn = true;
+		} else {
+			isOn = false;
+		}
+
 
 	}
 
@@ -52,6 +58,7 @@ public class ToggleController : MonoBehaviour
 			handleTransform.localPosition = new Vector3(onPosX, 0f, 0f);
 			onIcon.gameObject.SetActive(true);
 			offIcon.gameObject.SetActive(false);
+
 		}
 		else
 		{
@@ -73,7 +80,7 @@ public class ToggleController : MonoBehaviour
 
 	public void DoYourStaff()
 	{
-		Debug.Log(isOn);
+		Debug.Log("Toggle is"+isOn);
 	}
 
 	public void Switching()
@@ -97,6 +104,7 @@ public class ToggleController : MonoBehaviour
 			Transparency (onIcon, 1f, 0f);
 			Transparency (offIcon, 0f, 1f);
 			handleTransform.localPosition = SmoothMove(handle, onPosX, offPosX);
+			PlayerPrefs.SetString (buttonName, "off");
 		}
 		else 
 		{
@@ -104,6 +112,8 @@ public class ToggleController : MonoBehaviour
 			Transparency (onIcon, 0f, 1f);
 			Transparency (offIcon, 1f, 0f);
 			handleTransform.localPosition = SmoothMove(handle, offPosX, onPosX);
+			PlayerPrefs.SetString (buttonName, "on");
+
 		}
 			
 	}

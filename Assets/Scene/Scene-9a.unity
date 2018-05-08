@@ -374,7 +374,7 @@ MonoBehaviour:
   moveSpeed: 5
   linear_limit: 3.7
   angle_limit: 45
-  movement_speed: 1
+  movement_speed: 5
   detector: {fileID: 2037748238}
 --- !u!1 &314794494
 GameObject:
