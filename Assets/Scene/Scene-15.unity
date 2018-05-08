@@ -3507,7 +3507,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 197.3, y: 97.72974}
+  m_AnchoredPosition: {x: 197.3, y: 137}
   m_SizeDelta: {x: 204.8, y: 126}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1984044674
@@ -3540,14 +3540,27 @@ MonoBehaviour:
     - text: 
       delay: 1
   - words:
+    - text: Kata
+      delay: 1
+    - text: Ayah,
+      delay: 1
+    - text: aku
+      delay: 0
+    - text: bisa$
+      delay: 0
+    - text: menandai
+      delay: 0
+    - text: kalenderku
+      delay: 0
+    - text: lagi.
+      delay: 0
+    - text: 
+      delay: 1
+  - words:
     - text: Sampai
       delay: 1
     - text: ketemu$
       delay: 1
-    - text: tujuh
-      delay: 0
-    - text: hari
-      delay: 0
     - text: lagi,
       delay: 0
     - text: Ayah!

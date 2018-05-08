@@ -38,10 +38,9 @@ public class P8_SequenceManager : MonoBehaviour {
 			case 1: // ibu gerak, muncul tombol
 				{
 					ibuSprite.GetComponent<Animator> ().SetTrigger ("gerak");
-					telepon.GetComponent<Animator> ().SetTrigger ("muncul");
-					telepon.GetComponent<P8_ClickableBaloon> ().allowClick = true;
 					videocall.GetComponent<Animator> ().SetTrigger ("muncul");
 					videocall.GetComponent<P8_ClickableBaloon> ().allowClick = true;
+					StartCoroutine (WaitForTelepon ());
 					break;
 				}
 			default:
@@ -51,6 +50,12 @@ public class P8_SequenceManager : MonoBehaviour {
 			}
 		}
 
+	}
+
+	IEnumerator WaitForTelepon() {
+		yield return new WaitForSeconds (1);
+		telepon.GetComponent<Animator> ().SetTrigger ("muncul");
+		telepon.GetComponent<P8_ClickableBaloon> ().allowClick = true;
 	}
 
 }
