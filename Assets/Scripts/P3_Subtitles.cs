@@ -20,9 +20,9 @@ public class P3_Subtitles : MonoBehaviour {
 	private string highlighted;		// highlighted part
 	private CanvasGroup cg;			// canvas group with alpha
 	private IEnumerator speller;
+	private bool waitingForInput = false;
 	private GameObject seqManager;
 	private bool subAllowed = false;
-	private bool clickAllowed = false;
 
 	// Use this for initialization
 	void Start () {
@@ -51,15 +51,16 @@ public class P3_Subtitles : MonoBehaviour {
 					StartCoroutine (speller);
 				}
 			}
-			if (clickAllowed) {
-				clickAllowed = false;
-				Debug.Log ("test masuk");
-				if (((Input.touchCount > 0) && (Input.GetTouch (0).phase == TouchPhase.Began)) || (Input.GetMouseButtonDown(0))) {
-					FadeOut ();
-				}
-			} 
-
 		}
+		if (Input.GetKeyDown (KeyCode.Mouse0) || (Input.touchCount == 1 && Input.GetTouch (0).phase == TouchPhase.Began)) {
+			if (waitingForInput) {
+				waitingForInput = false;
+				FadeOut ();
+			} else {
+				setToEnd ();
+			}
+		}
+
 	}
 
 	public void DoSub(int _wordset) {
@@ -95,13 +96,17 @@ public class P3_Subtitles : MonoBehaviour {
 		// if end of text ask for input
 		if (idx == texts[wordset].words.Length) {
 			subAllowed = false;
-			clickAllowed = true;
+			//clickAllowed = true;
 			if (wordset == texts.Length - 1) {
 				seqManager.GetComponent<P3_SequenceManager> ().inSequence = false;
-			} 
-//			else {
-//				holder.GetComponent<P3_SubHolder> ().allowClick = true;
-//			}
+			} else {
+				waitingForInput = true;
+			}
+			/*
+			else {
+				holder.GetComponent<P3_SubHolder> ().allowClick = true;
+			}
+			*/
 		}
 	}
 
