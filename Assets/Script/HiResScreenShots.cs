@@ -35,4 +35,8 @@ public class HiResScreenShots : MonoBehaviour {
 	    //Save image to file
 	    System.IO.File.WriteAllBytes(path, imageBytes);
 	}
+	public void TakeSS() {
+		crayon.SetActive(false);
+		StartCoroutine(captureScreenshot());
+	}
 }
