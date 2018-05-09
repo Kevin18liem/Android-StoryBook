@@ -20,6 +20,7 @@ public class P3_Subtitles : MonoBehaviour {
 	private string highlighted;		// highlighted part
 	private CanvasGroup cg;			// canvas group with alpha
 	private IEnumerator speller;
+	private bool waitingForInput = false;
 	private GameObject seqManager;
 	private bool subAllowed = false;
 
@@ -49,6 +50,14 @@ public class P3_Subtitles : MonoBehaviour {
 					speller = Spell (texts [wordset].words [idx].delay);
 					StartCoroutine (speller);
 				}
+			}
+		}
+		if (Input.GetKeyDown (KeyCode.Mouse0) || (Input.touchCount == 1 && Input.GetTouch (0).phase == TouchPhase.Began)) {
+			if (waitingForInput) {
+				waitingForInput = false;
+				FadeOut ();
+			} else {
+				setToEnd ();
 			}
 		}
 
@@ -87,12 +96,17 @@ public class P3_Subtitles : MonoBehaviour {
 		// if end of text ask for input
 		if (idx == texts[wordset].words.Length) {
 			subAllowed = false;
+			//clickAllowed = true;
 			if (wordset == texts.Length - 1) {
 				seqManager.GetComponent<P3_SequenceManager> ().inSequence = false;
-
 			} else {
+				waitingForInput = true;
+			}
+			/*
+			else {
 				holder.GetComponent<P3_SubHolder> ().allowClick = true;
 			}
+			*/
 		}
 	}
 
