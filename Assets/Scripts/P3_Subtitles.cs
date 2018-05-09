@@ -22,6 +22,7 @@ public class P3_Subtitles : MonoBehaviour {
 	private IEnumerator speller;
 	private GameObject seqManager;
 	private bool subAllowed = false;
+	private bool clickAllowed = false;
 
 	// Use this for initialization
 	void Start () {
@@ -50,8 +51,15 @@ public class P3_Subtitles : MonoBehaviour {
 					StartCoroutine (speller);
 				}
 			}
-		}
+			if (clickAllowed) {
+				clickAllowed = false;
+				Debug.Log ("test masuk");
+				if (((Input.touchCount > 0) && (Input.GetTouch (0).phase == TouchPhase.Began)) || (Input.GetMouseButtonDown(0))) {
+					FadeOut ();
+				}
+			} 
 
+		}
 	}
 
 	public void DoSub(int _wordset) {
@@ -87,12 +95,13 @@ public class P3_Subtitles : MonoBehaviour {
 		// if end of text ask for input
 		if (idx == texts[wordset].words.Length) {
 			subAllowed = false;
+			clickAllowed = true;
 			if (wordset == texts.Length - 1) {
 				seqManager.GetComponent<P3_SequenceManager> ().inSequence = false;
-
-			} else {
-				holder.GetComponent<P3_SubHolder> ().allowClick = true;
-			}
+			} 
+//			else {
+//				holder.GetComponent<P3_SubHolder> ().allowClick = true;
+//			}
 		}
 	}
 
