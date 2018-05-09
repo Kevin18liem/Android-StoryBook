@@ -39,7 +39,7 @@ public class P7_Ayah_2 : MonoBehaviour {
 		yield return new WaitForSeconds (2);
 		if (!isStarting) {
 			anakNext.GetComponent<Animator> ().SetTrigger ("toNgomong");
-			scriptAnakNext.GetComponent<P7_Subtitles_Anak> ().isStart = true;
+			//scriptAnakNext.GetComponent<P7_Subtitles_Anak> ().isStart = true;
 			bubbleAnakNext.SetActive (true);
 			isStarting = true;
 		}

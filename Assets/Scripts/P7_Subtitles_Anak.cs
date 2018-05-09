@@ -6,25 +6,22 @@ using TextItemClass;
 
 public class P7_Subtitles_Anak : MonoBehaviour {
 
-	public string trigger;
-	public bool isStart = false;
-	public bool isDone = false;
-	public GameObject scriptIbuNext;
-	public GameObject anakSprite;
-	public GameObject nextText;
-	public GameObject nextTextIbu;
-	public GameObject ibuAnimNext;
 	public TextItem[] texts;		// texts to be displayed
-	public float fade_speed = 1;	// fade speed
+	public float fade_speed = 3;	// fade speed
 	public char newline_char = '$';	// char to be detected as newline
+	public GameObject anakSedih;
+	public GameObject ayahSatu;
+
 	private string text_buffer;		// buffer to save string
 	private int wordset;			// which wordset to display
 	private int idx;				// which word to style
 	private bool waiting;			// true if waiting
 	private bool in_anim;			// in fade animation
-	private bool wait_input;		// true if waiting for input
 	private string highlighted;		// highlighted part
 	private CanvasGroup cg;			// canvas group with alpha
+	private IEnumerator speller;
+	private GameObject seqManager;
+	private bool subAllowed = false;
 
 	// Use this for initialization
 	void Start () {
@@ -36,33 +33,31 @@ public class P7_Subtitles_Anak : MonoBehaviour {
 		wordset = 0;
 		waiting = false;
 		in_anim = false;
-		wait_input = false;
 		cg.alpha = 0;
 		cg.interactable = false;
+		seqManager = GameObject.Find ("SequenceManager");
+
 	}
 
 	// Update is called once per frame
 	void Update () {
-		if (isStart) {
+
+		if (subAllowed) {
 			// play text if not in fade animation and waiting for input and not end of texts
-			if (!waiting && !in_anim && !wait_input && wordset < texts.Length) {
+			if (!waiting && !in_anim && wordset < texts.Length) {
 				if (idx < texts [wordset].words.Length) {
-					StartCoroutine (Spell (texts [wordset].words [idx].delay));
-				}
-			}
-			// when input got, change text if there are still more text to display
-			if (wait_input) {
-				if ((((Input.touchCount > 0) && (Input.GetTouch (0).phase == TouchPhase.Began)) || Input.GetMouseButtonDown (0))) {
-					wait_input = false;
-					nextText.GetComponent<Animator>().SetTrigger ("fadeout");
-					ChangeText ();
-					//Script Ibu
-					nextTextIbu.GetComponent<Animator>().SetTrigger ("fadein");
-					ibuAnimNext.GetComponent<Animator>().SetTrigger ("toNgomong");
-					scriptIbuNext.GetComponent<P7_Subtitles_Ibu_2>().isStart = true;
+					speller = Spell (texts [wordset].words [idx].delay);
+					StartCoroutine (speller);
 				}
 			}
 		}
+
+	}
+
+	public void DoSub(int _wordset) {
+		idx = 0;
+		wordset = _wordset;
+		subAllowed = true;
 	}
 
 	IEnumerator Spell (float sec) {
@@ -91,9 +86,17 @@ public class P7_Subtitles_Anak : MonoBehaviour {
 
 		// if end of text ask for input
 		if (idx == texts[wordset].words.Length) {
-			wait_input = true;
-			anakSprite.GetComponent<Animator> ().SetTrigger ("toIdle");
+			subAllowed = false;
+			seqManager.GetComponent<P7_SequenceManager> ().inSequence = false;
+			seqManager.GetComponent<P7_SequenceManager> ().sequence++;
+			anakSedih.GetComponent<Animator> ().SetTrigger ("toIdle");
+			ayahSatu.GetComponent<Animator> ().SetTrigger ("toLambai");
+			ayahSatu.GetComponent<P7_Ayah_Script_1> ().isStarting = true;
 		}
+	}
+
+	public void FadeOut() {
+		StartCoroutine (Fade (false));
 	}
 
 	IEnumerator Fade(bool fadeIn) {
@@ -130,9 +133,14 @@ public class P7_Subtitles_Anak : MonoBehaviour {
 	}
 
 	void ChangeText() {
-		idx = 0;
-		wordset++;
-		StartCoroutine (Fade (false));
+		if (wordset != texts.Length - 1) {
+			StartCoroutine (Fade (false));
+			idx = 0;
+			wordset++;
+		} else {
+			idx = texts[wordset].words.Length;
+			HighlightText ();
+		}
 	}
 
 	void HighlightText() {
@@ -155,6 +163,10 @@ public class P7_Subtitles_Anak : MonoBehaviour {
 		text_buffer = text_buffer.Replace (newline_char, '\n');
 
 		GetComponent<Text> ().text = text_buffer;
+	}
+
+	public void setToEnd() {
+		idx = texts [wordset].words.Length - 1;
 	}
 
 }
