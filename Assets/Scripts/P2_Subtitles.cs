@@ -8,11 +8,8 @@ public class P2_Subtitles : MonoBehaviour {
 	
 	public GameObject anakIbuNext;
 	public GameObject bapakMobil;
+	public bool isFinish = false;
 	public string trigger;
-	public Sprite anakIbuNextSprite;
-	public Sprite bapaMobilNextSprite;
-	public GameObject bapaMobilNext;
-	public GameObject nextText;
 	public TextItem[] texts;		// texts to be displayed
 	public float fade_speed = 1;	// fade speed
 	public char newline_char = '$';	// char to be detected as newline
@@ -47,18 +44,28 @@ public class P2_Subtitles : MonoBehaviour {
 		// play text if not in fade animation and waiting for input and not end of texts
 		if (!waiting && !in_anim && !wait_input && wordset < texts.Length) {
 			if (idx < texts [wordset].words.Length) {
+				Debug.Log ("test spell");
 				StartCoroutine (Spell (texts [wordset].words [idx].delay));
-			}
+			} 
 		}
 		// when input got, change text if there are still more text to display
 		if (wait_input) {
-			if ((((Input.touchCount > 0) && (Input.GetTouch (0).phase == TouchPhase.Began)) || Input.GetMouseButtonDown(0))) {
+			if ((((Input.touchCount > 0) && (Input.GetTouch (0).phase == TouchPhase.Began)) || Input.GetMouseButtonDown (0))) {
 				wait_input = false;
 				Debug.Log ("masuk ga gan");
 				ChangeText ();
-				nextText.GetComponent<P2_Subtitles_2> ().startBubbleText = true;
-				anakIbuNext.GetComponent<Animator> ().SetTrigger(trigger);
-				bapakMobil.GetComponent<Animator> ().SetTrigger ("dada");
+				if (texts.Length == wordset && !isFinish) {
+					Debug.Log ("test animation");
+					anakIbuNext.GetComponent<Animator> ().SetTrigger (trigger);
+					bapakMobil.GetComponent<Animator> ().SetTrigger ("dada");
+					isFinish = true;
+				}
+			} 
+		} else {
+			if ((((Input.touchCount > 0) && (Input.GetTouch (0).phase == TouchPhase.Began)) || Input.GetMouseButtonDown (0))) {
+				if (isFinish) {
+					bapakMobil.GetComponent<Animator> ().SetTrigger ("jalan");
+				}
 			}
 		}
 
@@ -91,6 +98,9 @@ public class P2_Subtitles : MonoBehaviour {
 		// if end of text ask for input
 		if (idx == texts[wordset].words.Length) {
 			wait_input = true;
+//			if (texts.Length) {
+//				
+//			}
 		}
 	}
 
