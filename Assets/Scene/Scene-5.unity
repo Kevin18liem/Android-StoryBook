@@ -1953,6 +1953,7 @@ GameObject:
   - component: {fileID: 1060761157}
   - component: {fileID: 1060761156}
   - component: {fileID: 1060761158}
+  - component: {fileID: 1060761159}
   m_Layer: 0
   m_Name: pesawat
   m_TagString: Untagged
@@ -2047,6 +2048,23 @@ MonoBehaviour:
   treshold: 0.8
   moveable: 1
   anak: {fileID: 431319616}
+--- !u!95 &1060761159
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1060761154}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b75e2a0198744bf47b00df0d65ff9457, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1140867188
 GameObject:
   m_ObjectHideFlags: 0
@@ -3528,6 +3546,7 @@ GameObject:
   - component: {fileID: 2036333584}
   - component: {fileID: 2036333582}
   - component: {fileID: 2036333583}
+  - component: {fileID: 2036333585}
   m_Layer: 0
   m_Name: bola
   m_TagString: Untagged
@@ -3622,6 +3641,23 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!95 &2036333585
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2036333580}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4cb1e747c7930ae4ebe937acc7da537e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &2063711574
 GameObject:
   m_ObjectHideFlags: 0

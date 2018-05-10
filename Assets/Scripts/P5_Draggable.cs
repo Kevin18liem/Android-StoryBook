@@ -52,6 +52,7 @@ public class P5_Draggable : MonoBehaviour {
 			{
 				if (raycastHit.collider.name == gameObject.name)
 				{
+					GetComponent<Animator> ().enabled = false;
 					dist = transform.position.z - Camera.main.transform.position.z;
 					temp = new Vector3 (Input.GetTouch (0).position.x, Input.GetTouch (0).position.y,
 						dist);
@@ -109,6 +110,7 @@ public class P5_Draggable : MonoBehaviour {
 				snap = true;
 			} else {
 				snap = false;
+				GetComponent<Animator> ().enabled = true;
 			}
 			moving = true;
 		}
