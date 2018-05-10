@@ -1716,6 +1716,7 @@ GameObject:
   - component: {fileID: 951534716}
   - component: {fileID: 951534715}
   - component: {fileID: 951534717}
+  - component: {fileID: 951534718}
   m_Layer: 0
   m_Name: robot
   m_TagString: Untagged
@@ -1810,6 +1811,23 @@ MonoBehaviour:
   treshold: 0.8
   moveable: 1
   anak: {fileID: 431319616}
+--- !u!95 &951534718
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 951534713}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 00bc91d242a245a4483231e4e06c3472, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1024251779
 GameObject:
   m_ObjectHideFlags: 0
@@ -2055,7 +2073,7 @@ Animator:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1060761154}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: b75e2a0198744bf47b00df0d65ff9457, type: 2}
   m_CullingMode: 0
@@ -3108,6 +3126,7 @@ GameObject:
   - component: {fileID: 1624014971}
   - component: {fileID: 1624014970}
   - component: {fileID: 1624014972}
+  - component: {fileID: 1624014973}
   m_Layer: 0
   m_Name: mobil
   m_TagString: Untagged
@@ -3202,6 +3221,23 @@ MonoBehaviour:
   treshold: 0.8
   moveable: 1
   anak: {fileID: 431319616}
+--- !u!95 &1624014973
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1624014968}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 871809deea26f664386b522039a6200a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1782235554
 GameObject:
   m_ObjectHideFlags: 0
@@ -3648,7 +3684,7 @@ Animator:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2036333580}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 4cb1e747c7930ae4ebe937acc7da537e, type: 2}
   m_CullingMode: 0

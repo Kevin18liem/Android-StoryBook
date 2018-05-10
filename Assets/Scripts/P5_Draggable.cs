@@ -36,7 +36,9 @@ public class P5_Draggable : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+		if (seqManager.GetComponent<P5_SequenceManager>().movable && !GetComponent<Animator>().enabled && !snap && !isdragging) {
+			GetComponent<Animator> ().enabled = true;
+		}
 		if (anak.GetComponent<Animator> ().IsInTransition(0) && 
 			anak.GetComponent<Animator>().GetNextAnimatorStateInfo (0).IsName("anak-idle") && transform.position.z > -0.1f) {
 			transform.position = new Vector3 (transform.position.x, transform.position.y, -0.1f);
@@ -70,6 +72,7 @@ public class P5_Draggable : MonoBehaviour {
 			{
 				if (raycastHit.collider.name == gameObject.name)
 				{
+					GetComponent<Animator> ().enabled = false;
 					dist = transform.position.z - Camera.main.transform.position.z;
 					temp = new Vector3 (Input.mousePosition.x, Input.mousePosition.y,
 						dist);
@@ -99,6 +102,7 @@ public class P5_Draggable : MonoBehaviour {
 				snap = true;
 			} else {
 				snap = false;
+				GetComponent<Animator> ().enabled = false;
 			}
 			moving = true;
 		} else if (isdragging && Input.GetMouseButtonUp(0)) {
