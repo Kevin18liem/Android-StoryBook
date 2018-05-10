@@ -565,6 +565,7 @@ Transform:
   - {fileID: 951534714}
   - {fileID: 277151809}
   - {fileID: 53489802}
+  - {fileID: 1028177098}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1847,13 +1848,14 @@ GameObject:
   - component: {fileID: 1028177098}
   - component: {fileID: 1028177097}
   - component: {fileID: 1028177096}
+  - component: {fileID: 1028177099}
   m_Layer: 0
   m_Name: Anak Idle Revised Wrong Size
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &1028177096
 Animator:
   serializedVersion: 3
@@ -1921,13 +1923,25 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1028177095}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.7, y: -0.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 508918136}
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1028177099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1028177095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c41a0213af964da4e8493b6e8c2cb355, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSpeed: 2
 --- !u!1 &1060761154
 GameObject:
   m_ObjectHideFlags: 0
@@ -2982,7 +2996,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1550619015
 MonoBehaviour:
   m_ObjectHideFlags: 0
