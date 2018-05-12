@@ -2149,8 +2149,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: c0e11cc07c8302f4197cdede8ae59f99, type: 3}
-        m_MethodName: 
+      - m_Target: {fileID: 1374577694}
+        m_MethodName: TakeSS
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

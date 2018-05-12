@@ -42,7 +42,7 @@ public class P11_DraggableX : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if ((Input.touchCount == 1) && (Input.GetTouch(0).phase == TouchPhase.Began) && !moving && moveable) {
+		if ((Input.touchCount == 1) && (Input.GetTouch(0).phase == TouchPhase.Began) && !moving && moveable && !isdragging) {
 			Ray raycast = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
 			RaycastHit raycastHit;
 			if (Physics.Raycast(raycast, out raycastHit))
@@ -56,11 +56,12 @@ public class P11_DraggableX : MonoBehaviour {
 						dist);
 					temp = Camera.main.ScreenToWorldPoint (temp);
 					offset = transform.position - temp;
-					putHintHere (target.position);
+					//putHintHere (target.position);
+					GeserHand();
 					isdragging = true;
 				}
 			}
-		} else if (Input.GetMouseButtonDown(0) && !moving && moveable) {
+		} else if (Input.GetMouseButtonDown(0) && !moving && moveable && !isdragging) {
 			Ray raycast = Camera.main.ScreenPointToRay(Input.mousePosition);
 			RaycastHit raycastHit;
 			if (Physics.Raycast(raycast, out raycastHit))
@@ -74,7 +75,8 @@ public class P11_DraggableX : MonoBehaviour {
 						dist);
 					temp = Camera.main.ScreenToWorldPoint (temp);
 					offset = transform.position - temp;
-					putHintHere (target.position);
+					//putHintHere (target.position);
+					GeserHand();
 					isdragging = true;
 				}
 			}
@@ -152,7 +154,17 @@ public class P11_DraggableX : MonoBehaviour {
 	}
 
 	public void putHintHere(Vector3 pos) {
-			hint.transform.position = new Vector3 (pos.x + 0.5f, pos.y - 0.5f, initPos.z);
+		Debug.Log ("puthint");
+		hint.transform.parent.position = new Vector3 (pos.x, pos.y - 0.5f, initPos.z);
+		hint.GetComponent<Animator>().ResetTrigger("geser");
+		hint.GetComponent<Animator> ().SetTrigger ("diam");
+
+	}
+
+	void GeserHand() {
+		Debug.Log ("geserhand");
+		hint.GetComponent<Animator>().ResetTrigger("diam");
+		hint.GetComponent<Animator> ().SetTrigger ("geser");
 	}
 
 }
