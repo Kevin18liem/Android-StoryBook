@@ -3359,9 +3359,9 @@ MonoBehaviour:
       delay: 0.5
   - words:
     - text: Tapi
-      delay: 0.2
+      delay: 0.5
     - text: nanti
-      delay: 0.4
+      delay: 0.5
     - text: itu
       delay: 0.6
     - text: kapan?

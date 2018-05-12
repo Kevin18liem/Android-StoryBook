@@ -9,7 +9,7 @@ public class P15_SequenceManager : MonoBehaviour {
 	public GameObject keluargaSprite;
 	public GameObject mobilSprite;
 	public bool inSequence;
-
+	public GameObject pinchHint;
 	public int sequence;
 	private bool inCoroutine;
 
@@ -25,6 +25,7 @@ public class P15_SequenceManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		Debug.Log (inSequence + " " + sequence);
 		if (!inSequence && !inCoroutine) {
 			inSequence = true;
 			switch (sequence) {
@@ -41,6 +42,7 @@ public class P15_SequenceManager : MonoBehaviour {
 			case 2: // wait for pinch
 				{	
 					Debug.Log ("waiting for pinch");
+					pinchHint.SetActive (true);
 					keluargaSprite.GetComponent<P15_Keluarga> ().allowPinch = true;
 					break;
 				}

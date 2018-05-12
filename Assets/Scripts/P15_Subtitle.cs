@@ -25,6 +25,7 @@ public class P15_Subtitle : MonoBehaviour {
 	public AudioClip audiosub1;
 	public AudioClip audiosub2;
 	public AudioClip audiosub3;
+	private bool waitingForInput;
 
 	// Use this for initialization
 	void Start () {
@@ -52,6 +53,15 @@ public class P15_Subtitle : MonoBehaviour {
 					speller = Spell (texts [wordset].words [idx].delay);
 					StartCoroutine (speller);
 				}
+			}
+		}
+
+		if (Input.GetKeyDown (KeyCode.Mouse0) || (Input.touchCount == 1 && Input.GetTouch (0).phase == TouchPhase.Began)) {
+			if (waitingForInput) {
+				waitingForInput = false;
+				FadeOut ();
+			} else {
+				setToEnd ();
 			}
 		}
 
@@ -90,8 +100,13 @@ public class P15_Subtitle : MonoBehaviour {
 		// if end of text ask for input
 		if (idx == texts[wordset].words.Length) {
 			subAllowed = false;
-			holder.GetComponent<P15_SubtitleHolder> ().allowClick = true;
-			seqManager.GetComponent<P15_SequenceManager> ().inSequence = false;
+			if (wordset == texts.Length - 1) {
+				seqManager.GetComponent<P15_SequenceManager> ().inSequence = false;
+			} else {
+				waitingForInput = true;
+			}
+			//holder.GetComponent<P15_SubtitleHolder> ().allowClick = true;
+			//seqManager.GetComponent<P15_SequenceManager> ().inSequence = false;
 			seqManager.GetComponent<P15_SequenceManager> ().sequence++;
 
 			//sprite.GetComponent<Animator> ().SetTrigger ("idle");

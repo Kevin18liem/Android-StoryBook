@@ -43,7 +43,7 @@ public class P15_Keluarga : MonoBehaviour {
 					if (Vector3.Distance (touch1.position, touch2.position) < deltaPos) {
 						pinchDone = true;
 						anim.SetTrigger ("peluk");
-						subtitle.GetComponent<P15_Subtitle> ().FadeOut ();
+						//subtitle.GetComponent<P15_Subtitle> ().FadeOut ();
 
 					}
 				}
@@ -54,7 +54,7 @@ public class P15_Keluarga : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.Space) && allowPinch && !pinchDone) {
 			pinchDone = true;
 			anim.SetTrigger ("peluk");
-			subtitle.GetComponent<P15_Subtitle> ().FadeOut ();
+			//subtitle.GetComponent<P15_Subtitle> ().FadeOut ();
 		}
 		
 	}
@@ -67,5 +67,7 @@ public class P15_Keluarga : MonoBehaviour {
 		Debug.Log ("move");
 		transform.position = new Vector3 (transform.position.x, transform.position.y - 0.3f, transform.position.z);
 	}
-
+	public void DisableHint() {
+		seqManager.GetComponent<P15_SequenceManager> ().pinchHint.SetActive (false);
+	}
 }

@@ -502,6 +502,7 @@ GameObject:
   - component: {fileID: 218732283}
   - component: {fileID: 218732285}
   - component: {fileID: 218732282}
+  - component: {fileID: 218732286}
   m_Layer: 5
   m_Name: Subtitles
   m_TagString: Untagged
@@ -540,37 +541,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   texts:
   - words:
-    - text: Esok
-      delay: 1
-    - text: hari,
-      delay: 0
-    - text: aku
-      delay: 0
-    - text: membantu
-      delay: 0
-    - text: ibu$
-      delay: 0
-    - text: menaruh
-      delay: 0
-    - text: piring
-      delay: 0
-    - text: untuk
-      delay: 0
-    - text: sarapan.
-      delay: 0
     - text: 
       delay: 0
   - words:
     - text: Tapi
-      delay: 1
+      delay: 0.5
     - text: nanti
-      delay: 0
+      delay: 0.5
     - text: itu
-      delay: 0
+      delay: 0.6
     - text: kapan?
-      delay: 0
+      delay: 0.5
     - text: 
-      delay: 0
+      delay: 0.5
   fade_speed: 3
   newline_char: 36
 --- !u!114 &218732283
@@ -623,6 +606,86 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!82 &218732286
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 218732280}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: c96f6dc4e051cf646826d508e08d0b0b, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &278057492
 GameObject:
   m_ObjectHideFlags: 0
@@ -914,6 +977,7 @@ MonoBehaviour:
   moveable: 1
   succ: {fileID: 423844943}
   hintPiring: {fileID: 1090274714}
+  tapped: 0
 --- !u!65 &349261354
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1253,6 +1317,7 @@ MonoBehaviour:
   moveable: 0
   succ: {fileID: 2000323792}
   hintPiring: {fileID: 963297337}
+  tapped: 0
 --- !u!65 &423844947
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2430,6 +2495,7 @@ GameObject:
   - component: {fileID: 1071615759}
   - component: {fileID: 1071615758}
   - component: {fileID: 1071615757}
+  - component: {fileID: 1071615761}
   m_Layer: 5
   m_Name: Anak
   m_TagString: Untagged
@@ -2469,11 +2535,11 @@ MonoBehaviour:
   texts:
   - words:
     - text: Ini
-      delay: 0
+      delay: 0.2
     - text: piringku.
-      delay: 0
+      delay: 0.6
     - text: 
-      delay: 0
+      delay: 0.6
   fade_speed: 3
   newline_char: 36
   maxPlateMoved: 2
@@ -2529,6 +2595,86 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1071615755}
+--- !u!82 &1071615761
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1071615755}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: ff2b5c2483ced4447b53de697da6bd84, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &1090274714
 GameObject:
   m_ObjectHideFlags: 0
@@ -3413,6 +3559,7 @@ GameObject:
   - component: {fileID: 1645183389}
   - component: {fileID: 1645183388}
   - component: {fileID: 1645183387}
+  - component: {fileID: 1645183391}
   m_Layer: 5
   m_Name: Ibu
   m_TagString: Untagged
@@ -3452,13 +3599,13 @@ MonoBehaviour:
   texts:
   - words:
     - text: Ini
-      delay: 1
+      delay: 0.2
     - text: piring
-      delay: 0
+      delay: 0.4
     - text: Ibu.
-      delay: 0
+      delay: 0.4
     - text: 
-      delay: 0
+      delay: 0.4
   fade_speed: 3
   newline_char: 36
   maxPlateMoved: 1
@@ -3514,6 +3661,86 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1645183385}
+--- !u!82 &1645183391
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1645183385}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: ade6b69e600235445a81cf954b6f5d83, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &1697711839
 GameObject:
   m_ObjectHideFlags: 0
@@ -4026,6 +4253,7 @@ GameObject:
   - component: {fileID: 1831833761}
   - component: {fileID: 1831833760}
   - component: {fileID: 1831833759}
+  - component: {fileID: 1831833763}
   m_Layer: 5
   m_Name: Ayah
   m_TagString: Untagged
@@ -4048,7 +4276,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 229}
+  m_AnchoredPosition: {x: 0, y: 211}
   m_SizeDelta: {x: 1050.6, y: 126}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1831833759
@@ -4065,25 +4293,25 @@ MonoBehaviour:
   texts:
   - words:
     - text: Ini
-      delay: 0
+      delay: 0.4
     - text: piring
-      delay: 0
+      delay: 0.4
     - text: Ayah
-      delay: 0
+      delay: 0.4
     - text: kalau
-      delay: 0
-    - text: ia
-      delay: 0
+      delay: 0.5
+    - text: ia$
+      delay: 0.3
     - text: sarapan
-      delay: 0
+      delay: 0.6
     - text: bersama
-      delay: 0
+      delay: 0.6
     - text: kami
-      delay: 0
+      delay: 0.4
     - text: nanti
-      delay: 0
+      delay: 0.4
     - text: 
-      delay: 0
+      delay: 0.4
   fade_speed: 3
   newline_char: 36
   maxPlateMoved: 3
@@ -4132,13 +4360,93 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Ini piring Ayajh kalau ia sarapan bersama kami nanti.
+  m_Text: Ini piring Ayah kalau ia sarapan bersama kami nanti.
 --- !u!222 &1831833762
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1831833757}
+--- !u!82 &1831833763
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1831833757}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 6375f9b0a53a48349b502e48d8853259, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &1879233982
 GameObject:
   m_ObjectHideFlags: 0
@@ -4437,6 +4745,7 @@ MonoBehaviour:
   moveable: 0
   succ: {fileID: 0}
   hintPiring: {fileID: 760070918}
+  tapped: 0
 --- !u!65 &2000323796
 BoxCollider:
   m_ObjectHideFlags: 0

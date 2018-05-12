@@ -23,7 +23,6 @@ public class P4_SpecialSub : MonoBehaviour {
 	private CanvasGroup cg;			// canvas group with alpha
 	private bool waitForTap;
 	private P4_SequenceManager sequenceManager;
-
 	// Use this for initialization
 	void Start () {
 
@@ -136,6 +135,9 @@ public class P4_SpecialSub : MonoBehaviour {
 				yield return null;
 			}
 			cg.interactable = true;
+			if (PlayerPrefs.GetString ("Narasi") == "on") {
+				GetComponent<AudioSource> ().Play ();
+			}
 		} else {
 			cg.interactable = false;
 			while (cg.alpha > 0) {

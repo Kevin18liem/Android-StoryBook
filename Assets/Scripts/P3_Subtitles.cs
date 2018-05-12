@@ -24,6 +24,8 @@ public class P3_Subtitles : MonoBehaviour {
 	private GameObject seqManager;
 	private bool subAllowed = false;
 
+	public AudioClip audiosubanak1;
+	public AudioClip audiosubanak2;
 	// Use this for initialization
 	void Start () {
 
@@ -122,6 +124,15 @@ public class P3_Subtitles : MonoBehaviour {
 				yield return null;
 			}
 			cg.interactable = true;
+			if (PlayerPrefs.GetString ("Narasi") == "on") {
+				if (wordset == 0) {
+					GetComponent<AudioSource> ().Stop ();
+					GetComponent<AudioSource> ().PlayOneShot (audiosubanak1);
+				} else if (wordset == 1) {
+					GetComponent<AudioSource> ().Stop ();
+					GetComponent<AudioSource> ().PlayOneShot (audiosubanak2);
+				}
+			}
 		} else {
 			cg.interactable = false;
 			while (cg.alpha > 0) {

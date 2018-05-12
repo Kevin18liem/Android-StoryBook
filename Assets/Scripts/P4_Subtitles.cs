@@ -96,6 +96,11 @@ public class P4_Subtitles : MonoBehaviour {
 				yield return null;
 			}
 			cg.interactable = true;
+			if (PlayerPrefs.GetString ("Narasi") == "on") {
+				if (wordset == 1) {
+					GetComponent<AudioSource> ().Play ();
+				}
+			}
 		} else {
 			cg.interactable = false;
 			while (cg.alpha > 0) {
