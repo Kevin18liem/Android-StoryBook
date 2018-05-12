@@ -232,7 +232,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 17459561}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.76, y: -0.7, z: -0.2}
+  m_LocalPosition: {x: 2.17, y: -0.7, z: -0.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1587887801}
@@ -265,7 +265,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &19588660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -878,7 +878,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 434140084}
   m_LocalRotation: {x: 0, y: 0, z: -0.07668417, w: 0.9970555}
-  m_LocalPosition: {x: 0.99, y: -1.56, z: -0.25}
+  m_LocalPosition: {x: 1.36, y: -1.56, z: -0.25}
   m_LocalScale: {x: 0.05390995, y: 0.07194416, z: 0.8031585}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1531,8 +1531,8 @@ MonoBehaviour:
   spritePintu: {fileID: 931027239}
   spriteIbuAnak: {fileID: 17459561}
   subtitle: {fileID: 1744241478}
-  subHolder: {fileID: 19588659}
   nextPageButton: {fileID: 1759647351}
+  hasilGambar: {fileID: 434140084}
   inSequence: 0
 --- !u!4 &1208198810
 Transform:
@@ -2621,7 +2621,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 118, y: 206}
+  m_AnchoredPosition: {x: 154, y: 206}
   m_SizeDelta: {x: 428.9, y: 126}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1744241480
@@ -2670,7 +2670,6 @@ MonoBehaviour:
       delay: 1
   fade_speed: 3
   newline_char: 36
-  holder: {fileID: 19588659}
 --- !u!225 &1744241481
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2703,7 +2702,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 5aef65ee60a884941952c7aa39e1dce7, type: 3}
-    m_FontSize: 36
+    m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2

@@ -8,8 +8,8 @@ public class P13_SequenceManager : MonoBehaviour {
 	public GameObject spritePintu;
 	public GameObject spriteIbuAnak;
 	public GameObject subtitle;
-	public GameObject subHolder;
 	public GameObject nextPageButton;
+	public GameObject hasilGambar;
 	public bool inSequence;
 
 	private int sequence;
@@ -31,13 +31,15 @@ public class P13_SequenceManager : MonoBehaviour {
 			inSequence = true;
 			switch (sequence) {
 			case 0:
-				{	
+				{	Debug.Log ("starting");
 					spriteAyah.GetComponent<P13_Pintu> ().allowTap = true;
 					sequence++;
 					break;
 				}
 			case 1:
 				{
+					Debug.Log ("sub1");
+					hasilGambar.transform.position =  hasilGambar.transform.position + new Vector3 (-0.15f, 0.15f, 0);
 					subtitle.GetComponent<P13_Subtitles> ().DoSub (0);
 					sequence++;
 					break;

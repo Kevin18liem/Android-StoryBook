@@ -9,7 +9,7 @@ public class P13_Subtitles : MonoBehaviour {
 	public TextItem[] texts;		// texts to be displayed
 	public float fade_speed = 3;	// fade speed
 	public char newline_char = '$';	// char to be detected as newline
-	public GameObject holder;
+	//public GameObject holder;
 	//public GameObject sprite;
 
 	private string text_buffer;		// buffer to save string
@@ -22,6 +22,7 @@ public class P13_Subtitles : MonoBehaviour {
 	private IEnumerator speller;
 	private GameObject seqManager;
 	private bool subAllowed = false;
+	private bool waitingForInput = false;
 
 	// Use this for initialization
 	void Start () {
@@ -49,6 +50,15 @@ public class P13_Subtitles : MonoBehaviour {
 					speller = Spell (texts [wordset].words [idx].delay);
 					StartCoroutine (speller);
 				}
+			}
+		}
+
+		if (Input.GetKeyDown (KeyCode.Mouse0) || (Input.touchCount == 1 && Input.GetTouch (0).phase == TouchPhase.Began)) {
+			if (waitingForInput) {
+				waitingForInput = false;
+				FadeOut ();
+			} else {
+				setToEnd ();
 			}
 		}
 
@@ -91,8 +101,7 @@ public class P13_Subtitles : MonoBehaviour {
 				seqManager.GetComponent<P13_SequenceManager> ().inSequence = false;
 
 			} else {
-				holder.GetComponent<P13_SubHolder> ().allowClick = true;
-				seqManager.GetComponent<P13_SequenceManager> ().IbuAnakDoneSpell ();
+				waitingForInput = true;
 			}
 		}
 	}
