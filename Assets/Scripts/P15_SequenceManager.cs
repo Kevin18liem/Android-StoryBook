@@ -33,21 +33,25 @@ public class P15_SequenceManager : MonoBehaviour {
 					subtitle.GetComponent<P15_Subtitle> ().DoSub (0);
 					break;
 				}
-			case 1: // wait for pinch
-				{	
-					Debug.Log ("waiting for pinch");
-					keluargaSprite.GetComponent<P15_Keluarga> ().allowPinch = true;
-
-					break;
-				}
-			case 2: // ayah masuk mobil
+			case 1: // idle, play subtitle 2
 				{
-					Debug.Log ("ayah masuk mobil");
-					mobilSprite.GetComponent<Animator> ().SetTrigger ("dadah");
 					subtitle.GetComponent<P15_Subtitle> ().DoSub (1);
 					break;
 				}
-			case 3: // mobil jalan
+			case 2: // wait for pinch
+				{	
+					Debug.Log ("waiting for pinch");
+					keluargaSprite.GetComponent<P15_Keluarga> ().allowPinch = true;
+					break;
+				}
+			case 3: // ayah masuk mobil
+				{
+					Debug.Log ("ayah masuk mobil");
+					mobilSprite.GetComponent<Animator> ().SetTrigger ("dadah");
+					subtitle.GetComponent<P15_Subtitle> ().DoSub (2);
+					break;
+				}
+			case 4: // mobil jalan
 				{
 					mobilSprite.GetComponent<P15_Mobil> ().allowClick = true;
 					break;

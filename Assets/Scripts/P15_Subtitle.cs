@@ -22,6 +22,9 @@ public class P15_Subtitle : MonoBehaviour {
 	private IEnumerator speller;
 	private GameObject seqManager;
 	private bool subAllowed = false;
+	public AudioClip audiosub1;
+	public AudioClip audiosub2;
+	public AudioClip audiosub3;
 
 	// Use this for initialization
 	void Start () {
@@ -107,6 +110,20 @@ public class P15_Subtitle : MonoBehaviour {
 				yield return null;
 			}
 			cg.interactable = true;
+			if (PlayerPrefs.GetString ("Narasi") == "on") {
+				if (wordset == 0) {
+					GetComponent<AudioSource> ().Stop ();
+					GetComponent<AudioSource> ().PlayOneShot (audiosub1);
+				}
+				else if (wordset == 1) {
+					GetComponent<AudioSource> ().Stop ();
+					GetComponent<AudioSource> ().PlayOneShot (audiosub2);
+				} 
+				else if (wordset == 2) {
+					GetComponent<AudioSource> ().Stop ();
+					GetComponent<AudioSource> ().PlayOneShot (audiosub3);
+				}
+			}	
 		} else {
 			cg.interactable = false;
 			while (cg.alpha > 0) {
@@ -169,6 +186,7 @@ public class P15_Subtitle : MonoBehaviour {
 
 	public void setToEnd() {
 		idx = texts [wordset].words.Length - 1;
+		Debug.Log ("dipanggil");
 	}
 
 }

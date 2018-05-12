@@ -8,6 +8,8 @@ public class CloseSettingsPopup : MonoBehaviour {
 	public void SettingsPopupOff() {
 		settingsPopup.SetActive (false);
 		Time.timeScale = 1;
-		AudioListener.pause = false;
+		if (PlayerPrefs.GetString ("Narasi") == "on") { 
+			AudioListener.pause = false;
+		}
 	}
 }

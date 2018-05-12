@@ -105,6 +105,7 @@ public class ToggleController : MonoBehaviour
 			Transparency (offIcon, 0f, 1f);
 			handleTransform.localPosition = SmoothMove(handle, onPosX, offPosX);
 			PlayerPrefs.SetString (buttonName, "off");
+			AudioListener.pause = true;
 		}
 		else 
 		{

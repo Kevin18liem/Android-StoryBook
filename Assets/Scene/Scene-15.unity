@@ -3485,6 +3485,7 @@ GameObject:
   - component: {fileID: 1984044676}
   - component: {fileID: 1984044675}
   - component: {fileID: 1984044674}
+  - component: {fileID: 1984044678}
   m_Layer: 5
   m_Name: Subtitles
   m_TagString: Untagged
@@ -3507,8 +3508,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 197.3, y: 137}
-  m_SizeDelta: {x: 204.8, y: 126}
+  m_AnchoredPosition: {x: 212.06, y: 137}
+  m_SizeDelta: {x: 234.31, y: 126}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1984044674
 MonoBehaviour:
@@ -3524,52 +3525,59 @@ MonoBehaviour:
   texts:
   - words:
     - text: Hari
-      delay: 1
+      delay: 0.2
     - text: ini
-      delay: 1
+      delay: 0.3
     - text: Ayah
-      delay: 0
+      delay: 0.3
     - text: harus$
-      delay: 0
+      delay: 0.3
     - text: pergi
-      delay: 0
-    - text: bekerja
-      delay: 0
+      delay: 0.3
+    - text: ke
+      delay: 0.3
+    - text: luar
+      delay: 0.3
+    - text: kota
+      delay: 0.3
     - text: lagi.
-      delay: 0
+      delay: 0.3
     - text: 
-      delay: 1
+      delay: 0.5
   - words:
     - text: Kata
-      delay: 1
+      delay: 0.2
     - text: Ayah,
-      delay: 1
+      delay: 0.3
     - text: aku
-      delay: 0
+      delay: 0.3
     - text: bisa$
-      delay: 0
+      delay: 0.4
     - text: menandai
-      delay: 0
+      delay: 0.5
     - text: kalenderku
-      delay: 0
+      delay: 0.45
     - text: lagi.
-      delay: 0
+      delay: 0.4
     - text: 
-      delay: 1
+      delay: 0.5
   - words:
     - text: Sampai
-      delay: 1
+      delay: 0.3
     - text: ketemu$
-      delay: 1
+      delay: 0.4
     - text: lagi,
-      delay: 0
+      delay: 0.2
     - text: Ayah!
-      delay: 0
+      delay: 0.5
     - text: 
-      delay: 1
+      delay: 0.7
   fade_speed: 3
   newline_char: 36
   holder: {fileID: 1506907579}
+  audiosub1: {fileID: 8300000, guid: 200bd21f28fc62f418c4823ad0792e0d, type: 3}
+  audiosub2: {fileID: 8300000, guid: a3025b69c2d2fd343a534934cd70e080, type: 3}
+  audiosub3: {fileID: 8300000, guid: dc410a56d4ff89447808062c76a92eaa, type: 3}
 --- !u!225 &1984044675
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -3602,7 +3610,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 5aef65ee60a884941952c7aa39e1dce7, type: 3}
-    m_FontSize: 24
+    m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -3620,3 +3628,83 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1984044672}
+--- !u!82 &1984044678
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1984044672}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
