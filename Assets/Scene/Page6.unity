@@ -2291,6 +2291,7 @@ GameObject:
   - component: {fileID: 1351579032}
   - component: {fileID: 1351579031}
   - component: {fileID: 1351579030}
+  - component: {fileID: 1351579034}
   m_Layer: 5
   m_Name: Subtitles
   m_TagString: Untagged
@@ -2329,57 +2330,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   texts:
   - words:
-    - text: Ayah
-      delay: 1
-    - text: semua
-      delay: 1
-    - text: teman-
-      delay: 1
-    - text: temanku$
-      delay: 0
+    - text: Niko
+      delay: 0.1
     - text: selalu
-      delay: 0
-    - text: ada
-      delay: 0
-    - text: bersama
-      delay: 0
-    - text: mereka.
-      delay: 0
+      delay: 0.4
+    - text: pulang
+      delay: 0.5
+    - text: bersama$
+      delay: 0.5
+    - text: ayah
+      delay: 0.5
+    - text: dan
+      delay: 0.4
+    - text: ibunya.
+      delay: 0.3
     - text: 
-      delay: 0
+      delay: 0.4
   - words:
-    - text: Tapi
-      delay: 1
-    - text: Ayah
-      delay: 1
-    - text: tidak
-      delay: 1
-    - text: selalu
-      delay: 0
-    - text: ada
-      delay: 0
-    - text: di
-      delay: 0
-    - text: sini.$
-      delay: 0
-    - text: Apa
-      delay: 0
-    - text: Ayah
-      delay: 0
-    - text: tidak
-      delay: 0
-    - text: peduli
-      delay: 0
-    - text: denganku,
-      delay: 0
-    - text: ya?
-      delay: 0
+    - text: Andai
+      delay: 0.3
+    - text: saja
+      delay: 0.4
+    - text: Ayah$
+      delay: 0.6
+    - text: bisa
+      delay: 0.5
+    - text: menjemputku.
+      delay: 0.7
     - text: 
-      delay: 0
+      delay: 0.7
   fade_speed: 3
   newline_char: 36
   ibuAnak: {fileID: 126799352}
   keluargaLain: {fileID: 918750237}
+  audiosubanak1: {fileID: 8300000, guid: c366ecde7354a274c84dc1272da6233b, type: 3}
+  audiosubanak2: {fileID: 8300000, guid: f7836b4ba4e029c4b931b3a37bf50d6c, type: 3}
 --- !u!225 &1351579031
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2430,6 +2415,86 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1351579028}
+--- !u!82 &1351579034
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1351579028}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &1359116893
 GameObject:
   m_ObjectHideFlags: 0

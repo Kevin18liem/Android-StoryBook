@@ -926,6 +926,8 @@ MonoBehaviour:
   newline_char: 36
   bubble: {fileID: 1503611461}
   sprite: {fileID: 462791557}
+  audiosubanak1: {fileID: 0}
+  audiosubanak2: {fileID: 0}
 --- !u!114 &499713264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -947,7 +949,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 5aef65ee60a884941952c7aa39e1dce7, type: 3}
-    m_FontSize: 24
+    m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -1402,6 +1404,7 @@ GameObject:
   - component: {fileID: 719635943}
   - component: {fileID: 719635942}
   - component: {fileID: 719635941}
+  - component: {fileID: 719635945}
   m_Layer: 5
   m_Name: SubAnak
   m_TagString: Untagged
@@ -1441,28 +1444,28 @@ MonoBehaviour:
   texts:
   - words:
     - text: Ayah
-      delay: 0
+      delay: 0.2
     - text: kenapa
-      delay: 0
+      delay: 0.4
     - text: pergi
-      delay: 0
+      delay: 0.3
     - text: lama
-      delay: 0
+      delay: 0.4
     - text: sekali?
-      delay: 0
+      delay: 0.5
     - text: 
-      delay: 0
+      delay: 0.5
   - words:
     - text: Minggu
-      delay: 0
+      delay: 0.2
     - text: depan
-      delay: 0
+      delay: 0.3
     - text: itu
-      delay: 0
+      delay: 0.3
     - text: kapan?
-      delay: 0
+      delay: 0.4
     - text: 
-      delay: 0
+      delay: 0.5
   - words:
     - text: Bisa!
       delay: 0
@@ -1497,6 +1500,8 @@ MonoBehaviour:
   newline_char: 36
   bubble: {fileID: 1623106793}
   sprite: {fileID: 822119213}
+  audiosubanak1: {fileID: 8300000, guid: f72ac957708849b47900204a463c5afd, type: 3}
+  audiosubanak2: {fileID: 8300000, guid: 4f7022e540c333a49baf5e52a357c4c6, type: 3}
 --- !u!225 &719635942
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1529,7 +1534,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 5aef65ee60a884941952c7aa39e1dce7, type: 3}
-    m_FontSize: 24
+    m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -1547,6 +1552,86 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 719635939}
+--- !u!82 &719635945
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 719635939}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &740513095
 GameObject:
   m_ObjectHideFlags: 0

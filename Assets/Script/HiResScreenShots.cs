@@ -9,6 +9,7 @@ public class HiResScreenShots : MonoBehaviour {
 	public KeyCode takeScreenshotKey = KeyCode.S;
 	public int screenshotCount = 0;
 	public GameObject crayon;
+	public GameObject buttonsave;
 	private void Start() {
 		
 	}
@@ -30,6 +31,7 @@ public class HiResScreenShots : MonoBehaviour {
 		//screenImage.ReadPixels(new Rect(75, 191, resWidth, resHeight), 0, 0);
 		screenImage.Apply();
 		crayon.SetActive (true);
+		buttonsave.SetActive (true);
 	    //Convert to png
 	    byte[] imageBytes = screenImage.EncodeToPNG();
 	    //Save image to file
@@ -37,6 +39,7 @@ public class HiResScreenShots : MonoBehaviour {
 	}
 	public void TakeSS() {
 		crayon.SetActive(false);
+		buttonsave.SetActive (false);
 		StartCoroutine(captureScreenshot());
 	}
 }
