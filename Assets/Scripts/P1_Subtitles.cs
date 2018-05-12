@@ -12,6 +12,7 @@ public class P1_Subtitles : MonoBehaviour {
 	public GameObject spriteAnak;
 	public GameObject spriteAyah;
 	public GameObject spriteIbu;
+	public GameObject nextPage;
 
 	private string text_buffer;		// buffer to save string
 	private int wordset;			// which wordset to display
@@ -71,9 +72,6 @@ public class P1_Subtitles : MonoBehaviour {
 			yield return new WaitForSeconds (sec);
 
 			// events
-			if (wordset == 0 && idx == 5) {
-				spriteIbu.GetComponent<Animator> ().SetTrigger ("menunduk");
-			}
 			if (wordset == 1 && idx == 0) {
 				spriteAyah.GetComponent<Animator> ().SetTrigger ("ngelus");
 				spriteAnak.GetComponent<Animator> ().SetTrigger ("terkejut");
@@ -98,6 +96,7 @@ public class P1_Subtitles : MonoBehaviour {
 				spriteIbu.GetComponent<P1_TriggerAnimation> ().trigger_allowed = true;
 				spriteAyah.GetComponent<P1_TriggerAnimation> ().trigger_allowed = true;		
 				spriteAnak.GetComponent<P1_TriggerAnimation> ().trigger_allowed = true;
+				nextPage.SetActive (true);
 			}
 		}
 	}

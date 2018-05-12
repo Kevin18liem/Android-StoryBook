@@ -11,6 +11,8 @@ public class P4_DraggablePiring : MonoBehaviour {
 	public float anim_speed = 4;		// animation speed
 	public bool moveable = false;		// true if mvoeable
 	public GameObject succ;				// succesor
+	public GameObject hintPiring;
+	public bool tapped = false;
 
 	private bool isdragging;			// true if dragging
 	private float dist;					// distance from camera to collider
@@ -68,6 +70,7 @@ public class P4_DraggablePiring : MonoBehaviour {
 					temp = Camera.main.ScreenToWorldPoint (temp);
 					offset = transform.position - temp;
 					putHintHere (target.position);
+					hintPiring.SetActive (true);
 					isdragging = true;
 				}
 			}
@@ -87,6 +90,7 @@ public class P4_DraggablePiring : MonoBehaviour {
 					temp = Camera.main.ScreenToWorldPoint (temp);
 					offset = transform.position - temp;
 					putHintHere (target.position);
+					hintPiring.SetActive (true);
 					isdragging = true;
 				}
 			}
@@ -131,12 +135,12 @@ public class P4_DraggablePiring : MonoBehaviour {
 					transform.position = Vector3.Lerp (transform.position, target.position, moveSpeed *
 					Time.deltaTime);
 				} else {
+					hintPiring.SetActive (false);
 					transform.position = target.position;
 					moving = false;
 					moveable = false;
 					// events
 					if (succ) {
-						
 						succ.GetComponent<P4_DraggablePiring> ().moveable = true;
 						succ.GetComponent<P4_DraggablePiring> ().putHintHere (succ.transform.position);
 					} else {
@@ -168,6 +172,7 @@ public class P4_DraggablePiring : MonoBehaviour {
 			hint.transform.position = new Vector3 (pos.x + 1, pos.y - 1.5f, 1);
 		} else {
 			hint.transform.position = new Vector3 (pos.x + 1, pos.y - 1.5f, initPos.z);
+
 		}
 
 	}
