@@ -1167,6 +1167,7 @@ GameObject:
   - component: {fileID: 401627356}
   - component: {fileID: 401627355}
   - component: {fileID: 401627358}
+  - component: {fileID: 401627359}
   m_Layer: 5
   m_Name: Subtitles
   m_TagString: Untagged
@@ -1310,7 +1311,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1323,6 +1324,33 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &401627359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 401627353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a7cedb43b2d1594885f893d9402a167, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  texts:
+  - words:
+    - text: test
+      delay: 0
+    - text: 
+      delay: 0
+  - words:
+    - text: test2
+      delay: 0
+    - text: 
+      delay: 0
+  fade_speed: 3
+  newline_char: 36
+  audiosubanak1: {fileID: 0}
+  audiosubanak2: {fileID: 0}
+  audiosubbapak1: {fileID: 0}
 --- !u!1 &421142276
 GameObject:
   m_ObjectHideFlags: 0
@@ -3918,6 +3946,49 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1768203549}
+--- !u!1 &1771993127
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1771993129}
+  - component: {fileID: 1771993128}
+  m_Layer: 0
+  m_Name: SequenceManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1771993128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1771993127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a154e7f4874339d4dabf21495bb226b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subtitle: {fileID: 401627353}
+  nextPageButton: {fileID: 1108888641}
+  inSequence: 0
+--- !u!4 &1771993129
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1771993127}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.9962253, y: -1.2074134, z: 0.09375}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1879735040
 GameObject:
   m_ObjectHideFlags: 0
