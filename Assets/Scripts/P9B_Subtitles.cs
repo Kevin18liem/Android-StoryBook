@@ -22,6 +22,7 @@ public class P9B_Subtitles : MonoBehaviour {
 	private IEnumerator speller;
 	private GameObject seqManager;
 	private bool subAllowed = false;
+	private bool waitingForInput = false;
 
 	// Use this for initialization
 	void Start () {
@@ -49,6 +50,17 @@ public class P9B_Subtitles : MonoBehaviour {
 					speller = Spell (texts [wordset].words [idx].delay);
 					StartCoroutine (speller);
 				}
+			}
+		}
+
+		if (Input.GetKeyDown (KeyCode.Mouse0) || (Input.touchCount == 1 && Input.GetTouch (0).phase == TouchPhase.Began)) {
+			if (waitingForInput) {
+				waitingForInput = false;
+				bubble.GetComponent<Animator> ().SetTrigger ("out");
+
+				FadeOut ();
+			} else {
+				setToEnd ();
 			}
 		}
 
@@ -87,6 +99,11 @@ public class P9B_Subtitles : MonoBehaviour {
 		// if end of text ask for input
 		if (idx == texts[wordset].words.Length) {
 			subAllowed = false;
+			if (wordset == texts.Length - 1) {
+				seqManager.GetComponent<P9B_SequenceManager> ().inSequence = false;
+			} else {
+				waitingForInput = true;
+			}
 			bubble.GetComponent<P9B_Bubble> ().allowFadeOut = true;
 			sprite.GetComponent<Animator> ().SetTrigger ("idle");
 		}
@@ -162,6 +179,10 @@ public class P9B_Subtitles : MonoBehaviour {
 		text_buffer = text_buffer.Replace (newline_char, '\n');
 
 		GetComponent<Text> ().text = text_buffer;
+	}
+
+	public void setToEnd() {
+		idx = texts [wordset].words.Length - 1;
 	}
 
 }
