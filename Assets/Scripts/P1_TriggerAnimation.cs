@@ -8,6 +8,7 @@ public class P1_TriggerAnimation : MonoBehaviour {
 	public Animator anim;				// object's animator
 	public bool trigger_allowed = true;	// true if trigger allowed
 	public float speed = 1.5f;			// animation speed
+	public bool tapped = false;
 
 	// Use this for initialization
 	void Start () {
@@ -30,6 +31,7 @@ public class P1_TriggerAnimation : MonoBehaviour {
 				if (raycastHit.collider.name == gameObject.name)
 				{
 					anim.SetTrigger(trigger);
+					tapped = true;
 				}
 
 			}
@@ -41,6 +43,7 @@ public class P1_TriggerAnimation : MonoBehaviour {
 				if (raycastHit.collider.name == gameObject.name)
 				{
 					anim.SetTrigger(trigger);
+					tapped = true;
 				}
 
 			}

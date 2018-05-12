@@ -12,6 +12,7 @@ public class P4_DraggablePiring : MonoBehaviour {
 	public bool moveable = false;		// true if mvoeable
 	public GameObject succ;				// succesor
 	public GameObject hintPiring;
+	public bool tapped = false;
 
 	private bool isdragging;			// true if dragging
 	private float dist;					// distance from camera to collider
