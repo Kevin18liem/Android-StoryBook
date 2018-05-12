@@ -65,6 +65,7 @@ public class P14_Subtitles_Anak : MonoBehaviour {
 		// if beginning new text, go init
 		if (idx == 0) {
 			InitText ();
+
 		}
 
 		// make sure animation finished playing
@@ -99,6 +100,9 @@ public class P14_Subtitles_Anak : MonoBehaviour {
 				yield return null;
 			}
 			cg.interactable = true;
+			if (PlayerPrefs.GetString ("Narasi") == "on") {
+				GetComponent<AudioSource> ().Play ();
+			}	
 		} else {
 			cg.interactable = false;
 			while (cg.alpha > 0) {
@@ -140,8 +144,9 @@ public class P14_Subtitles_Anak : MonoBehaviour {
 				else
 					text_buffer = text_buffer + " <b>" + highlighted + "</b>";
 			} else {
-				if (i == 0)
+				if (i == 0) {
 					text_buffer = texts [wordset].words [i].text;
+				}
 				else
 					text_buffer = text_buffer + " " + texts [wordset].words [i].text;
 			}

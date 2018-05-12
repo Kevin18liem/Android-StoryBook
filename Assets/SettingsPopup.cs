@@ -8,5 +8,6 @@ public class SettingsPopup : MonoBehaviour {
 	public void SettingsPopupOn() {
 		settingsPopup.SetActive (true);
 		Time.timeScale = 0;
+		AudioListener.pause = true;
 	}
 }
