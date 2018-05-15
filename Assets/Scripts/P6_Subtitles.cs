@@ -11,7 +11,7 @@ public class P6_Subtitles : MonoBehaviour {
 	public char newline_char = '$';	// char to be detected as newline
 	public GameObject ibuAnak;
 	public GameObject keluargaLain;
-
+	public GameObject buttonHint;
 	private string text_buffer;		// buffer to save string
 	private int wordset;			// which wordset to display
 	private int idx;				// which word to style
@@ -81,11 +81,13 @@ public class P6_Subtitles : MonoBehaviour {
 			if (wordset == 0 && idx == 0) {
 				ibuAnak.GetComponent<Animator> ().SetTrigger ("nunduk");
 				keluargaLain.GetComponent<Animator> ().SetTrigger ("senang");
+
 			}
 
 			if (wordset == 1 && idx == 0) {
 				ibuAnak.GetComponent<Animator> ().SetTrigger ("nunduk");
 				keluargaLain.GetComponent<Animator> ().SetTrigger ("senang");
+				buttonHint.SetActive (true);
 			}
 
 			// Highlight

@@ -4489,7 +4489,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &1185339968
 Animator:
   serializedVersion: 3
@@ -5487,6 +5487,7 @@ MonoBehaviour:
   newline_char: 36
   ibuAnak: {fileID: 126799352}
   keluargaLain: {fileID: 918750237}
+  buttonHint: {fileID: 1185339967}
   audiosubanak1: {fileID: 8300000, guid: c366ecde7354a274c84dc1272da6233b, type: 3}
   audiosubanak2: {fileID: 8300000, guid: f7836b4ba4e029c4b931b3a37bf50d6c, type: 3}
 --- !u!225 &1351579031
@@ -7424,7 +7425,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2124779185
 Transform:
   m_ObjectHideFlags: 0
