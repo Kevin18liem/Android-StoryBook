@@ -7,5 +7,6 @@ public class Navigation_Panel_Change_Page : MonoBehaviour {
 	public string nextScene;
 	public void ToNextPage() {
 		SceneManager.LoadScene (nextScene);
+		Time.timeScale = 1;
 	}
 }
