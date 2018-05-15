@@ -105,6 +105,7 @@ public class P1_Draggable : MonoBehaviour {
 			if (time <= 0.5f) {
 				GetComponent<Animator> ().enabled = true;
 				GetComponent<Animator> ().SetTrigger (trigger);
+				GetComponent<AudioSource> ().Play ();
 				moving = false;
 				tapped = true;
 			}
@@ -125,6 +126,7 @@ public class P1_Draggable : MonoBehaviour {
 			if (time <= 0.5f) {
 				GetComponent<Animator> ().enabled = true;
 				GetComponent<Animator> ().SetTrigger (trigger);
+				GetComponent<AudioSource> ().Play ();
 				moving = false;
 				tapped = true;
 			}
