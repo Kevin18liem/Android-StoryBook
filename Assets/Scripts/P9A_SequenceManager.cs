@@ -25,7 +25,7 @@ public class P9A_SequenceManager : MonoBehaviour {
 		sequence = 0;
 		inSequence = false;
 		inCoroutine = false;
-		
+		PlayerPrefs.SetInt ("VideoCall", 1);
 	}
 	
 	// Update is called once per frame

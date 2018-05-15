@@ -17,10 +17,10 @@ public class ToggleNavigation : MonoBehaviour {
 			NavigationPanel.SetActive (false);
 			SliderPanel.SetActive (false);
 			Grey.SetActive (false);
-			if (unlockTelepon) {
+			if (PlayerPrefs.GetInt("Call") == 1) {
 				Telepon.SetActive (false);
 			}
-			if (unlockVideoCall) {
+			if (PlayerPrefs.GetInt("VideoCall") == 1) {
 				VideoCall.SetActive (false);
 			}
 			Time.timeScale = 1;
@@ -28,12 +28,12 @@ public class ToggleNavigation : MonoBehaviour {
 			NavigationPanel.SetActive (true);
 			SliderPanel.SetActive (true);
 			Grey.SetActive (true);
-			if (unlockTelepon) {
+			if (PlayerPrefs.GetInt("Call") == 1) {
 				Telepon.SetActive (true);
 			} else {
 				Telepon.SetActive (false);
 			}
-			if (unlockVideoCall) {
+			if (PlayerPrefs.GetInt("VideoCall") == 1) {
 				VideoCall.SetActive (true);
 			} else {
 				VideoCall.SetActive (false);

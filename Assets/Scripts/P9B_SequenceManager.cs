@@ -29,6 +29,7 @@ public class P9B_SequenceManager : MonoBehaviour {
 		Debug.Log ("disabling ayah");
 		bgAyah.SetActive (false);
 		spriteAyah.SetActive (false);
+		PlayerPrefs.SetInt ("Call", 1);
 		
 	}
 	
