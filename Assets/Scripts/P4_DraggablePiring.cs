@@ -135,7 +135,9 @@ public class P4_DraggablePiring : MonoBehaviour {
 					transform.position = Vector3.Lerp (transform.position, target.position, moveSpeed *
 					Time.deltaTime);
 				} else {
-					GetComponent<AudioSource> ().Play ();
+					if (PlayerPrefs.GetString ("Musik") == "on") {
+						GetComponent<AudioSource> ().Play ();
+					}
 					hintPiring.SetActive (false);
 					transform.position = target.position;
 					moving = false;

@@ -48,7 +48,11 @@ public class P3_IbuAnak : MonoBehaviour {
 	}
 
 	public void PlaySelimutSFX() {
-		if (!GetComponent<AudioSource>().isPlaying) GetComponent<AudioSource> ().Play ();
+		if (!GetComponent<AudioSource> ().isPlaying) {
+			if (PlayerPrefs.GetString ("Musik") == "on") {
+				GetComponent<AudioSource> ().Play ();
+			}
+		}
 	}
 
 }

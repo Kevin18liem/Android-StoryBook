@@ -12,6 +12,8 @@ TagManager:
   - Handle
   - Off Text
   - settingsbutton
+  - subtitle
+  - SoundEffect
   layers:
   - Default
   - TransparentFX

@@ -25,7 +25,9 @@ public class P15_Mobil : MonoBehaviour {
 			if (Physics.Raycast (raycast, out raycastHit)) {
 				if (raycastHit.collider.name == gameObject.name) {
 					anim.SetTrigger ("jalan");
-					GetComponent<AudioSource> ().Play ();
+					if (PlayerPrefs.GetString ("Musik") == "on") {
+						GetComponent<AudioSource> ().Play();
+					}
 				}
 
 			}
@@ -35,7 +37,9 @@ public class P15_Mobil : MonoBehaviour {
 			if (Physics.Raycast (raycast, out raycastHit)) {
 				if (raycastHit.collider.name == gameObject.name) {
 					anim.SetTrigger ("jalan");
-					GetComponent<AudioSource> ().Play ();
+					if (PlayerPrefs.GetString ("Musik") == "on") {
+						GetComponent<AudioSource> ().Play();
+					}
 
 				}
 

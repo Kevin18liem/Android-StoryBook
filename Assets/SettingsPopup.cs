@@ -10,11 +10,16 @@ public class SettingsPopup : MonoBehaviour {
 	public GameObject Grey;
 	[SerializeField]
 	public void SettingsPopupOn() {
+		GameObject uiObject = GameObject.Find ("UI");
+		if (PlayerPrefs.GetString ("Musik") == "on") {
+			uiObject.GetComponent<AudioSource>().Play();
+		}
 		Grey.SetActive (true);
 		settingsPopup.SetActive (true);
 		navigationButton.GetComponent<Button> ().interactable = false;
 		homeButton.GetComponent<Button> ().interactable = false;
 		Time.timeScale = 0;
-		AudioListener.pause = true;
+		//AudioListener.pause = true;
+		GameObject.FindWithTag("subtitle").GetComponent<AudioSource>().Pause();
 	}
 }

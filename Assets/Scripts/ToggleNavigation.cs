@@ -13,6 +13,8 @@ public class ToggleNavigation : MonoBehaviour {
 	public bool unlockVideoCall = false;
 	[SerializeField]
 	public void toggleAnimation() {
+		GameObject uiObject = GameObject.Find ("UI");
+		uiObject.GetComponent<AudioSource>().Play();
 		if (NavigationPanel.activeInHierarchy) {
 			NavigationPanel.SetActive (false);
 			SliderPanel.SetActive (false);
@@ -25,7 +27,7 @@ public class ToggleNavigation : MonoBehaviour {
 			}
 			Time.timeScale = 1;
 
-			AudioListener.pause = false;
+			GameObject.FindWithTag("subtitle").GetComponent<AudioSource>().UnPause();
 		} else {
 			NavigationPanel.SetActive (true);
 			SliderPanel.SetActive (true);
@@ -41,7 +43,7 @@ public class ToggleNavigation : MonoBehaviour {
 				VideoCall.SetActive (false);
 			}
 			Time.timeScale = 0;
-			AudioListener.pause = true;
+			GameObject.FindWithTag("subtitle").GetComponent<AudioSource>().Pause();
 		}
 	}
 }

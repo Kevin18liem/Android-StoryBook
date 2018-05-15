@@ -24,7 +24,10 @@ public class SwipeTrail : MonoBehaviour {
 			thisTrail = (GameObject)Instantiate (trailPrefab, startPos, Quaternion.identity);
 			UpdateColor ();
 		} else if (((Input.touchCount > 0 && Input.GetTouch (0).phase == TouchPhase.Moved) || Input.GetMouseButton (0))) {
-			if (!GetComponent<AudioSource>().isPlaying) GetComponent<AudioSource> ().Play ();
+			if (!GetComponent<AudioSource> ().isPlaying) {
+				if (PlayerPrefs.GetString ("Musik") == "on") 
+					GetComponent<AudioSource>().Play ();
+			}
 			Ray mRay = Camera.main.ScreenPointToRay (Input.mousePosition);
 			float rayDistance;
 			if (objPlane.Raycast (mRay, out rayDistance))

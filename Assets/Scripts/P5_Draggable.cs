@@ -131,7 +131,9 @@ public class P5_Draggable : MonoBehaviour {
 					moveable = false;
 					anak.GetComponent<P5_Anak> ().TriggerAnimation (gameObject);
 					transform.position = new Vector3 (end.position.x, end.position.y, 2);
-					GetComponent<AudioSource> ().Play ();
+					if (PlayerPrefs.GetString ("Musik") == "on") {
+						GetComponent<AudioSource> ().Play ();
+					}
 				}
 			} else {
 				if (Vector3.Distance (transform.position, initPos) >= dDist) {

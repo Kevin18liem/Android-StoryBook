@@ -15,7 +15,9 @@ public class P2_Mobil : MonoBehaviour {
 	}
 
 	public void PlayCarSound() {
-		GetComponent<AudioSource> ().Play ();
+		if (PlayerPrefs.GetString ("Musik") == "on") {
+			GetComponent<AudioSource> ().Play ();
+		}
 	}
 
 }

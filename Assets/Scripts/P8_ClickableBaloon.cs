@@ -50,7 +50,9 @@ public class P8_ClickableBaloon : MonoBehaviour {
 	}
 
 	public void PlaySound() {
-		GetComponent<AudioSource> ().Play ();
+		if (PlayerPrefs.GetString ("Musik") == "on") {
+			GetComponent<AudioSource> ().Play ();
+		}
 	}
 
 }

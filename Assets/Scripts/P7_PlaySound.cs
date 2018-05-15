@@ -18,8 +18,9 @@ public class P7_PlaySound : MonoBehaviour {
 
 	public void PlaySound() {
 		if (!played) {
-			GetComponent<AudioSource> ().Play ();
-			played = true;
+			if (PlayerPrefs.GetString ("Musik") == "on") {
+				GetComponent<AudioSource> ().Play ();
+			}
 		}
 	}
 

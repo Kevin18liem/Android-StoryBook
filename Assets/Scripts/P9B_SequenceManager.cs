@@ -42,7 +42,9 @@ public class P9B_SequenceManager : MonoBehaviour {
 			case 0:
 				{
 					Debug.Log ("seq 0 : delaying");
-					GetComponent<AudioSource> ().Play ();
+					if (PlayerPrefs.GetString ("Musik") == "on") {
+						GetComponent<AudioSource> ().Play ();
+					}
 					spriteAnak.GetComponent<Animator> ().SetFloat ("mood", 0);
 					StartCoroutine (Delay (2.533f));
 					sequence++;

@@ -52,7 +52,9 @@ public class P11_DraggableX : MonoBehaviour {
 				if (raycastHit.collider.name == gameObject.name)
 				{
 					anim.SetTrigger ("boop");
-					GetComponent<AudioSource> ().PlayOneShot (pop);
+					if (PlayerPrefs.GetString ("Musik") == "on") {
+						GetComponent<AudioSource> ().PlayOneShot (pop);
+					}
 					dist = transform.position.z - Camera.main.transform.position.z;
 					temp = new Vector3 (Input.GetTouch (0).position.x, Input.GetTouch (0).position.y,
 						dist);
@@ -71,7 +73,9 @@ public class P11_DraggableX : MonoBehaviour {
 				if (raycastHit.collider.name == gameObject.name)
 				{
 					anim.SetTrigger ("boop");
-					GetComponent<AudioSource> ().PlayOneShot (pop);
+					if (PlayerPrefs.GetString ("Musik") == "on") {
+						GetComponent<AudioSource> ().PlayOneShot (pop);
+					}
 					dist = transform.position.z - Camera.main.transform.position.z;
 					temp = new Vector3 (Input.mousePosition.x, Input.mousePosition.y,
 						dist);
@@ -124,7 +128,9 @@ public class P11_DraggableX : MonoBehaviour {
 					transform.position = Vector3.Lerp (transform.position, target.position, moveSpeed *
 						Time.deltaTime);
 				} else {
-					GetComponent<AudioSource> ().PlayOneShot (correct);
+					if (PlayerPrefs.GetString ("Musik") == "on") {
+						GetComponent<AudioSource> ().PlayOneShot (correct);
+					}
 					spriteAnak.GetComponent<Animator> ().SetTrigger ("next");
 					transform.position = target.position;
 					moving = false;
