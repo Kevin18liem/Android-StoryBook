@@ -5,6 +5,7 @@ using UnityEngine;
 public class P13_Pintu : MonoBehaviour {
 
 	public bool allowTap = false;
+	public AudioClip pintuBuka;
 
 	private Animator anim;
 	private GameObject seqManager;
@@ -28,7 +29,8 @@ public class P13_Pintu : MonoBehaviour {
 				if (raycastHit.collider.name == gameObject.name) {
 					anim.SetTrigger ("buka");
 					seqManager.GetComponent<P13_SequenceManager> ().DoorTapped ();
-
+					GetComponent<AudioSource> ().Stop ();
+					GetComponent<AudioSource> ().PlayOneShot (pintuBuka);
 					allowTap = false;
 				}
 			}
@@ -40,7 +42,8 @@ public class P13_Pintu : MonoBehaviour {
 				if (raycastHit.collider.name == gameObject.name) {
 					anim.SetTrigger ("buka");
 					seqManager.GetComponent<P13_SequenceManager> ().DoorTapped ();
-
+					GetComponent<AudioSource> ().Stop ();
+					GetComponent<AudioSource> ().PlayOneShot (pintuBuka);
 					allowTap = false;
 				}
 			}

@@ -2,6 +2,10 @@ using UnityEngine;
 using System.Collections;
 public class SwipeTrail : MonoBehaviour {
 	public GameObject trailPrefab;
+	public AudioClip crayon;
+	public AudioClip eraser;
+
+	private AudioClip currentClip;
 	GameObject thisTrail;
 	Vector3 startPos;
 	Plane objPlane;
@@ -12,22 +16,30 @@ public class SwipeTrail : MonoBehaviour {
 		KodeWarna = "black";
 	}
 	private void Update() {
-		if(((Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)|| Input.GetMouseButtonDown(0))) {
-			Ray mRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+		if (((Input.touchCount > 0 && Input.GetTouch (0).phase == TouchPhase.Began) || Input.GetMouseButtonDown (0))) {
+			Ray mRay = Camera.main.ScreenPointToRay (Input.mousePosition);
 			float rayDistance;
-			if(objPlane.Raycast(mRay, out rayDistance))
-				startPos = mRay.GetPoint(rayDistance);
-			thisTrail = (GameObject) Instantiate(trailPrefab,startPos,Quaternion.identity);
-				UpdateColor ();
-		} else if(((Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)|| Input.GetMouseButton(0))) {
-			Ray mRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+			if (objPlane.Raycast (mRay, out rayDistance))
+				startPos = mRay.GetPoint (rayDistance);
+			thisTrail = (GameObject)Instantiate (trailPrefab, startPos, Quaternion.identity);
+			UpdateColor ();
+		} else if (((Input.touchCount > 0 && Input.GetTouch (0).phase == TouchPhase.Moved) || Input.GetMouseButton (0))) {
+			if (!GetComponent<AudioSource>().isPlaying) GetComponent<AudioSource> ().Play ();
+			Ray mRay = Camera.main.ScreenPointToRay (Input.mousePosition);
 			float rayDistance;
-			if(objPlane.Raycast(mRay,out rayDistance))
-				thisTrail.transform.position = mRay.GetPoint(rayDistance);
+			if (objPlane.Raycast (mRay, out rayDistance))
+				thisTrail.transform.position = mRay.GetPoint (rayDistance);
+		} else if (((Input.touchCount > 0 && Input.GetTouch (0).phase == TouchPhase.Ended) || Input.GetMouseButtonUp (0))) {
+			GetComponent<AudioSource> ().Stop ();
 		}
 	}
 
 	private void UpdateColor() {
+		if (KodeWarna == "white") {
+			GetComponent<AudioSource> ().clip = eraser;
+		} else {
+			GetComponent<AudioSource> ().clip = crayon;
+		}
 		if (KodeWarna == "black") {
 				thisTrail.GetComponent<TrailRenderer> ().startColor = Color.black;
 				thisTrail.GetComponent<TrailRenderer> ().endColor = Color.black;

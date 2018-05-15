@@ -13,6 +13,8 @@ public class P11_DraggableX : MonoBehaviour {
 	public GameObject succ;				// succesor
 	public GameObject spriteAnak;
 	public GameObject nextPage;
+	public AudioClip pop;
+	public AudioClip correct;
 
 	private bool isdragging;			// true if dragging
 	private float dist;					// distance from camera to collider
@@ -50,7 +52,7 @@ public class P11_DraggableX : MonoBehaviour {
 				if (raycastHit.collider.name == gameObject.name)
 				{
 					anim.SetTrigger ("boop");
-
+					GetComponent<AudioSource> ().PlayOneShot (pop);
 					dist = transform.position.z - Camera.main.transform.position.z;
 					temp = new Vector3 (Input.GetTouch (0).position.x, Input.GetTouch (0).position.y,
 						dist);
@@ -69,7 +71,7 @@ public class P11_DraggableX : MonoBehaviour {
 				if (raycastHit.collider.name == gameObject.name)
 				{
 					anim.SetTrigger ("boop");
-
+					GetComponent<AudioSource> ().PlayOneShot (pop);
 					dist = transform.position.z - Camera.main.transform.position.z;
 					temp = new Vector3 (Input.mousePosition.x, Input.mousePosition.y,
 						dist);
@@ -122,6 +124,7 @@ public class P11_DraggableX : MonoBehaviour {
 					transform.position = Vector3.Lerp (transform.position, target.position, moveSpeed *
 						Time.deltaTime);
 				} else {
+					GetComponent<AudioSource> ().PlayOneShot (correct);
 					spriteAnak.GetComponent<Animator> ().SetTrigger ("next");
 					transform.position = target.position;
 					moving = false;
