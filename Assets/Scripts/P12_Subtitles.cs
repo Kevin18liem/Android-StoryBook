@@ -25,7 +25,6 @@ public class P12_Subtitles : MonoBehaviour {
 	private bool waitingForInput = false;
 	public AudioClip audiosubanak1;
 	public AudioClip audiosubanak2;
-	public AudioClip audiosubbapak1;
 	// Use this for initialization
 	void Start () {
 
@@ -89,12 +88,6 @@ public class P12_Subtitles : MonoBehaviour {
 				HighlightText ();
 				Debug.Log ("On highlight");
 			}
-			if (PlayerPrefs.GetString ("Narasi") == "on") {
-				if (wordset == 0 && idx == 3) {
-					GetComponent<AudioSource> ().Stop ();
-					GetComponent<AudioSource> ().PlayOneShot (audiosubanak2);
-				}
-			}
 			// increment
 			idx++;
 			waiting = false;
@@ -129,9 +122,9 @@ public class P12_Subtitles : MonoBehaviour {
 				if (wordset == 0) {
 					GetComponent<AudioSource> ().Stop ();
 					GetComponent<AudioSource> ().PlayOneShot (audiosubanak1);
-
 				} else if (wordset == 1) {
-					//masukan audio bapak
+					GetComponent<AudioSource> ().Stop ();
+					GetComponent<AudioSource> ().PlayOneShot (audiosubanak2);
 				}
 			}
 		} else {

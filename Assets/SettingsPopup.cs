@@ -7,9 +7,10 @@ public class SettingsPopup : MonoBehaviour {
 	public GameObject settingsPopup;
 	public GameObject navigationButton;
 	public GameObject homeButton;
-
+	public GameObject Grey;
 	[SerializeField]
 	public void SettingsPopupOn() {
+		Grey.SetActive (true);
 		settingsPopup.SetActive (true);
 		navigationButton.GetComponent<Button> ().interactable = false;
 		homeButton.GetComponent<Button> ().interactable = false;

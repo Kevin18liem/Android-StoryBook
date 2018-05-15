@@ -340,6 +340,7 @@ RectTransform:
   - {fileID: 544973831}
   - {fileID: 1538657700}
   - {fileID: 10147611}
+  - {fileID: 1323760144}
   - {fileID: 746831903}
   - {fileID: 311471260}
   - {fileID: 1804521999}
@@ -1770,7 +1771,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 18722446}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1791,6 +1792,7 @@ MonoBehaviour:
   settingsPopup: {fileID: 746831902}
   navigationButton: {fileID: 2017651395}
   homeButton: {fileID: 1804521998}
+  Grey: {fileID: 1323760143}
 --- !u!114 &311471262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3230,7 +3232,7 @@ Transform:
   - {fileID: 1858013709}
   - {fileID: 2141007360}
   m_Father: {fileID: 18722446}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &749872857
 GameObject:
@@ -3791,7 +3793,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -51.1, y: -218.4}
-  m_SizeDelta: {x: 364.4, y: 218.6}
+  m_SizeDelta: {x: 372, y: 186}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &825353110
 MonoBehaviour:
@@ -3933,7 +3935,7 @@ RectTransform:
   m_Children:
   - {fileID: 937203386}
   m_Father: {fileID: 18722446}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -4186,6 +4188,7 @@ MonoBehaviour:
   settingsPopup: {fileID: 1264780756}
   navigationButton: {fileID: 2017651395}
   settingsButton: {fileID: 311471259}
+  Grey: {fileID: 1323760143}
 --- !u!114 &938059841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4903,7 +4906,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 18722446}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -5893,15 +5896,15 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1264780756}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 57, y: 264, z: -8.117954}
-  m_LocalScale: {x: 0.77436, y: 1.06251, z: 1}
+  m_LocalPosition: {x: 66.397, y: 355.83, z: -8.117954}
+  m_LocalScale: {x: 0.95824564, y: 1.4742227, z: 1}
   m_Children:
   - {fileID: 825353109}
   - {fileID: 2109773041}
   - {fileID: 554711974}
   - {fileID: 938059839}
   m_Father: {fileID: 18722446}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1285508398
 GameObject:
@@ -5994,6 +5997,74 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1 &1323760143
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1323760144}
+  - component: {fileID: 1323760146}
+  - component: {fileID: 1323760145}
+  m_Layer: 5
+  m_Name: Grey Page Wider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1323760144
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1323760143}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 18722446}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -0.027526855}
+  m_SizeDelta: {x: 26.599854, y: -0.05505371}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1323760145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1323760143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.30882353, g: 0.2929282, b: 0.2929282, a: 0.674}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1323760146
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1323760143}
 --- !u!1 &1328718974
 GameObject:
   m_ObjectHideFlags: 0
@@ -8133,7 +8204,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 18722446}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -8154,6 +8225,7 @@ MonoBehaviour:
   homesPopup: {fileID: 1264780756}
   navigationButton: {fileID: 2017651395}
   settingsButton: {fileID: 311471259}
+  Grey: {fileID: 1323760143}
 --- !u!114 &1804522001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8301,7 +8373,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 18722446}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -9279,7 +9351,7 @@ RectTransform:
   m_Children:
   - {fileID: 214186892}
   m_Father: {fileID: 18722446}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9763,6 +9835,7 @@ MonoBehaviour:
   settingsPopup: {fileID: 746831902}
   navigationButton: {fileID: 2017651395}
   settingsButton: {fileID: 1804521998}
+  Grey: {fileID: 1323760143}
 --- !u!114 &2141007362
 MonoBehaviour:
   m_ObjectHideFlags: 0

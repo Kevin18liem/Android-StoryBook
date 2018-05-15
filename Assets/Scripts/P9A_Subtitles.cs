@@ -26,6 +26,9 @@ public class P9A_Subtitles : MonoBehaviour {
 
 	public AudioClip audiosubanak1;
 	public AudioClip audiosubanak2;
+	public AudioClip audiosubbapak1;
+	public AudioClip audiosubbapak2;
+	public AudioClip audiosubbapak3;
 	// Use this for initialization
 	void Start () {
 
@@ -131,8 +134,17 @@ public class P9A_Subtitles : MonoBehaviour {
 						GetComponent<AudioSource> ().Stop ();
 						GetComponent<AudioSource> ().PlayOneShot (audiosubanak2);
 					}
-				} else if (gameObject.name == "SubBapak") {
-					//masukan audio bapak
+				} else if (gameObject.name == "SubAyahKecil") {
+					if (wordset == 0) {
+						GetComponent<AudioSource> ().Stop ();
+						GetComponent<AudioSource> ().PlayOneShot (audiosubbapak1);
+					} else if (wordset == 1) {
+						GetComponent<AudioSource> ().Stop ();
+						GetComponent<AudioSource> ().PlayOneShot (audiosubbapak2);
+					} else if (wordset == 2) {
+						GetComponent<AudioSource> ().Stop ();
+						GetComponent<AudioSource> ().PlayOneShot (audiosubbapak3);
+					}
 				}
 			}	
 		} else {

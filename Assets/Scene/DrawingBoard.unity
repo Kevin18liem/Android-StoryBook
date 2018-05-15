@@ -143,7 +143,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1241921663}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -164,6 +164,7 @@ MonoBehaviour:
   homesPopup: {fileID: 1505765731}
   navigationButton: {fileID: 74842318}
   settingsButton: {fileID: 896834630}
+  Grey: {fileID: 1280923758}
 --- !u!114 &22166625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -501,7 +502,7 @@ RectTransform:
   m_Children:
   - {fileID: 1243080948}
   m_Father: {fileID: 1241921663}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2323,20 +2324,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   texts:
   - words:
-    - text: test
-      delay: 0
+    - text: Enam
+      delay: 0.4
+    - text: hari
+      delay: 0.3
+    - text: sudah
+      delay: 0.4
+    - text: berlalu,$
+      delay: 0.5
+    - text: artinya
+      delay: 0.5
+    - text: besok
+      delay: 0.4
+    - text: ayah
+      delay: 0.3
+    - text: pulang
+      delay: 0.4
     - text: 
-      delay: 0
+      delay: 0.5
   - words:
-    - text: test2
-      delay: 0
+    - text: Aku
+      delay: 0.2
+    - text: akan
+      delay: 0.3
+    - text: membuat
+      delay: 0.4
+    - text: sesuatu
+      delay: 0.4
+    - text: untuk
+      delay: 0.3
+    - text: ayah
+      delay: 0.3
     - text: 
-      delay: 0
+      delay: 0.4
   fade_speed: 3
   newline_char: 36
-  audiosubanak1: {fileID: 0}
-  audiosubanak2: {fileID: 0}
-  audiosubbapak1: {fileID: 0}
+  audiosubanak1: {fileID: 8300000, guid: 6ed4792657c865d49974c5bc7a079f14, type: 3}
+  audiosubanak2: {fileID: 8300000, guid: 0275fef72dbfedf4584ff87b944e5e2b, type: 3}
 --- !u!1 &421142276
 GameObject:
   m_ObjectHideFlags: 0
@@ -3091,7 +3115,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1241921663}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -3149,6 +3173,7 @@ MonoBehaviour:
   settingsPopup: {fileID: 1505765731}
   navigationButton: {fileID: 74842318}
   settingsButton: {fileID: 896834630}
+  Grey: {fileID: 1280923758}
 --- !u!114 &703299480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3849,7 +3874,7 @@ Transform:
   - {fileID: 329289248}
   - {fileID: 1768203550}
   m_Father: {fileID: 1241921663}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &835197692
 GameObject:
@@ -4109,7 +4134,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1241921663}
-  m_RootOrder: 7
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4232,7 +4257,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1241921663}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4253,6 +4278,7 @@ MonoBehaviour:
   settingsPopup: {fileID: 825690473}
   navigationButton: {fileID: 74842318}
   homeButton: {fileID: 22166622}
+  Grey: {fileID: 1280923758}
 --- !u!114 &896834633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5794,11 +5820,12 @@ RectTransform:
   - {fileID: 401627354}
   - {fileID: 1108888642}
   - {fileID: 296166610}
+  - {fileID: 845917176}
+  - {fileID: 1280923761}
   - {fileID: 825690474}
   - {fileID: 896834631}
   - {fileID: 22166623}
   - {fileID: 1505765732}
-  - {fileID: 845917176}
   - {fileID: 1871971546}
   - {fileID: 691750531}
   - {fileID: 2101901895}
@@ -5959,6 +5986,74 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1255995153}
+--- !u!1 &1280923758
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1280923761}
+  - component: {fileID: 1280923760}
+  - component: {fileID: 1280923759}
+  m_Layer: 5
+  m_Name: Grey Page Wider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1280923759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1280923758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.30882353, g: 0.2929282, b: 0.2929282, a: 0.674}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1280923760
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1280923758}
+--- !u!224 &1280923761
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1280923758}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1241921663}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -0.027526855}
+  m_SizeDelta: {x: 26.599854, y: -0.05505371}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1335946116
 GameObject:
   m_ObjectHideFlags: 0
@@ -6524,7 +6619,7 @@ Transform:
   - {fileID: 1051512002}
   - {fileID: 703299478}
   m_Father: {fileID: 1241921663}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1517373126
 GameObject:
@@ -7254,6 +7349,7 @@ MonoBehaviour:
   settingsPopup: {fileID: 825690473}
   navigationButton: {fileID: 74842318}
   settingsButton: {fileID: 22166622}
+  Grey: {fileID: 1280923758}
 --- !u!114 &1768203552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7660,7 +7756,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1241921663}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -8712,7 +8808,7 @@ RectTransform:
   m_Children:
   - {fileID: 1008688863}
   m_Father: {fileID: 1241921663}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}

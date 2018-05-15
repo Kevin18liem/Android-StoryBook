@@ -131,7 +131,7 @@ public class P13_Subtitles : MonoBehaviour {
 					GetComponent<AudioSource> ().PlayOneShot (audiosubanak1);
 
 				} else if (wordset == 1) {
-					//masukan audio bapak
+					GetComponent<AudioSource> ().PlayOneShot (audiosubbapak1);
 				}
 			}
 		} else {

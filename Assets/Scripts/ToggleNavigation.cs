@@ -24,6 +24,8 @@ public class ToggleNavigation : MonoBehaviour {
 				VideoCall.SetActive (false);
 			}
 			Time.timeScale = 1;
+
+			AudioListener.pause = false;
 		} else {
 			NavigationPanel.SetActive (true);
 			SliderPanel.SetActive (true);
@@ -39,6 +41,7 @@ public class ToggleNavigation : MonoBehaviour {
 				VideoCall.SetActive (false);
 			}
 			Time.timeScale = 0;
+			AudioListener.pause = true;
 		}
 	}
 }

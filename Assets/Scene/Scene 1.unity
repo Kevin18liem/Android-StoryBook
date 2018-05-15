@@ -143,7 +143,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1511132936}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -164,6 +164,7 @@ MonoBehaviour:
   settingsPopup: {fileID: 1065358274}
   navigationButton: {fileID: 643808773}
   homeButton: {fileID: 640870105}
+  Grey: {fileID: 1082610131}
 --- !u!114 &104343389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,7 +281,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1511132936}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -417,7 +418,7 @@ RectTransform:
   m_Children:
   - {fileID: 300435398}
   m_Father: {fileID: 1511132936}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -586,6 +587,7 @@ GameObject:
   - component: {fileID: 218732283}
   - component: {fileID: 218732282}
   - component: {fileID: 218732285}
+  - component: {fileID: 218732286}
   m_Layer: 5
   m_Name: Subtitles
   m_TagString: Untagged
@@ -625,48 +627,32 @@ MonoBehaviour:
   texts:
   - words:
     - text: Namaku
-      delay: 1
+      delay: 0.4
     - text: Arka.$
-      delay: 1
-    - text: Aku
-      delay: 1
-    - text: suka
-      delay: 1
-    - text: bermain
-      delay: 1
-    - text: dengan
-      delay: 1
-    - text: ayahku.
-      delay: 1
+      delay: 0.3
     - text: 
-      delay: 1
+      delay: 0.4
   - words:
-    - text: Tapi
-      delay: 1
-    - text: suatu
-      delay: 1
-    - text: hari
-      delay: 1
-    - text: ayah
-      delay: 1
-    - text: harus
-      delay: 1
-    - text: pergi
-      delay: 1
-    - text: ke
-      delay: 1
-    - text: luar
-      delay: 1
-    - text: kota.
-      delay: 1
+    - text: Aku
+      delay: 0.4
+    - text: suka
+      delay: 0.3
+    - text: bermain
+      delay: 0.4
+    - text: dengan
+      delay: 0.3
+    - text: ayahku.
+      delay: 0.4
     - text: 
-      delay: 1
+      delay: 0.4
   fade_speed: 3
   newline_char: 36
   spriteAnak: {fileID: 1596274138}
   spriteAyah: {fileID: 1074658247}
   spriteIbu: {fileID: 1514761615}
   nextPage: {fileID: 153201828}
+  audiosubanak1: {fileID: 8300000, guid: dea1e14e45d5d6a4d99248a04b60d838, type: 3}
+  audiosubanak2: {fileID: 8300000, guid: f9c33246b2530214ca8c75da9a388694, type: 3}
 --- !u!114 &218732283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -717,6 +703,86 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!82 &218732286
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 218732280}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &277017801
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,7 +1006,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1511132936}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1154,6 +1220,7 @@ MonoBehaviour:
   settingsPopup: {fileID: 1345497277}
   navigationButton: {fileID: 643808773}
   settingsButton: {fileID: 104343386}
+  Grey: {fileID: 1082610131}
 --- !u!114 &413420190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2486,6 +2553,7 @@ MonoBehaviour:
   homesPopup: {fileID: 1345497277}
   navigationButton: {fileID: 643808773}
   settingsButton: {fileID: 104343386}
+  Grey: {fileID: 1082610131}
 --- !u!114 &640870108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2603,7 +2671,7 @@ RectTransform:
   m_Children:
   - {fileID: 737381799}
   m_Father: {fileID: 1511132936}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2771,7 +2839,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1511132936}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -4352,7 +4420,7 @@ Transform:
   - {fileID: 1244558843}
   - {fileID: 1098987496}
   m_Father: {fileID: 1511132936}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1074658247
 GameObject:
@@ -4475,6 +4543,74 @@ MonoBehaviour:
   trigger_allowed: 0
   speed: 1.5
   tapped: 0
+--- !u!1 &1082610131
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1082610132}
+  - component: {fileID: 1082610134}
+  - component: {fileID: 1082610133}
+  m_Layer: 5
+  m_Name: Grey Page Wider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1082610132
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1082610131}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1511132936}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -0.027526855}
+  m_SizeDelta: {x: 26.599854, y: -0.05505371}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1082610133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1082610131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.30882353, g: 0.2929282, b: 0.2929282, a: 0.674}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1082610134
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1082610131}
 --- !u!1 &1098987495
 GameObject:
   m_ObjectHideFlags: 0
@@ -4526,6 +4662,7 @@ MonoBehaviour:
   settingsPopup: {fileID: 1065358274}
   navigationButton: {fileID: 643808773}
   settingsButton: {fileID: 640870105}
+  Grey: {fileID: 1082610131}
 --- !u!114 &1098987498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5260,15 +5397,15 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1345497277}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 57, y: 264, z: -8.117954}
-  m_LocalScale: {x: 0.77436, y: 1.06251, z: 1}
+  m_LocalPosition: {x: 69.155, y: 380.27, z: -8.117954}
+  m_LocalScale: {x: 1.01223, y: 1.5837594, z: 1}
   m_Children:
   - {fileID: 1786300412}
   - {fileID: 1854662201}
   - {fileID: 1944101569}
   - {fileID: 413420188}
   m_Father: {fileID: 1511132936}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1353745976
 GameObject:
@@ -5807,6 +5944,7 @@ RectTransform:
   m_Children:
   - {fileID: 218732281}
   - {fileID: 640870106}
+  - {fileID: 1082610132}
   - {fileID: 1345497278}
   - {fileID: 104343387}
   - {fileID: 153201829}
@@ -6672,7 +6810,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -51.1, y: -218.4}
-  m_SizeDelta: {x: 364.4, y: 218.6}
+  m_SizeDelta: {x: 372, y: 186}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1786300413
 MonoBehaviour:

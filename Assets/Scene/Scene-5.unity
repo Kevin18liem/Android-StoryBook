@@ -606,6 +606,74 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 108534862}
+--- !u!1 &130065517
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 130065518}
+  - component: {fileID: 130065520}
+  - component: {fileID: 130065519}
+  m_Layer: 5
+  m_Name: Grey Page Wider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &130065518
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 130065517}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1550619018}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -0.027526855}
+  m_SizeDelta: {x: 26.599854, y: -0.05505371}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &130065519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 130065517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.30882353, g: 0.2929282, b: 0.2929282, a: 0.674}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &130065520
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 130065517}
 --- !u!1 &276384478
 GameObject:
   m_ObjectHideFlags: 0
@@ -1053,6 +1121,7 @@ MonoBehaviour:
   homesPopup: {fileID: 2063711574}
   navigationButton: {fileID: 1376851891}
   settingsButton: {fileID: 903572677}
+  Grey: {fileID: 130065517}
 --- !u!114 &380793087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1150,7 +1219,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1550619018}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2086,7 +2155,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1550619018}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2471,6 +2540,7 @@ MonoBehaviour:
   settingsPopup: {fileID: 760233217}
   navigationButton: {fileID: 1376851891}
   settingsButton: {fileID: 380793085}
+  Grey: {fileID: 130065517}
 --- !u!114 &742471629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2662,7 +2732,7 @@ Transform:
   - {fileID: 920607153}
   - {fileID: 742471627}
   m_Father: {fileID: 1550619018}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &828246738
 GameObject:
@@ -3062,6 +3132,7 @@ MonoBehaviour:
   settingsPopup: {fileID: 760233217}
   navigationButton: {fileID: 1376851891}
   homeButton: {fileID: 380793085}
+  Grey: {fileID: 130065517}
 --- !u!114 &903572679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3159,7 +3230,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1550619018}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3615,6 +3686,7 @@ MonoBehaviour:
   settingsPopup: {fileID: 2063711574}
   navigationButton: {fileID: 1376851891}
   settingsButton: {fileID: 903572677}
+  Grey: {fileID: 130065517}
 --- !u!114 &937388386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3762,7 +3834,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1550619018}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -5363,7 +5435,7 @@ RectTransform:
   m_Children:
   - {fileID: 1596552628}
   m_Father: {fileID: 1550619018}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -5442,7 +5514,7 @@ RectTransform:
   m_Children:
   - {fileID: 1786086268}
   m_Father: {fileID: 1550619018}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5917,7 +5989,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -51.1, y: -218.4}
-  m_SizeDelta: {x: 364.4, y: 218.6}
+  m_SizeDelta: {x: 327, y: 186}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1525383024
 MonoBehaviour:
@@ -6251,6 +6323,7 @@ RectTransform:
   - {fileID: 1855782082}
   - {fileID: 1922977879}
   - {fileID: 828246739}
+  - {fileID: 130065518}
   - {fileID: 760233218}
   - {fileID: 903572682}
   - {fileID: 380793090}
@@ -7822,15 +7895,15 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2063711574}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 57, y: 264, z: -8.117954}
-  m_LocalScale: {x: 0.77436, y: 1.06251, z: 1}
+  m_LocalPosition: {x: 74.682, y: 389.46, z: -8.117954}
+  m_LocalScale: {x: 1.1203706, y: 1.6280936, z: 1}
   m_Children:
   - {fileID: 1525383023}
   - {fileID: 754355372}
   - {fileID: 1542395051}
   - {fileID: 937388384}
   m_Father: {fileID: 1550619018}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2093915256
 GameObject:
