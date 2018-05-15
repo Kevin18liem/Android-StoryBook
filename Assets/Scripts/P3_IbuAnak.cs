@@ -47,4 +47,8 @@ public class P3_IbuAnak : MonoBehaviour {
 		seqManager.GetComponent<P3_SequenceManager> ().AnimationDone ();
 	}
 
+	public void PlaySelimutSFX() {
+		if (!GetComponent<AudioSource>().isPlaying) GetComponent<AudioSource> ().Play ();
+	}
+
 }

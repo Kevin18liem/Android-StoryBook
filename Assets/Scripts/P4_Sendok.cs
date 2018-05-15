@@ -93,6 +93,7 @@ public class P4_Sendok : MonoBehaviour {
 	}
 
 	public void SetEmpty() {
+		GetComponent<AudioSource> ().Play ();
 		curr.sprite = empty;
 	}
 }

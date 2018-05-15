@@ -144,6 +144,7 @@ public class P4_Draggable : MonoBehaviour {
 					transform.position = Vector3.Lerp (transform.position, target.position, moveSpeed *
 						Time.deltaTime);
 				} else {
+					GetComponent<AudioSource> ().Play ();
 					transform.position = target.position;
 					moving = false;
 					moveable = false;
@@ -165,6 +166,8 @@ public class P4_Draggable : MonoBehaviour {
 					transform.position = Vector3.Lerp (transform.position, target2.position, moveSpeed *
 						Time.deltaTime);
 				} else {
+					GetComponent<AudioSource> ().Play ();
+
 					transform.position = target2.position;
 					moving = false;
 					moveable = false;
