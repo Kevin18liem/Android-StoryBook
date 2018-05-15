@@ -73,10 +73,11 @@ public class P1_Subtitles : MonoBehaviour {
 			yield return new WaitForSeconds (sec);
 
 			// events
+			/*
 			if (wordset == 1 && idx == 0) {
 				spriteAyah.GetComponent<Animator> ().SetTrigger ("ngelus");
 				spriteAnak.GetComponent<Animator> ().SetTrigger ("terkejut");
-			}
+			}*/
 
 			// Highlight
 			if (PlayerPrefs.GetString ("HighlightText") == "on") {

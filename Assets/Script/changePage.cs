@@ -19,8 +19,11 @@ public class changePage : MonoBehaviour {
 			balikHalaman.GetComponent<BalikHalaman> ().sceneName = sceneName;
 			if (next) {
 				balikHalaman.GetComponent<Animator> ().SetTrigger ("balik");
+				balikHalaman.GetComponent<AudioSource>().Play ();
+
 			} else {
 				balikHalaman.GetComponent<Animator> ().SetTrigger ("balik-sebelum");
+				balikHalaman.GetComponent<AudioSource>().Play ();
 
 			}
 		} else {
