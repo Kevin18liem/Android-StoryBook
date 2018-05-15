@@ -35,4 +35,5 @@ public class P7_Ayah_Script_2 : MonoBehaviour {
 //			Debug.Log ("test" + GameObject.Find ("SequenceManager").GetComponent<P7_SequenceManager> ().sequence);
 		}
 	}
+
 }

@@ -48,4 +48,9 @@ public class P8_ClickableBaloon : MonoBehaviour {
 		}
 
 	}
+
+	public void PlaySound() {
+		GetComponent<AudioSource> ().Play ();
+	}
+
 }
