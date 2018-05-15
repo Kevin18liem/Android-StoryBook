@@ -131,7 +131,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &10147611
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2953,6 +2953,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   subtitle: {fileID: 551299635}
   subtitleIbu: {fileID: 1412253282}
+  nextPageBtn: {fileID: 2094398298}
   inSequence: 0
   sequence: 0
 --- !u!1 &703130465
@@ -9747,7 +9748,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2094398299
 RectTransform:
   m_ObjectHideFlags: 0

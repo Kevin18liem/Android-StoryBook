@@ -8,6 +8,7 @@ public class P7_SequenceManager : MonoBehaviour {
 
 	public GameObject subtitle;
 	public GameObject subtitleIbu;
+	public GameObject nextPageBtn;
 	public bool inSequence;
 	public int sequence;
 
