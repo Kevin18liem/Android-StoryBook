@@ -826,8 +826,8 @@ RectTransform:
   - {fileID: 1204504040}
   - {fileID: 613927887}
   - {fileID: 814369510}
-  - {fileID: 872281040}
   - {fileID: 1581613665}
+  - {fileID: 872281040}
   - {fileID: 1429681298}
   - {fileID: 972195416}
   - {fileID: 1226658139}
@@ -2784,7 +2784,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.511}
+  m_Color: {r: 0.30882353, g: 0.2929282, b: 0.2929282, a: 0.674}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3269,7 +3269,7 @@ RectTransform:
   m_Children:
   - {fileID: 512757365}
   m_Father: {fileID: 300435398}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -3287,7 +3287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05b656a634cd94322a6f95647482ccaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextScene: Scene-2
+  nextScene: Scene-9b
 --- !u!114 &872281042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6164,7 +6164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05b656a634cd94322a6f95647482ccaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextScene: Scene-2
+  nextScene: Scene-9a
 --- !u!114 &1581613661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6281,7 +6281,7 @@ RectTransform:
   m_Children:
   - {fileID: 1849701752}
   m_Father: {fileID: 300435398}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
