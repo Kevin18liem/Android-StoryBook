@@ -534,7 +534,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   next: 1
   balikHalaman: {fileID: 1224207668}
-  sceneName: Scene 1
+  sceneName: Scene-Milik
 --- !u!1 &706737192
 GameObject:
   m_ObjectHideFlags: 0
