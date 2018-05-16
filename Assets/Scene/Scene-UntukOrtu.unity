@@ -551,7 +551,7 @@ GameObject:
   - component: {fileID: 974248904}
   - component: {fileID: 974248903}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: ScrollArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -574,7 +574,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 106, y: 0}
+  m_AnchoredPosition: {x: 106, y: -17}
   m_SizeDelta: {x: -618, y: -379.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &974248903
@@ -788,7 +788,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 95.7, y: 160}
+  m_AnchoredPosition: {x: 95.7, y: 143}
   m_SizeDelta: {x: 394.09, y: 153}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1413104310
@@ -1100,7 +1100,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 98.07, y: -156.5}
+  m_AnchoredPosition: {x: 98.07, y: -173.5}
   m_SizeDelta: {x: 394.09, y: 153}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1890210975
@@ -1212,7 +1212,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 511221674}
   m_HandleRect: {fileID: 511221673}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0.99999994
   m_Size: 0.51575434
   m_NumberOfSteps: 0
   m_OnValueChanged:
