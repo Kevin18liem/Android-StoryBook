@@ -59,3 +59,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene/Scene-15.unity
     guid: 907579525f0b0fb4a8887bf2a8f89a06
+  - enabled: 1
+    path: Assets/Scene/Scene-UntukOrtu.unity
+    guid: 7b21ba713fea23a489b75188641f0ad4
