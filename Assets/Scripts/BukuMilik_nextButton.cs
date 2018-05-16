@@ -21,7 +21,9 @@ public class BukuMilik_nextButton : MonoBehaviour {
 
 	public void ToNextPage() {
 		PlayerPrefs.SetString ("PlayerName", inputfield.text);
-		SceneManager.LoadScene (nextScene);
+		GetComponent<changePage> ().sceneName = nextScene;
+		GetComponent<changePage> ().changeMenuScene ();
+		//SceneManager.LoadScene (nextScene);
 	}
 
 }
