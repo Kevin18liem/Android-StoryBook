@@ -6454,8 +6454,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 344, y: -167.33441}
-  m_SizeDelta: {x: 315.7, y: 126}
+  m_AnchoredPosition: {x: 344, y: -194.1672}
+  m_SizeDelta: {x: 315.7, y: 179.67}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1412253284
 MonoBehaviour:
@@ -6471,58 +6471,31 @@ MonoBehaviour:
   texts:
   - words:
     - text: Karena
-      delay: 0
+      delay: 0.6
     - text: Ayah
-      delay: 0
+      delay: 0.5
     - text: harus$
-      delay: 0
+      delay: 0.5
     - text: membangun
-      delay: 0
+      delay: 0.5
     - text: rumah,$
-      delay: 0
+      delay: 0.5
     - text: jalan,
-      delay: 0
+      delay: 0.4
     - text: dan
-      delay: 0
+      delay: 0.4
     - text: jembatan$
-      delay: 0
+      delay: 0.5
     - text: di
-      delay: 0
+      delay: 0.4
     - text: luar
-      delay: 0
+      delay: 0.4
     - text: kota,
-      delay: 0
+      delay: 0.4
     - text: Arka.
-      delay: 0
+      delay: 0.4
     - text: 
-      delay: 0
-  - words:
-    - text: Ayah
-      delay: 0
-    - text: tidak
-      delay: 0
-    - text: selalu
-      delay: 0
-    - text: ada
-      delay: 0
-    - text: di
-      delay: 0
-    - text: sini
-      delay: 0
-    - text: karena$
-      delay: 0
-    - text: harus
-      delay: 0
-    - text: bekerja
-      delay: 0
-    - text: di
-      delay: 0
-    - text: luar
-      delay: 0
-    - text: kota
-      delay: 0
-    - text: 
-      delay: 0
+      delay: 0.4
   fade_speed: 3
   newline_char: 36
   spriteIbu: {fileID: 499283453}
@@ -6585,7 +6558,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 9729e07f27a59804d8f8b1eec0c817fa, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

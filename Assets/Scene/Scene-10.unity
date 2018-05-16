@@ -3971,7 +3971,7 @@ MonoBehaviour:
   settingsPopup: {fileID: 2027017673}
   navigationButton: {fileID: 100201890}
   settingsButton: {fileID: 662517185}
-  Grey: {fileID: 100201890}
+  Grey: {fileID: 1611473156}
 --- !u!114 &889834553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6439,23 +6439,23 @@ MonoBehaviour:
   texts:
   - words:
     - text: Yuk,
-      delay: 0
+      delay: 0.4
     - text: kita
-      delay: 0
+      delay: 0.4
     - text: tandai
-      delay: 0
-    - text: kalender$
-      delay: 0
-    - text: ini
-      delay: 0
-    - text: sampai
-      delay: 0
-    - text: Ayah
-      delay: 0
-    - text: pulang
-      delay: 0
+      delay: 0.3
+    - text: tujuh
+      delay: 0.3
+    - text: hari$
+      delay: 0.3
+    - text: di
+      delay: 0.2
+    - text: kalender
+      delay: 0.4
+    - text: ini.
+      delay: 0.4
     - text: 
-      delay: 0
+      delay: 0.4
   fade_speed: 3
   newline_char: 36
 --- !u!82 &1554496757
@@ -6467,7 +6467,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: bd228354ccf12e046b8cefa9f4ce288a, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

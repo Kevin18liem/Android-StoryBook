@@ -103,6 +103,9 @@ public class P7_Subtitles_Ibu_1 : MonoBehaviour {
 				yield return null;
 			}
 			cg.interactable = true;
+			if (PlayerPrefs.GetString ("Narasi") == "on") {
+				GetComponent<AudioSource> ().Play ();
+			}
 		} else {
 			cg.interactable = false;
 			while (cg.alpha > 0) {

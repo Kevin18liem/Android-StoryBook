@@ -2806,7 +2806,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   next: 0
   balikHalaman: {fileID: 122367882}
-  sceneName: Scene-Main
+  sceneName: Scene-MainMenu
 --- !u!114 &673354923
 MonoBehaviour:
   m_ObjectHideFlags: 0
