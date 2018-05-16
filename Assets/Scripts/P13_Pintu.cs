@@ -21,6 +21,10 @@ public class P13_Pintu : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		if (allowTap && PlayerPrefs.GetString ("Musik") == "on" && !GetComponent<AudioSource> ().isPlaying) {
+			GetComponent<AudioSource> ().Play ();
+		}
+
 		if ((Input.touchCount > 0) && (Input.GetTouch (0).phase == TouchPhase.Began) && allowTap) {
 
 			Ray raycast = Camera.main.ScreenPointToRay (Input.GetTouch (0).position);
@@ -30,7 +34,9 @@ public class P13_Pintu : MonoBehaviour {
 					anim.SetTrigger ("buka");
 					seqManager.GetComponent<P13_SequenceManager> ().DoorTapped ();
 					GetComponent<AudioSource> ().Stop ();
-					GetComponent<AudioSource> ().PlayOneShot (pintuBuka);
+					if (PlayerPrefs.GetString ("Musik") == "on") {
+						GetComponent<AudioSource> ().PlayOneShot (pintuBuka);
+					}
 					allowTap = false;
 				}
 			}
@@ -43,7 +49,9 @@ public class P13_Pintu : MonoBehaviour {
 					anim.SetTrigger ("buka");
 					seqManager.GetComponent<P13_SequenceManager> ().DoorTapped ();
 					GetComponent<AudioSource> ().Stop ();
-					GetComponent<AudioSource> ().PlayOneShot (pintuBuka);
+					if (PlayerPrefs.GetString ("Musik") == "on") {
+						GetComponent<AudioSource> ().PlayOneShot (pintuBuka);
+					}
 					allowTap = false;
 				}
 			}

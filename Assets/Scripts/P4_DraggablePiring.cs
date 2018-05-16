@@ -137,6 +137,7 @@ public class P4_DraggablePiring : MonoBehaviour {
 				} else {
 					if (PlayerPrefs.GetString ("Musik") == "on") {
 						GetComponent<AudioSource> ().Play ();
+						GameObject.Find ("PiringSound").GetComponent<AudioSource> ().Play ();
 					}
 					hintPiring.SetActive (false);
 					transform.position = target.position;
