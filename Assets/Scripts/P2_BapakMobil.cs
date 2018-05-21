@@ -8,7 +8,7 @@ public class P2_BapakMobil : MonoBehaviour {
 	public float distance;
 	public float dDist = 0.1f;
 	public float moveSpeed;
-
+	public GameObject buttonHint;
 	private Vector3 target;
 
 	// Use this for initialization

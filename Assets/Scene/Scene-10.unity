@@ -5680,7 +5680,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 40
-    m_Alignment: 5
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -6444,9 +6444,9 @@ MonoBehaviour:
       delay: 0.4
     - text: tandai
       delay: 0.3
-    - text: tujuh
+    - text: tujuh$
       delay: 0.3
-    - text: hari$
+    - text: hari
       delay: 0.3
     - text: di
       delay: 0.2

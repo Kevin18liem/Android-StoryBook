@@ -24,6 +24,7 @@ public class P2_Subtitles : MonoBehaviour {
 	public AudioClip audiosubanak1;
 	public AudioClip audiosubanak2;
 	public AudioClip audiosubanak3;
+	public GameObject buttonHint;
 	// Use this for initialization
 	void Start () {
 
@@ -61,12 +62,14 @@ public class P2_Subtitles : MonoBehaviour {
 					anakIbuNext.GetComponent<Animator> ().SetTrigger (trigger);
 					bapakMobil.GetComponent<Animator> ().SetTrigger ("dada");
 					isFinish = true;
+					buttonHint.SetActive (true);
 				}
 			} 
 		} else {
 			if ((((Input.touchCount > 0) && (Input.GetTouch (0).phase == TouchPhase.Began)) || Input.GetMouseButtonDown (0))) {
 				if (isFinish) {
 					bapakMobil.GetComponent<Animator> ().SetTrigger ("jalan");
+					buttonHint.SetActive (false);
 				}
 			}
 		}
@@ -124,6 +127,7 @@ public class P2_Subtitles : MonoBehaviour {
 					} else if (wordset == 2) {
 						GetComponent<AudioSource> ().Stop ();
 						GetComponent<AudioSource> ().PlayOneShot (audiosubanak3);
+						
 					}
 			}	
 		} else {
