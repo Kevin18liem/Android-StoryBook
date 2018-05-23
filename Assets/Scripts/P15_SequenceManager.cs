@@ -13,6 +13,7 @@ public class P15_SequenceManager : MonoBehaviour {
 	public int sequence;
 	private bool inCoroutine;
 
+	public GameObject buttonHint;
 	// Use this for initialization
 	void Start () {
 		sequence = 0;
@@ -55,6 +56,7 @@ public class P15_SequenceManager : MonoBehaviour {
 				}
 			case 4: // mobil jalan
 				{
+					buttonHint.SetActive (true);
 					mobilSprite.GetComponent<P15_Mobil> ().allowClick = true;
 					break;
 				}

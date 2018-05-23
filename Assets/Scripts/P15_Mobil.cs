@@ -7,6 +7,7 @@ public class P15_Mobil : MonoBehaviour {
 	public bool allowClick = false;
 	public GameObject button;
 
+	public GameObject buttonHint;
 	private Animator anim;
 
 	// Use this for initialization
@@ -20,8 +21,9 @@ public class P15_Mobil : MonoBehaviour {
 	void Update () {
 
 		if ((Input.touchCount > 0) && (Input.GetTouch (0).phase == TouchPhase.Began) && allowClick) {
+			buttonHint.SetActive (false);
 			Ray raycast = Camera.main.ScreenPointToRay (Input.GetTouch (0).position);
-			RaycastHit raycastHit;
+			RaycastHit raycastHit;	
 			if (Physics.Raycast (raycast, out raycastHit)) {
 				if (raycastHit.collider.name == gameObject.name) {
 					anim.SetTrigger ("jalan");
@@ -32,6 +34,7 @@ public class P15_Mobil : MonoBehaviour {
 
 			}
 		} else if (Input.GetMouseButtonDown (0) && allowClick) {
+			buttonHint.SetActive (false);
 			Ray raycast = Camera.main.ScreenPointToRay (Input.mousePosition);
 			RaycastHit raycastHit;
 			if (Physics.Raycast (raycast, out raycastHit)) {
