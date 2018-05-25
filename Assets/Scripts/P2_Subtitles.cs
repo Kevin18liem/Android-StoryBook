@@ -158,6 +158,7 @@ public class P2_Subtitles : MonoBehaviour {
 	void ChangeText() {
 		idx = 0;
 		wordset++;
+		if(wordset!=3)
 		StartCoroutine (Fade (false));
 	}
 
