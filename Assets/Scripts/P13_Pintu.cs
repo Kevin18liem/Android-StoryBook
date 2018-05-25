@@ -6,6 +6,9 @@ public class P13_Pintu : MonoBehaviour {
 
 	public bool allowTap = false;
 	public AudioClip pintuBuka;
+	public AudioClip pintuTutup;
+	public GameObject sparkle1;
+	public GameObject hint;
 
 	private Animator anim;
 	private GameObject seqManager;
@@ -31,7 +34,9 @@ public class P13_Pintu : MonoBehaviour {
 			RaycastHit raycastHit;
 			if (Physics.Raycast (raycast, out raycastHit)) {
 				if (raycastHit.collider.name == gameObject.name) {
+					sparkle1.SetActive (false);
 					anim.SetTrigger ("buka");
+					hint.SetActive (false);
 					seqManager.GetComponent<P13_SequenceManager> ().DoorTapped ();
 					GetComponent<AudioSource> ().Stop ();
 					if (PlayerPrefs.GetString ("Musik") == "on") {
@@ -47,6 +52,9 @@ public class P13_Pintu : MonoBehaviour {
 			if (Physics.Raycast (raycast, out raycastHit)) {
 				if (raycastHit.collider.name == gameObject.name) {
 					anim.SetTrigger ("buka");
+					sparkle1.SetActive (false);
+					hint.SetActive (false);
+
 					seqManager.GetComponent<P13_SequenceManager> ().DoorTapped ();
 					GetComponent<AudioSource> ().Stop ();
 					if (PlayerPrefs.GetString ("Musik") == "on") {
@@ -62,5 +70,15 @@ public class P13_Pintu : MonoBehaviour {
 	public void AnimationDone() {
 		seqManager.GetComponent<P13_SequenceManager> ().AyahMasukDone ();
 	}
+
+	public void StartSubtitle() {
+		seqManager.GetComponent<P13_SequenceManager> ().StartSubtitle ();
+	}
+
+	public void PlayDoorClose() {
+		GetComponent<AudioSource> ().PlayOneShot (pintuTutup);
+	}
+
+
 
 }

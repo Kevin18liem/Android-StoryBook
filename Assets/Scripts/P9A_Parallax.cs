@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class P9A_Parallax : MonoBehaviour {
 
+	public float speedMultiplier = 2;
 	public float maxDelta;
 	public float moveSpeed = 1;
 	public float linear_limit;			// how long the bg can move (from -limit to limit)
@@ -48,7 +49,7 @@ public class P9A_Parallax : MonoBehaviour {
 		{
 			Debug.Log ("acc = " + Input.acceleration.x + " " + Input.acceleration.y + " " + Input.acceleration.z);
 
-			pos = initPos.x + (Input.acceleration.x * 2);
+			pos = initPos.x + (Input.acceleration.x * speedMultiplier);
 			if (pos > linear_limit) {
 				pos = linear_limit;
 			} else if (pos < -linear_limit) {

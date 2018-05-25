@@ -10,6 +10,9 @@ public class BukuMilik_InputField : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Debug.Log (PlayerPrefs.GetString ("PlayerName"));
+		if (PlayerPrefs.HasKey("PlayerName")) {
+			GetComponent<InputField> ().text = PlayerPrefs.GetString ("PlayerName");
+		}
 	}
 	
 	// Update is called once per frame

@@ -63,13 +63,20 @@ public class P4_SpecialSub : MonoBehaviour {
 				if (nextText) {
 					nextText.GetComponent<P4_SpecialSub> ().allowText = true;
 				}
+
+				if (gameObject.name == "Anak") {
+					transform.parent.GetChild (0).GetComponent<P4_SpecialSub> ().FadeOut ();
+					transform.parent.GetChild (1).GetComponent<P4_SpecialSub> ().FadeOut ();
+					sequenceManager.holdNormalSub = true;
+				}	
+
 				allowText = false;
 				sequenceManager.allowPlateMove = true;
 				wait_input = false;
 				if (gameObject.name == "Ayah") {
 					sequenceManager.readySpecialToFade = true;
 				}
-					
+
 			}
 					
 		}
@@ -95,6 +102,7 @@ public class P4_SpecialSub : MonoBehaviour {
 
 		// if beginning new text, go init
 		if (idx == 0) {
+			
 			InitText ();
 			if (gameObject.name == "Ibu") {
 				GameObject.Find ("PiringIbu").GetComponent<P4_DraggablePiring> ().putHintHere (GameObject.Find ("PiringIbu").transform.position);
@@ -124,6 +132,7 @@ public class P4_SpecialSub : MonoBehaviour {
 		// if end of text ask for input
 		if (idx == texts[wordset].words.Length) {
 			wait_input = true;
+
 		}
 	}
 
@@ -144,10 +153,16 @@ public class P4_SpecialSub : MonoBehaviour {
 				cg.alpha -= Time.deltaTime / 2 * fade_speed;
 				yield return null;
 			}
-			sequenceManager.holdNormalSub = false;
+
+			if (gameObject.name == "Ayah")
+				sequenceManager.holdNormalSub = false;
 
 		}
 		in_anim = false;
+	}
+
+	public void FadeOut() {
+		StartCoroutine (Fade (false));
 	}
 
 	void InitText () {

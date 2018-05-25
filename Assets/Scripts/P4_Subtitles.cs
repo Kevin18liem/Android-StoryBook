@@ -26,7 +26,7 @@ public class P4_Subtitles : MonoBehaviour {
 		cg = gameObject.GetComponent<CanvasGroup> ();
 
 		idx = 0;
-		wordset = 0;
+		wordset = 1;
 		waiting = false;
 		in_anim = false;
 		wait_input = false;

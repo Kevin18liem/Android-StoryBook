@@ -40,7 +40,6 @@ public class P13_SequenceManager : MonoBehaviour {
 				{
 					Debug.Log ("sub1");
 					hasilGambar.transform.position =  hasilGambar.transform.position + new Vector3 (-0.15f, 0.15f, 0);
-					subtitle.GetComponent<P13_Subtitles> ().DoSub (0);
 					sequence++;
 					break;
 				}
@@ -68,6 +67,12 @@ public class P13_SequenceManager : MonoBehaviour {
 
 	public void AyahMasukDone() {
 		spritePintu.SetActive (true);
+
+	}
+
+	public void StartSubtitle() {
+		subtitle.GetComponent<P13_Subtitles> ().DoSub (0);
+
 	}
 
 	public void DoorTapped() {

@@ -31,6 +31,7 @@ public class P4_TriggerAnimation : MonoBehaviour {
 			RaycastHit raycastHit;
 			if (Physics.Raycast (raycast, out raycastHit)) {
 				if (raycastHit.collider.name == gameObject.name) {
+					GetComponent<AudioSource> ().Play ();
 					anim.SetTrigger (trigger);
 				}
 
@@ -41,6 +42,7 @@ public class P4_TriggerAnimation : MonoBehaviour {
 			RaycastHit raycastHit;
 			if (Physics.Raycast (raycast, out raycastHit)) {
 				if (raycastHit.collider.name == gameObject.name) {
+					GetComponent<AudioSource> ().Play ();
 					anim.SetTrigger (trigger);
 				}
 

@@ -173,9 +173,9 @@ public class P4_DraggablePiring : MonoBehaviour {
 
 	public void putHintHere(Vector3 pos) {
 		if (!sequenceManager.allowPlateMove) {
-			hint.transform.position = new Vector3 (pos.x + 1, pos.y - 1.5f, 1);
+			hint.transform.position = new Vector3 (pos.x + 0.5f, pos.y - 1.0f, 1);
 		} else {
-			hint.transform.position = new Vector3 (pos.x + 1, pos.y - 1.5f, initPos.z);
+			hint.transform.position = new Vector3 (pos.x + 0.5f, pos.y - 1.0f, initPos.z);
 
 		}
 
