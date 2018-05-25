@@ -14,6 +14,7 @@ public class P9A_SequenceManager : MonoBehaviour {
 	public GameObject balonAnak;
 	public GameObject subtitleAnak;
 	public GameObject nextPageButton;
+	public GameObject balonHalo;
 	public bool inSequence;
 
 	private int sequence;
@@ -51,7 +52,7 @@ public class P9A_SequenceManager : MonoBehaviour {
 					Debug.Log ("seq 1 : enabling ayah");
 					callScreen.SetActive (false);
 					spriteAyah.GetComponent<Animator> ().SetTrigger ("lambai");
-					balonAyahKecil.GetComponent<Animator> ().SetTrigger ("in");
+					balonHalo.GetComponent<Animator> ().SetTrigger ("in");
 					subtitleAyahKecil.GetComponent<P9A_Subtitles> ().DoSub (0);
 					sequence++;
 					break;

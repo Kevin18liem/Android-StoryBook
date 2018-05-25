@@ -7,7 +7,10 @@ public class P12_SequenceManager : MonoBehaviour {
 	public GameObject subtitle;
 	public GameObject nextPageButton;
 	public bool inSequence;
+	public bool imageSaved = false;
+	public GameObject notice;
 
+	private bool noticeOn = false;
 	private int sequence;
 	private bool inCoroutine;
 
@@ -51,6 +54,27 @@ public class P12_SequenceManager : MonoBehaviour {
 			}
 		}
 
+	}
+
+	public void CheckSaved() {
+		if (imageSaved) {
+			nextPageButton.GetComponent<changePage> ().changeMenuScene ();
+		} else {
+			if (!noticeOn)
+			DisplayNoticeToSave ();
+		}
+	}
+
+	public void DisplayNoticeToSave() {
+		notice.SetActive (true);
+		StartCoroutine (Wait (2));
+		noticeOn = true;
+	}
+
+	IEnumerator Wait(float sec) {
+		yield return new WaitForSeconds (sec);
+		notice.SetActive (false);
+		noticeOn = false;
 	}
 
 }

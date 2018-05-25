@@ -10,6 +10,7 @@ public class P9A_Subtitles : MonoBehaviour {
 	public float fade_speed = 1;	// fade speed
 	public char newline_char = '$';	// char to be detected as newline
 	public GameObject bubble;
+	public GameObject bubbleHalo;
 	public GameObject sprite;
 
 	private string text_buffer;		// buffer to save string
@@ -61,7 +62,13 @@ public class P9A_Subtitles : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.Mouse0) || (Input.touchCount == 1 && Input.GetTouch (0).phase == TouchPhase.Began)) {
 			if (waitingForInput) {
 				waitingForInput = false;
-				bubble.GetComponent<Animator> ().SetTrigger ("out");
+				Debug.Log (wordset + " " + gameObject.name);
+				if (wordset == 0 && gameObject.name == "SubAyahKecil") {
+					bubbleHalo.GetComponent<Animator> ().SetTrigger ("out");
+				} else {
+					bubble.GetComponent<Animator> ().SetTrigger ("out");
+
+				}
 				FadeOut ();
 			} else {
 				setToEnd ();

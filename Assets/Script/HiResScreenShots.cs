@@ -38,6 +38,7 @@ public class HiResScreenShots : MonoBehaviour {
 	    System.IO.File.WriteAllBytes(path, imageBytes);
 	}
 	public void TakeSS() {
+		GameObject.Find ("SequenceManager").GetComponent<P12_SequenceManager> ().imageSaved = true;
 		crayon.SetActive(false);
 		buttonsave.SetActive (false);
 		StartCoroutine(captureScreenshot());

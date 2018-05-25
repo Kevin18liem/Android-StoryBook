@@ -28,6 +28,7 @@ public class P9B_Subtitles : MonoBehaviour {
 	public AudioClip audiosubbapak1;
 	public AudioClip audiosubbapak2;
 	public AudioClip audiosubbapak3;
+	public GameObject bubbleHalo;
 	// Use this for initialization
 	void Start () {
 
@@ -60,8 +61,11 @@ public class P9B_Subtitles : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.Mouse0) || (Input.touchCount == 1 && Input.GetTouch (0).phase == TouchPhase.Began)) {
 			if (waitingForInput) {
 				waitingForInput = false;
-				bubble.GetComponent<Animator> ().SetTrigger ("out");
-
+				if (wordset == 0 && gameObject.name == "SubAyahKecil") {
+					bubbleHalo.GetComponent<Animator> ().SetTrigger ("out");
+				} else {
+					bubble.GetComponent<Animator> ().SetTrigger ("out");
+				}
 				FadeOut ();
 			} else {
 				setToEnd ();

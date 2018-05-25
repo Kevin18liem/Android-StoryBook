@@ -14,6 +14,7 @@ public class P9B_SequenceManager : MonoBehaviour {
 	public GameObject balonAnak;
 	public GameObject subtitleAnak;
 	public GameObject nextPageButton;
+	public GameObject balonHalo;
 	public bool inSequence;
 
 	private int sequence;
@@ -57,7 +58,7 @@ public class P9B_SequenceManager : MonoBehaviour {
 					bgAyah.SetActive (true);
 					spriteAyah.SetActive (true);
 					spriteAyah.GetComponent<Animator> ().SetTrigger ("ngomong");
-					balonAyahKecil.GetComponent<Animator> ().SetTrigger ("in");
+					balonHalo.GetComponent<Animator> ().SetTrigger ("in");
 					subtitleAyahKecil.GetComponent<P9B_Subtitles> ().DoSub (0);
 					sequence++;
 					break;
