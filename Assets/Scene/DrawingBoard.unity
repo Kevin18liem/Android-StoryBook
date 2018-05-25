@@ -3825,7 +3825,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trailPrefab: {fileID: 1692785063364924, guid: 5173dc0da0859d54582706ee8eec493d,
     type: 2}
-  crayon: {fileID: 8300000, guid: 197f87e96d5c6e24d9d44238c9544efe, type: 3}
+  crayon: {fileID: 8300000, guid: 710c03781df4f07429c3daf7266d585a, type: 3}
   eraser: {fileID: 8300000, guid: 5214d077842890e48a8c49b291afdcf8, type: 3}
   KodeWarna: 
 --- !u!4 &796616291

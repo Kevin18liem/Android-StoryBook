@@ -5703,7 +5703,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anakBapaSprite: {fileID: 786933230}
-  enableRest: 0
+  enableRest: 1
   texts:
   - words:
     - text: Ayah
