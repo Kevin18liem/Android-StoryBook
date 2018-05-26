@@ -15,6 +15,8 @@ public class P11_DraggableX : MonoBehaviour {
 	public GameObject nextPage;
 	public AudioClip pop;
 	public AudioClip correct;
+	public AudioClip hore;
+	public GameObject spriteSparkle;
 
 	private bool isdragging;			// true if dragging
 	private float dist;					// distance from camera to collider
@@ -131,6 +133,7 @@ public class P11_DraggableX : MonoBehaviour {
 					if (PlayerPrefs.GetString ("Musik") == "on") {
 						GetComponent<AudioSource> ().PlayOneShot (correct);
 					}
+					spriteSparkle.GetComponent<Animator> ().SetTrigger ("toSparkle");
 					spriteAnak.GetComponent<Animator> ().SetTrigger ("next");
 					transform.position = target.position;
 					moving = false;
@@ -146,6 +149,7 @@ public class P11_DraggableX : MonoBehaviour {
 
 					if (gameObject.name == "Hari 6") {
 						nextPage.SetActive (true);
+						GetComponent<AudioSource> ().PlayOneShot (hore);
 					}
 
 				}
