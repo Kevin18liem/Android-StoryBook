@@ -12,6 +12,9 @@ public class P5_Draggable : MonoBehaviour {
 	public bool moveable = false;		// true if mvoeable
 	public GameObject anak;
 
+	private AudioSource[] ballAudios;
+	private AudioSource throwBall;
+	private AudioSource bounceBall;
 	private bool isdragging;			// true if dragging
 	private float dist;					// distance from camera to collider
 	private Vector3 offset;				// projection of touch
@@ -132,7 +135,17 @@ public class P5_Draggable : MonoBehaviour {
 					anak.GetComponent<P5_Anak> ().TriggerAnimation (gameObject);
 					transform.position = new Vector3 (end.position.x, end.position.y, 2);
 					if (PlayerPrefs.GetString ("Musik") == "on") {
-						GetComponent<AudioSource> ().Play ();
+						if (gameObject.name == "bola") {
+							ballAudios = GetComponents<AudioSource> ();
+							ballAudios [0].Play ();
+							ballAudios [1].PlayDelayed (2);
+							ballAudios [1].Play ();
+						} else {
+							if (gameObject.name == "pesawat" || gameObject.name == "mobil") {
+								GetComponent<AudioSource> ().PlayDelayed (1);
+							}
+							GetComponent<AudioSource> ().Play ();
+						}
 					}
 				}
 			} else {
