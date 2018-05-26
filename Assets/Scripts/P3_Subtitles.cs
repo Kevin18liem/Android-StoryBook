@@ -22,7 +22,7 @@ public class P3_Subtitles : MonoBehaviour {
 	private IEnumerator speller;
 	private bool waitingForInput = false;
 	private GameObject seqManager;
-	private bool subAllowed = false;
+	private bool subAllowed = true;
 
 	public AudioClip audiosubanak1;
 	public AudioClip audiosubanak2;
