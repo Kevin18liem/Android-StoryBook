@@ -8,13 +8,16 @@ public class P3_IbuAnak : MonoBehaviour {
 
 	private GameObject seqManager;
 	private Animator anim;
+	private AudioSource soundEffectSelimut;
+	private float delayedTime = 2.75F;
 
 	// Use this for initialization
 	void Start () {
 
 		seqManager = GameObject.Find ("SequenceManager");
 		anim = GetComponent<Animator> ();
-		
+		soundEffectSelimut = GetComponent<AudioSource> ();
+		soundEffectSelimut.PlayDelayed (delayedTime);
 	}
 	
 	// Update is called once per frame
