@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class P9A_Parallax : MonoBehaviour {
 
+	public GameObject spriteAyah;
 	public float speedMultiplier = 2;
 	public float maxDelta;
 	public float moveSpeed = 1;
@@ -12,14 +13,14 @@ public class P9A_Parallax : MonoBehaviour {
 	public float movement_speed = 1;	// camera move speed
 	public GameObject detector;			// rotation detector
 
-	private float pos;					// position
-	private Vector3 initPos;
+	private float pos,posAyah;					// position
+	private Vector3 initPos, initAyah;
 
 	// Use this for initialization
 	void Start () {
 
 		initPos = transform.position;
-
+		initAyah = spriteAyah.transform.position;
 		//Input.gyro.enabled = true;
 
 	}
@@ -36,11 +37,17 @@ public class P9A_Parallax : MonoBehaviour {
 				transform.position = Vector3.MoveTowards (transform.position, 
 					new Vector3 (initPos.x + maxDelta, transform.position.y, transform.position.z),
 					moveSpeed * Time.deltaTime);
+				spriteAyah.transform.position = Vector3.MoveTowards (spriteAyah.transform.position, 
+					new Vector3 (initAyah.x + maxDelta, spriteAyah.transform.position.y, spriteAyah.transform.position.z),
+					moveSpeed * Time.deltaTime);
 			}
 			if (Input.GetKey (KeyCode.RightArrow) && 
 				Vector3.Distance(transform.position, initPos) <= maxDelta) {
 				transform.position = Vector3.MoveTowards (transform.position, 
 					new Vector3 (initPos.x - maxDelta, transform.position.y, transform.position.z),
+					moveSpeed * Time.deltaTime);
+				spriteAyah.transform.position = Vector3.MoveTowards (spriteAyah.transform.position, 
+					new Vector3 (initAyah.x - maxDelta, spriteAyah.transform.position.y, spriteAyah.transform.position.z),
 					moveSpeed * Time.deltaTime);
 			}
 		}
@@ -56,8 +63,18 @@ public class P9A_Parallax : MonoBehaviour {
 				pos = -linear_limit;
 			}
 
+			posAyah = initAyah.x + (Input.acceleration.x * speedMultiplier);
+			if (posAyah > linear_limit) {
+				posAyah = linear_limit;
+			} else if (posAyah < -linear_limit) {
+				posAyah = -linear_limit;
+			}
+
 			transform.position = Vector3.Lerp (transform.position, 
 				new Vector3 (pos, initPos.y,initPos.z),
+				movement_speed);
+			spriteAyah.transform.position = Vector3.Lerp (spriteAyah.transform.position, 
+				new Vector3 (posAyah, initAyah.y,initAyah.z),
 				movement_speed);
 
 			/*

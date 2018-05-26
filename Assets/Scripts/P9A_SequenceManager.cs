@@ -41,7 +41,7 @@ public class P9A_SequenceManager : MonoBehaviour {
 					if (PlayerPrefs.GetString ("Musik") == "on") {
 						GetComponent<AudioSource> ().Play ();
 					}
-					spriteAnak.GetComponent<Animator> ().SetFloat ("mood", 0);
+					spriteAnak.GetComponent<Animator> ().SetFloat ("mood", 1);
 					StartCoroutine (Delay (2.533f));
 					sequence++;
 					inSequence = false;
@@ -60,6 +60,7 @@ public class P9A_SequenceManager : MonoBehaviour {
 			case 2:
 				{
 					Debug.Log ("seq 2 : anak reply");
+					spriteAnak.GetComponent<Animator> ().SetFloat ("mood", 0);
 					spriteAnak.GetComponent<Animator> ().SetTrigger ("ngomong");
 					balonAnak.GetComponent<Animator> ().SetTrigger ("in");
 					subtitleAnak.GetComponent<P9A_Subtitles> ().DoSub (0);
