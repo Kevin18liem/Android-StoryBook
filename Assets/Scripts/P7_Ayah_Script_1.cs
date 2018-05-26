@@ -10,6 +10,8 @@ public class P7_Ayah_Script_1 : MonoBehaviour {
 	public bool isStarting = false;
 	public bool startNextBapa = false;
 	public GameObject bapaNextDua;
+	public GameObject fingerHint;
+	public GameObject nextFingerHint;
 
 	// Use this for initialization
 	void Start () {
@@ -20,7 +22,9 @@ public class P7_Ayah_Script_1 : MonoBehaviour {
 	void Update () {
 		if (isStarting) {
 			if ((((Input.touchCount > 0) && (Input.GetTouch (0).phase == TouchPhase.Began)) || Input.GetMouseButtonDown (0))) {
+				fingerHint.SetActive (false);
 				GetComponent<Animator>().SetTrigger ("toIdle");
+				nextFingerHint.SetActive (true);
 				bapaNextDua.SetActive (true);
 			}
 		}

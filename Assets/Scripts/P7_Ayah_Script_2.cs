@@ -12,6 +12,7 @@ public class P7_Ayah_Script_2 : MonoBehaviour {
 	public GameObject anakKaget;
 	public GameObject ibuNgomong;
 	public GameObject subtitleIbu;
+	public GameObject fingerHint;
 
 	private bool isFirst = false;
 
@@ -25,6 +26,7 @@ public class P7_Ayah_Script_2 : MonoBehaviour {
 		if ((((Input.touchCount > 0) && (Input.GetTouch (0).phase == TouchPhase.Began)) || Input.GetMouseButtonDown (0))) {
 			GetComponent<Animator>().SetTrigger ("toIdle");
 			bapaNextTiga.SetActive (true);
+			fingerHint.SetActive (false);
 			anakKaget.GetComponent<Animator> ().SetTrigger ("toKaget");
 			ibuNgomong.GetComponent<Animator> ().SetTrigger ("toNgomong");
 			if (!isFirst) {
