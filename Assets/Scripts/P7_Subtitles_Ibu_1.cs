@@ -86,6 +86,7 @@ public class P7_Subtitles_Ibu_1 : MonoBehaviour {
 		// if end of text ask for input
 		if (idx == texts[wordset].words.Length) {
 			subAllowed = false;
+			spriteIbu.GetComponent<Animator> ().SetTrigger ("toIdle");
 			//seqManager.GetComponent<P7_SequenceManager> ().inSequence = false;
 			//seqManager.GetComponent<P7_SequenceManager> ().sequence++;
 		}
