@@ -37,6 +37,8 @@ public class P1_Subtitles : MonoBehaviour {
 		wait_input = false;
 		cg.alpha = 0;
 		cg.interactable = false;
+		PlayerPrefs.SetInt ("Call", 1);
+		PlayerPrefs.SetInt ("VideoCall", 1);
 
 	}
 	
