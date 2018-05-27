@@ -21,7 +21,7 @@ public class UntukOrtuScroll : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (scroll.value == 1) {
+		if (scroll.value >= 0.9F) {
 			topFade.SetActive (false);
 		} else {
 			if (!topFade.activeSelf) {
