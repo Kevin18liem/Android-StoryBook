@@ -1532,7 +1532,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &395631469
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5168,6 +5168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NavigationPanel: {fileID: 415551868}
   SliderPanel: {fileID: 362384461}
+  navButton: {fileID: 0}
   Grey: {fileID: 1977953516}
   Telepon: {fileID: 58524630}
   VideoCall: {fileID: 1192779191}
