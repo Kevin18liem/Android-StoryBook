@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class ToggleNavigation : MonoBehaviour {
 	public GameObject NavigationPanel;
 	public GameObject SliderPanel;
+	public GameObject navButton;
 	public GameObject Grey;
 	public GameObject Telepon;
 	public GameObject VideoCall;
@@ -18,6 +19,7 @@ public class ToggleNavigation : MonoBehaviour {
 		if (NavigationPanel.activeInHierarchy) {
 			NavigationPanel.SetActive (false);
 			SliderPanel.SetActive (false);
+			navButton.SetActive (false);
 			Grey.SetActive (false);
 			if (PlayerPrefs.GetInt("Call") == 1) {
 				Telepon.SetActive (false);
@@ -31,6 +33,7 @@ public class ToggleNavigation : MonoBehaviour {
 		} else {
 			NavigationPanel.SetActive (true);
 			SliderPanel.SetActive (true);
+			navButton.SetActive (true);
 			Grey.SetActive (true);
 			if (PlayerPrefs.GetInt("Call") == 1) {
 				Telepon.SetActive (true);

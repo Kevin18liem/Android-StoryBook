@@ -2137,7 +2137,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 29e5f584c6a242940a4262f2870c3cf0, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -4610,7 +4610,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1074658247}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.61, y: 0.93, z: 0}
+  m_LocalPosition: {x: -0.87, y: 0.93, z: 0}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children: []
   m_Father: {fileID: 1879233983}
@@ -4702,7 +4702,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trigger: lanjut-ngelus
   anim: {fileID: 0}
-  trigger_allowed: 0
+  trigger_allowed: 1
   speed: 1.5
   tapped: 0
 --- !u!1 &1082610131
@@ -6310,7 +6310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trigger: menunduk
   anim: {fileID: 0}
-  trigger_allowed: 0
+  trigger_allowed: 1
   speed: 1.5
   tapped: 0
 --- !u!65 &1514761620
