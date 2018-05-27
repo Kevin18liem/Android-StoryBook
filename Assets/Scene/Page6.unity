@@ -1114,7 +1114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settingsPopup: {fileID: 1603067608}
-  navigationButton: {fileID: 0}
+  navigationButton: {fileID: 511001177}
   settingsButton: {fileID: 1263128492}
   Grey: {fileID: 1823602499}
 --- !u!114 &219028378
@@ -1747,7 +1747,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settingsPopup: {fileID: 1603067608}
-  navigationButton: {fileID: 0}
+  navigationButton: {fileID: 511001177}
   homeButton: {fileID: 1263128492}
   Grey: {fileID: 1823602499}
 --- !u!114 &496934823
@@ -5062,7 +5062,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   homesPopup: {fileID: 2124779184}
-  navigationButton: {fileID: 0}
+  navigationButton: {fileID: 511001177}
   settingsButton: {fileID: 496934820}
   Grey: {fileID: 1823602499}
 --- !u!114 &1263128495
@@ -6532,7 +6532,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settingsPopup: {fileID: 2124779184}
-  navigationButton: {fileID: 0}
+  navigationButton: {fileID: 511001177}
   settingsButton: {fileID: 496934820}
   Grey: {fileID: 1823602499}
 --- !u!114 &1660534318

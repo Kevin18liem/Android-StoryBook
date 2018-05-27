@@ -29,7 +29,8 @@ public class ToggleNavigation : MonoBehaviour {
 			}
 			Time.timeScale = 1;
 			AudioListener.pause = false;
-			GameObject.FindWithTag("subtitle").GetComponent<AudioSource>().UnPause();
+			if (GameObject.FindWithTag("subtitle") != null)
+				GameObject.FindWithTag("subtitle").GetComponent<AudioSource>().UnPause();
 		} else {
 			NavigationPanel.SetActive (true);
 			SliderPanel.SetActive (true);
@@ -46,7 +47,8 @@ public class ToggleNavigation : MonoBehaviour {
 				VideoCall.SetActive (false);
 			}
 			Time.timeScale = 0;
-			GameObject.FindWithTag("subtitle").GetComponent<AudioSource>().Pause();
+			if (GameObject.FindWithTag("subtitle") != null)
+				GameObject.FindWithTag("subtitle").GetComponent<AudioSource>().Pause();
 			AudioListener.pause = true;
 		}
 	}
