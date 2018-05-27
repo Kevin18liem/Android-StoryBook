@@ -2316,7 +2316,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NavigationPanel: {fileID: 1258038191}
   SliderPanel: {fileID: 937591129}
-  navButton: {fileID: 0}
+  navButton: {fileID: 1719366268}
   Grey: {fileID: 594738281}
   Telepon: {fileID: 1095707580}
   VideoCall: {fileID: 602705582}
