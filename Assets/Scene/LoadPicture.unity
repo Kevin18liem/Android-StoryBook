@@ -7574,7 +7574,7 @@ MonoBehaviour:
   newline_char: 36
   audiosubanak1: {fileID: 8300000, guid: 54a2111ca0176fd4698aaa394ce59c5d, type: 3}
   audiosubanak2: {fileID: 8300000, guid: d9e3beda1f8b73a4d811c422625efe21, type: 3}
-  audiosubbapak1: {fileID: 8300000, guid: 86cc5dc7de53d794c8f9a402a81128cb, type: 3}
+  audiosubbapak1: {fileID: 8300000, guid: f1d2005c6a73ac44eaa1d967ea0e89ca, type: 3}
 --- !u!225 &1744241481
 CanvasGroup:
   m_ObjectHideFlags: 0
