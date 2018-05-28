@@ -1134,7 +1134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteAyah: {fileID: 15595698}
-  speedMultiplier: 2
+  speedMultiplier: 4
   maxDelta: 3.7
   moveSpeed: 5
   linear_limit: 3.7
