@@ -21,5 +21,6 @@ public class SettingsPopup : MonoBehaviour {
 		Time.timeScale = 0;
 		//AudioListener.pause = true;
 		GameObject.FindWithTag("subtitle").GetComponent<AudioSource>().Pause();
+		GameObject.Find("Background Music").GetComponent<AudioSource>().Pause();
 	}
 }

@@ -19,6 +19,8 @@ public class CloseSettingsPopup : MonoBehaviour {
 		Time.timeScale = 1;
 		if (PlayerPrefs.GetString ("Narasi") == "on") { 
 			GameObject.FindWithTag("subtitle").GetComponent<AudioSource>().UnPause();
+			GameObject.Find("Background Music").GetComponent<AudioSource>().UnPause();
+
 		}
 	}
 }

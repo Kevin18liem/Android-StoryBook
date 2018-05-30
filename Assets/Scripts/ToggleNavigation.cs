@@ -19,7 +19,6 @@ public class ToggleNavigation : MonoBehaviour {
 		if (NavigationPanel.activeInHierarchy) {
 			NavigationPanel.SetActive (false);
 			SliderPanel.SetActive (false);
-			navButton.SetActive (false);
 			Grey.SetActive (false);
 			if (PlayerPrefs.GetInt("Call") == 1) {
 				Telepon.SetActive (false);
@@ -31,6 +30,7 @@ public class ToggleNavigation : MonoBehaviour {
 			AudioListener.pause = false;
 			if (GameObject.FindWithTag("subtitle") != null)
 				GameObject.FindWithTag("subtitle").GetComponent<AudioSource>().UnPause();
+				GameObject.Find("Background Music").GetComponent<AudioSource>().UnPause();
 		} else {
 			NavigationPanel.SetActive (true);
 			SliderPanel.SetActive (true);
@@ -49,6 +49,7 @@ public class ToggleNavigation : MonoBehaviour {
 			Time.timeScale = 0;
 			if (GameObject.FindWithTag("subtitle") != null)
 				GameObject.FindWithTag("subtitle").GetComponent<AudioSource>().Pause();
+				GameObject.Find("Background Music").GetComponent<AudioSource>().Pause();
 			AudioListener.pause = true;
 		}
 	}
