@@ -25,7 +25,6 @@ public class BukuMilik_InputField : MonoBehaviour {
 			nextButton.SetActive (false);
 		} else {
 			nextButton.SetActive (true);
-			nextButton.GetComponent<Animator> ().SetTrigger ("glow");
 		}
 	}
 

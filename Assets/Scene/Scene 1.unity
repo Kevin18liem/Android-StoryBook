@@ -573,6 +573,7 @@ GameObject:
   - component: {fileID: 153201831}
   - component: {fileID: 153201830}
   - component: {fileID: 153201833}
+  - component: {fileID: 153201834}
   m_Layer: 5
   m_Name: ToNextpage
   m_TagString: Untagged
@@ -697,6 +698,23 @@ MonoBehaviour:
   next: 1
   balikHalaman: {fileID: 599562471}
   sceneName: Scene-2
+--- !u!95 &153201834
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 153201828}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b3dd697be84259449b0bb6fe0b9309fb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &181726783
 GameObject:
   m_ObjectHideFlags: 0
@@ -6521,7 +6539,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:

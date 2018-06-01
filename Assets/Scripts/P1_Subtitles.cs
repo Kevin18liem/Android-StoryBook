@@ -60,7 +60,7 @@ public class P1_Subtitles : MonoBehaviour {
 
 		// when input got, change text if there are still more text to display
 		if (wait_input) {
-			if ((((Input.touchCount > 0) && (Input.GetTouch (0).phase == TouchPhase.Began)) || Input.GetMouseButtonDown(0)) && wordset < texts.Length - 1) {
+			if ( wordset < texts.Length - 1) {
 				wait_input = false;
 				ChangeText ();
 			}
@@ -107,6 +107,7 @@ public class P1_Subtitles : MonoBehaviour {
 				spriteAyah.GetComponent<P1_TriggerAnimation> ().trigger_allowed = true;		
 				spriteAnak.GetComponent<P1_TriggerAnimation> ().trigger_allowed = true;
 				nextPage.SetActive (true);
+				nextPage.GetComponent<Animator> ().SetTrigger ("glow");
 			}
 		}
 	}
