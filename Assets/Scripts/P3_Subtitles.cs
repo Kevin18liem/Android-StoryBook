@@ -22,7 +22,7 @@ public class P3_Subtitles : MonoBehaviour {
 	private IEnumerator speller;
 	private bool waitingForInput = false;
 	private GameObject seqManager;
-	private bool subAllowed = true;
+	private bool subAllowed = false;
 
 	public AudioClip audiosubanak1;
 	public AudioClip audiosubanak2;
@@ -61,12 +61,13 @@ public class P3_Subtitles : MonoBehaviour {
 			}
 		}
 		if (Input.GetKeyDown (KeyCode.Mouse0) || (Input.touchCount == 1 && Input.GetTouch (0).phase == TouchPhase.Began)) {
-			if (waitingForInput) {
-				waitingForInput = false;
-				FadeOut ();
-			} else {
+			 {
 				setToEnd ();
 			}
+		}
+		if (waitingForInput) {
+			waitingForInput = false;
+			FadeOut ();
 		}
 
 	}

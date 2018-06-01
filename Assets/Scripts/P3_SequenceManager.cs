@@ -31,12 +31,13 @@ public class P3_SequenceManager : MonoBehaviour {
 			case 0:
 				{
 					spriteIbuAnak.GetComponent<Animator> ().SetTrigger ("gerak");
+					subtitle.GetComponent<P3_Subtitles> ().DoSub (0);
+
 					sequence++;
 					break;
 				}
 			case 1:
 				{
-					subtitle.GetComponent<P3_Subtitles> ().DoSub (0);
 					sequence++;
 					break;
 				}
