@@ -109,6 +109,7 @@ public class P9B_SequenceManager : MonoBehaviour {
 			case 6:
 				{
 					nextPageButton.SetActive (true);
+					nextPageButton.GetComponent<Animator> ().SetTrigger ("glow");
 					break;
 				}
 			default:

@@ -3873,6 +3873,7 @@ GameObject:
   - component: {fileID: 841300833}
   - component: {fileID: 841300832}
   - component: {fileID: 841300831}
+  - component: {fileID: 841300835}
   m_Layer: 5
   m_Name: ToNextpage
   m_TagString: Untagged
@@ -3997,6 +3998,23 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 841300829}
+--- !u!95 &841300835
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 841300829}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b3dd697be84259449b0bb6fe0b9309fb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &865005588
 GameObject:
   m_ObjectHideFlags: 0
@@ -4853,7 +4871,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -6065,7 +6083,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -6322,6 +6340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isStart: 0
   anakSprite: {fileID: 1659093318}
+  nextButton: {fileID: 841300829}
   ibuSprite: {fileID: 1105298032}
   texts:
   - words:
@@ -6412,7 +6431,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:

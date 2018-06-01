@@ -19,6 +19,7 @@ public class P14_Subtitles_Anak : MonoBehaviour {
 	private bool wait_input;		// true if waiting for input
 	private string highlighted;		// highlighted part
 	private CanvasGroup cg;			// canvas group with alpha
+	public GameObject nextButton;
 
 	// Use this for initialization
 	void Start () {
@@ -96,6 +97,7 @@ public class P14_Subtitles_Anak : MonoBehaviour {
 		if (idx == texts[wordset].words.Length) {
 			wait_input = true;
 			anakBapaSprite.GetComponent<P14_Anak_Bapa>().isStarting = true;
+			nextButton.GetComponent<Animator> ().SetTrigger ("glow");
 		}
 	}
 

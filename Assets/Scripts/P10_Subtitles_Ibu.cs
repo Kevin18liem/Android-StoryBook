@@ -8,6 +8,7 @@ public class P10_Subtitles_Ibu : MonoBehaviour {
 
 	public bool isStart = false;
 	public GameObject anakSprite;
+	public GameObject nextButton;
 	public GameObject ibuSprite;
 	public TextItem[] texts;		// texts to be displayed
 	public float fade_speed = 1;	// fade speed
@@ -85,6 +86,7 @@ public class P10_Subtitles_Ibu : MonoBehaviour {
 		if (idx == texts[wordset].words.Length) {
 			wait_input = true;
 			ibuSprite.GetComponent<Animator>().SetTrigger ("toIdle");
+			nextButton.GetComponent<Animator> ().SetTrigger ("glow");
 		}
 	}
 

@@ -156,6 +156,7 @@ public class P11_DraggableX : MonoBehaviour {
 
 					if (gameObject.name == "Hari 6") {
 						nextPage.SetActive (true);
+						nextPage.GetComponent<Animator> ().SetTrigger ("glow");
 						GetComponent<AudioSource> ().PlayOneShot (hore);
 					}
 

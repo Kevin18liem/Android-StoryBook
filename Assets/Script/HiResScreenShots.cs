@@ -10,6 +10,7 @@ public class HiResScreenShots : MonoBehaviour {
 	public int screenshotCount = 0;
 	public GameObject crayon;
 	public GameObject buttonsave;
+	public GameObject nextButton;
 	private void Start() {
 		
 	}
@@ -39,6 +40,7 @@ public class HiResScreenShots : MonoBehaviour {
 	}
 	public void TakeSS() {
 		GameObject.Find ("SequenceManager").GetComponent<P12_SequenceManager> ().imageSaved = true;
+		nextButton.GetComponent<Animator> ().SetTrigger ("glow");
 		crayon.SetActive(false);
 		buttonsave.SetActive (false);
 		StartCoroutine(captureScreenshot());

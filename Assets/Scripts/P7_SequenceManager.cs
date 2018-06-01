@@ -53,4 +53,8 @@ public class P7_SequenceManager : MonoBehaviour {
 		inSequence = false;
 	}
 
+	public void GlowButton() {
+		nextPageBtn.GetComponent<Animator> ().SetTrigger ("glow");
+	}
+
 }

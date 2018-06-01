@@ -60,6 +60,7 @@ public class P13_SequenceManager : MonoBehaviour {
 				{
 					spriteAyah.GetComponent<Animator> ().SetTrigger ("idle");
 					nextPageButton.SetActive (true);
+					nextPageButton.GetComponent<Animator> ().SetTrigger ("glow");
 					break;
 				}
 			default:

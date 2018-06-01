@@ -56,13 +56,15 @@ public class P13_Subtitles : MonoBehaviour {
 		}
 
 		if (Input.GetKeyDown (KeyCode.Mouse0) || (Input.touchCount == 1 && Input.GetTouch (0).phase == TouchPhase.Began)) {
-			if (waitingForInput) {
-				waitingForInput = false;
-				FadeOut ();
-			} else {
+			 {
 				setToEnd ();
 			}
 		}
+
+		if (waitingForInput) {
+			waitingForInput = false;
+			FadeOut ();
+		} 
 
 	}
 

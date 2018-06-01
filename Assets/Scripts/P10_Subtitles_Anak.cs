@@ -54,14 +54,14 @@ public class P10_Subtitles_Anak : MonoBehaviour {
 		}
 		// when input got, change text if there are still more text to display
 		if (wait_input) {
-			if ((((Input.touchCount > 0) && (Input.GetTouch (0).phase == TouchPhase.Began)) || Input.GetMouseButtonDown (0))) {
+			//if ((((Input.touchCount > 0) && (Input.GetTouch (0).phase == TouchPhase.Began)) || Input.GetMouseButtonDown (0))) {
 				wait_input = false;
 				ChangeText ();
 				anakSprite.GetComponent<Animator> ().SetTrigger ("toInstantSenang");
 				//Script Ibu
 				ibuNextSprite.GetComponent<Animator>().SetTrigger ("toNgomong");
 				scriptIbuNext.GetComponent<P10_Subtitles_Ibu>().isStart = true;
-			}
+			//}
 		}
 	}
 

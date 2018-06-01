@@ -5728,6 +5728,7 @@ GameObject:
   - component: {fileID: 1108888644}
   - component: {fileID: 1108888643}
   - component: {fileID: 1108888646}
+  - component: {fileID: 1108888647}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -5852,6 +5853,23 @@ MonoBehaviour:
   next: 1
   balikHalaman: {fileID: 1335946116}
   sceneName: LoadPicture
+--- !u!95 &1108888647
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1108888641}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b3dd697be84259449b0bb6fe0b9309fb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1110185294
 GameObject:
   m_ObjectHideFlags: 0
@@ -7571,6 +7589,7 @@ MonoBehaviour:
   screenshotCount: 0
   crayon: {fileID: 1553989698}
   buttonsave: {fileID: 845917175}
+  nextButton: {fileID: 1108888641}
 --- !u!1 &1380239485
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@ public class P15_SequenceManager : MonoBehaviour {
 	public GameObject subtitle;
 	public GameObject keluargaSprite;
 	public GameObject mobilSprite;
+	public GameObject nextButton;
 	public bool inSequence;
 	public GameObject pinchHint;
 	public int sequence;
@@ -55,6 +56,7 @@ public class P15_SequenceManager : MonoBehaviour {
 				{
 					buttonHint.SetActive (true);
 					mobilSprite.GetComponent<P15_Mobil> ().allowClick = true;
+					nextButton.GetComponent<Animator> ().SetTrigger ("glow");
 					break;
 				}
 			default:

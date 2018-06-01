@@ -60,20 +60,22 @@ public class P9A_Subtitles : MonoBehaviour {
 		}
 
 		if (Input.GetKeyDown (KeyCode.Mouse0) || (Input.touchCount == 1 && Input.GetTouch (0).phase == TouchPhase.Began)) {
-			if (waitingForInput) {
-				waitingForInput = false;
-				Debug.Log (wordset + " " + gameObject.name);
-				if (wordset == 0 && gameObject.name == "SubAyahKecil") {
-					bubbleHalo.GetComponent<Animator> ().SetTrigger ("out");
-				} else {
-					bubble.GetComponent<Animator> ().SetTrigger ("out");
-
-				}
-				FadeOut ();
-			} else {
+			 {
 				setToEnd ();
 			}
 		}
+
+		if (waitingForInput) {
+			waitingForInput = false;
+			Debug.Log (wordset + " " + gameObject.name);
+			if (wordset == 0 && gameObject.name == "SubAyahKecil") {
+				bubbleHalo.GetComponent<Animator> ().SetTrigger ("out");
+			} else {
+				bubble.GetComponent<Animator> ().SetTrigger ("out");
+
+			}
+			FadeOut ();
+		} 
 
 	}
 

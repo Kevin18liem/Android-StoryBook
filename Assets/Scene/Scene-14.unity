@@ -4613,6 +4613,7 @@ GameObject:
   - component: {fileID: 1081390956}
   - component: {fileID: 1081390955}
   - component: {fileID: 1081390954}
+  - component: {fileID: 1081390958}
   m_Layer: 5
   m_Name: ToNextpage
   m_TagString: Untagged
@@ -4737,6 +4738,23 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1081390952}
+--- !u!95 &1081390958
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1081390952}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b3dd697be84259449b0bb6fe0b9309fb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1099980049
 GameObject:
   m_ObjectHideFlags: 0
@@ -6753,6 +6771,7 @@ MonoBehaviour:
       delay: 0.2
   fade_speed: 3
   newline_char: 36
+  nextButton: {fileID: 1081390952}
 --- !u!225 &1723381921
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -6870,7 +6889,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
