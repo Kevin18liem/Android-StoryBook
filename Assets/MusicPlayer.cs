@@ -15,7 +15,7 @@ public class MusicPlayer : MonoBehaviour {
 	private AudioSource source;
 
 	static private MusicPlayer instance;
-	static public bool seamlessPartOne = true;
+	static public bool seamlessPartOne = false;
 	static public bool seamlessPartTwo = false;
 	static public bool seamlessPartThree = false;
 	static public bool seamlessPartFour = false;
@@ -36,7 +36,16 @@ public class MusicPlayer : MonoBehaviour {
 
 	protected virtual void Start() {
 		// If the game starts in a menu scene, play the appropriate music
-		PlayPartOneMusic();
+		/*
+		if (!MusicPlayer.seamlessPartOne) {
+			MusicPlayer.PlayPartOneMusic ();
+			MusicPlayer.seamlessPartOne = true;
+			MusicPlayer.seamlessPartTwo = false;
+			MusicPlayer.seamlessPartThree = false;
+			MusicPlayer.seamlessPartFour = false;
+		} 
+*/
+		MusicPlayer.PlayPartOneMusic ();
 	}
 	static public void PlayPartOneMusic ()
 	{
