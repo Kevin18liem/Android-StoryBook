@@ -18,6 +18,7 @@ public class P4_Subtitles : MonoBehaviour {
 	private bool wait_input;		// true if waiting for input
 	private string highlighted;		// highlighted part
 	private CanvasGroup cg;			// canvas group with alpha
+	public GameObject nextButton;
 
 	// Use this for initialization
 	void Start () {
@@ -54,9 +55,11 @@ public class P4_Subtitles : MonoBehaviour {
 
 		// when input got, change text if there are still more text to display
 		if (wait_input) {
-			if ((((Input.touchCount > 0) && (Input.GetTouch (0).phase == TouchPhase.Began)) || Input.GetMouseButtonDown(0)) && wordset < texts.Length - 1) {
+			if (wordset < texts.Length - 1) {
 				wait_input = false;
 				ChangeText ();
+			} else {
+				nextButton.GetComponent<Animator> ().SetTrigger ("glow");
 			}
 		}
 

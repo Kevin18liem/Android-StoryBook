@@ -10,8 +10,7 @@ public class P6_SequenceManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		button.SetActive (false);
-		
+
 	}
 	
 	// Update is called once per frame
@@ -21,6 +20,7 @@ public class P6_SequenceManager : MonoBehaviour {
 
 	public void enableButton() {
 		button.SetActive (true);
+		button.GetComponent<Animator> ().SetTrigger ("glow");
 	}
 
 }

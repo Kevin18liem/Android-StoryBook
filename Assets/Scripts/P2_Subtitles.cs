@@ -8,6 +8,7 @@ public class P2_Subtitles : MonoBehaviour {
 	
 	public GameObject anakIbuNext;
 	public GameObject bapakMobil;
+	public GameObject nextButton;
 	public bool isFinish = false;
 	public string trigger;
 	public TextItem[] texts;		// texts to be displayed
@@ -59,7 +60,7 @@ public class P2_Subtitles : MonoBehaviour {
 		}
 		// when input got, change text if there are still more text to display
 		if (wait_input) {
-			if ((((Input.touchCount > 0) && (Input.GetTouch (0).phase == TouchPhase.Began)) || Input.GetMouseButtonDown (0))) {
+			//if ((((Input.touchCount > 0) && (Input.GetTouch (0).phase == TouchPhase.Began)) || Input.GetMouseButtonDown (0))) {
 				wait_input = false;
 				Debug.Log ("masuk ga gan");
 				ChangeText ();
@@ -70,12 +71,13 @@ public class P2_Subtitles : MonoBehaviour {
 					isFinish = true;
 					buttonHint.SetActive (true);
 				}
-			} 
+			//} 
 		} else {
 			if ((((Input.touchCount > 0) && (Input.GetTouch (0).phase == TouchPhase.Began)) || Input.GetMouseButtonDown (0))) {
 				if (isFinish) {
 					bapakMobil.GetComponent<Animator> ().SetTrigger ("jalan");
 					buttonHint.SetActive (false);
+					nextButton.GetComponent<Animator> ().SetTrigger ("glow");
 				}
 			}
 		}

@@ -50,6 +50,7 @@ public class P3_SequenceManager : MonoBehaviour {
 			case 3:
 				{
 					nextPageButton.SetActive (true);
+					nextPageButton.GetComponent<Animator> ().SetTrigger ("glow");
 					break;
 				}
 			default:

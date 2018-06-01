@@ -19,6 +19,8 @@ public class P5_Subtitles : MonoBehaviour {
 	private CanvasGroup cg;			// canvas group with alpha
 	private IEnumerator speller;
 	private GameObject seqManager;
+	public GameObject nextButton;
+	private bool wait_input = false;
 
 	public AudioClip audiosubanak1;
 	public AudioClip audiosubanak2;
@@ -50,6 +52,7 @@ public class P5_Subtitles : MonoBehaviour {
 		
 		if (!seqManager.GetComponent<P5_SequenceManager> ().movable && wordset == texts.Length - 1 && (idx == texts [wordset].words.Length)) {
 			seqManager.GetComponent<P5_SequenceManager> ().movable = true;
+			nextButton.GetComponent<Animator> ().SetTrigger ("glow");
 
 		}
 
@@ -62,12 +65,16 @@ public class P5_Subtitles : MonoBehaviour {
 		}
 
 		// when input got, change text if there are still more text to display
-		if ((((Input.touchCount > 0) && (Input.GetTouch (0).phase == TouchPhase.Began)) || Input.GetMouseButtonDown (0)) && wordset < texts.Length && !in_anim) {
-			StopCoroutine (speller);
-			waiting = false;
-			in_anim = false;
-			ChangeText ();
-		}
+		if (wordset < texts.Length && !in_anim) {
+			if (wait_input) {
+				StopCoroutine (speller);
+				waiting = false;
+				in_anim = false;
+				ChangeText ();
+				wait_input = false;
+			}
+		} 
+
 
 	}
 
@@ -97,6 +104,7 @@ public class P5_Subtitles : MonoBehaviour {
 
 		// if end of text ask for input
 		if (idx == texts[wordset].words.Length) {
+			wait_input = true;
 		}
 	}
 

@@ -23,6 +23,7 @@ public class P6_Subtitles : MonoBehaviour {
 	private GameObject seqManager;
 	public AudioClip audiosubanak1;
 	public AudioClip audiosubanak2;
+	private bool waiting_input = false;
 	// Use this for initialization
 	void Start () {
 
@@ -62,7 +63,8 @@ public class P6_Subtitles : MonoBehaviour {
 		}
 
 		// when input got, change text if there are still more text to display
-		if ((((Input.touchCount > 0) && (Input.GetTouch (0).phase == TouchPhase.Began)) || Input.GetMouseButtonDown (0)) && wordset < texts.Length) {
+		if (waiting_input && wordset < texts.Length) {
+			waiting_input = false;
 			StopCoroutine (speller);
 			waiting = false;
 			in_anim = false;
@@ -110,6 +112,7 @@ public class P6_Subtitles : MonoBehaviour {
 
 		// if end of text ask for input
 		if (idx == texts[wordset].words.Length) {
+			waiting_input = true;
 		}
 	}
 

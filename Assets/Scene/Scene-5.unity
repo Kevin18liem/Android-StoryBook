@@ -7957,6 +7957,7 @@ MonoBehaviour:
       delay: 0.5
   fade_speed: 3
   newline_char: 36
+  nextButton: {fileID: 1922977878}
   audiosubanak1: {fileID: 8300000, guid: cec38277fce18a141a46c4e58ea22d1f, type: 3}
   audiosubanak2: {fileID: 8300000, guid: fc64c5408653f1e45a679a116c30eb32, type: 3}
   audiosubanak3: {fileID: 8300000, guid: c96f6dc4e051cf646826d508e08d0b0b, type: 3}
@@ -8066,7 +8067,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -8260,6 +8261,7 @@ GameObject:
   - component: {fileID: 1922977882}
   - component: {fileID: 1922977881}
   - component: {fileID: 1922977880}
+  - component: {fileID: 1922977884}
   m_Layer: 5
   m_Name: ToNextpage
   m_TagString: Untagged
@@ -8384,6 +8386,23 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1922977878}
+--- !u!95 &1922977884
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1922977878}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b3dd697be84259449b0bb6fe0b9309fb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1923470226
 GameObject:
   m_ObjectHideFlags: 0
