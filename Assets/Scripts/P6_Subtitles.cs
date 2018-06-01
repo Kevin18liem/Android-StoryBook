@@ -36,7 +36,13 @@ public class P6_Subtitles : MonoBehaviour {
 		cg.alpha = 0;
 		cg.interactable = false;
 		seqManager = GameObject.Find ("SequenceManager");
-
+		if (!MusicPlayer.seamlessPartTwo) {
+			MusicPlayer.PlayPartTwoMusic ();
+			MusicPlayer.seamlessPartTwo = true;
+			MusicPlayer.seamlessPartOne = false;
+			MusicPlayer.seamlessPartThree = false;
+			MusicPlayer.seamlessPartFour = false;
+		}
 	}
 
 	// Update is called once per frame

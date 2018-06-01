@@ -33,6 +33,13 @@ public class P14_Subtitles_Anak : MonoBehaviour {
 		wait_input = false;
 		cg.alpha = 0;
 		cg.interactable = false;
+		if (!MusicPlayer.seamlessPartFour) {
+			MusicPlayer.PlayPartFourMusic ();
+			MusicPlayer.seamlessPartFour = true;
+			MusicPlayer.seamlessPartOne = false;
+			MusicPlayer.seamlessPartTwo = false;
+			MusicPlayer.seamlessPartThree = false;
+		}
 		StartCoroutine (tungguAnimasi ());
 	}
 

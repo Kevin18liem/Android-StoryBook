@@ -19,9 +19,6 @@ public class P15_SequenceManager : MonoBehaviour {
 		sequence = 0;
 		inSequence = false;
 		inCoroutine = false;
-		PlayerPrefs.SetString ("HighlightText", "on");
-		PlayerPrefs.SetString ("Narasi", "on");
-		PlayerPrefs.SetString ("Musik", "on");
 	}
 
 	// Update is called once per frame

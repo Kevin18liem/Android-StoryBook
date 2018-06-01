@@ -36,7 +36,13 @@ public class P7_Subtitles_Anak : MonoBehaviour {
 		cg.alpha = 0;
 		cg.interactable = false;
 		seqManager = GameObject.Find ("SequenceManager");
-
+		if (!MusicPlayer.seamlessPartThree) {
+			MusicPlayer.PlayPartThreeMusic ();
+			MusicPlayer.seamlessPartThree = true;
+			MusicPlayer.seamlessPartOne = false;
+			MusicPlayer.seamlessPartTwo = false;
+			MusicPlayer.seamlessPartFour = false;
+		}
 	}
 
 	// Update is called once per frame

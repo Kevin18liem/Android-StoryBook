@@ -11,6 +11,7 @@ public class changePage : MonoBehaviour {
 	[SerializeField]
 	public string sceneName;
 	public void changeMenuScene() {
+		GameObject.Find("Background Music").GetComponent<AudioSource>().UnPause();
 		GameObject UI = GameObject.Find ("UI");
 		if (UI) {
 			UI.SetActive (false);

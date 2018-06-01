@@ -39,7 +39,13 @@ public class P1_Subtitles : MonoBehaviour {
 		cg.interactable = false;
 		PlayerPrefs.SetInt ("Call", 1);
 		PlayerPrefs.SetInt ("VideoCall", 1);
-
+		if (!MusicPlayer.seamlessPartOne) {
+			MusicPlayer.PlayPartOneMusic ();
+			MusicPlayer.seamlessPartOne = true;
+			MusicPlayer.seamlessPartTwo = false;
+			MusicPlayer.seamlessPartThree = false;
+			MusicPlayer.seamlessPartFour = false;
+		}
 	}
 	
 	// Update is called once per frame

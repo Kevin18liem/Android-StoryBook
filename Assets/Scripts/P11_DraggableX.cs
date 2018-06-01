@@ -42,6 +42,13 @@ public class P11_DraggableX : MonoBehaviour {
 		if (moveable) {
 			putHintHere (transform.position);
 		}
+		if (!MusicPlayer.seamlessPartFour) {
+			MusicPlayer.PlayPartFourMusic ();
+			MusicPlayer.seamlessPartFour = true;
+			MusicPlayer.seamlessPartOne = false;
+			MusicPlayer.seamlessPartTwo = false;
+			MusicPlayer.seamlessPartThree = false;
+		}
 	}
 	
 	// Update is called once per frame

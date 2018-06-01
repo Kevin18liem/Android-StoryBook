@@ -27,6 +27,13 @@ public class P9A_SequenceManager : MonoBehaviour {
 		inSequence = false;
 		inCoroutine = false;
 		PlayerPrefs.SetInt ("VideoCall", 1);
+		if (!MusicPlayer.seamlessPartThree) {
+			MusicPlayer.PlayPartThreeMusic ();
+			MusicPlayer.seamlessPartThree = true;
+			MusicPlayer.seamlessPartOne = false;
+			MusicPlayer.seamlessPartTwo = false;
+			MusicPlayer.seamlessPartFour = false;
+		}
 	}
 	
 	// Update is called once per frame

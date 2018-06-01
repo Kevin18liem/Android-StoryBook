@@ -40,7 +40,13 @@ public class P15_Subtitle : MonoBehaviour {
 		cg.alpha = 0;
 		cg.interactable = false;
 		seqManager = GameObject.Find ("SequenceManager");
-
+		if (!MusicPlayer.seamlessPartFour) {
+			MusicPlayer.PlayPartFourMusic ();
+			MusicPlayer.seamlessPartFour = true;
+			MusicPlayer.seamlessPartOne = false;
+			MusicPlayer.seamlessPartTwo = false;
+			MusicPlayer.seamlessPartThree = false;
+		}
 	}
 
 	// Update is called once per frame

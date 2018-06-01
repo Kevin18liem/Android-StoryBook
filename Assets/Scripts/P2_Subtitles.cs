@@ -38,7 +38,13 @@ public class P2_Subtitles : MonoBehaviour {
 		wait_input = false;
 		cg.alpha = 0;
 		cg.interactable = false;
-
+		if (!MusicPlayer.seamlessPartOne) {
+			MusicPlayer.PlayPartOneMusic ();
+			MusicPlayer.seamlessPartOne = true;
+			MusicPlayer.seamlessPartTwo = false;
+			MusicPlayer.seamlessPartThree = false;
+			MusicPlayer.seamlessPartFour = false;
+		}
 	}
 
 	// Update is called once per frame
