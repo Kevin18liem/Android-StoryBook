@@ -19,6 +19,7 @@ public class ToggleNavigation : MonoBehaviour {
 		if (NavigationPanel.activeInHierarchy) {
 			NavigationPanel.SetActive (false);
 			SliderPanel.SetActive (false);
+			navButton.SetActive (false);
 			Grey.SetActive (false);
 			if (PlayerPrefs.GetInt("Call") == 1) {
 				Telepon.SetActive (false);
